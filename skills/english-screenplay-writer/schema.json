@@ -1,47 +1,30 @@
 {
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "screenplay_pack",
+  "description": "Intermediate JSON produced by english-screenplay-writer. All fields feed into storyboard-builder and the final .docx export.",
   "type": "object",
-  "required": [
-    "quick_reference",
-    "character_snapshot",
-    "episode_briefs",
-    "screenplay_markdown",
-    "scene_crosswalk"
-  ],
+  "required": ["project", "episode_briefs", "episodes", "scene_crosswalk"],
   "properties": {
-
-    "quick_reference": {
+    "project": {
       "type": "object",
-      "required": ["project_title", "logline", "target_market", "genre", "episode_count", "episode_duration", "mood_tags", "protagonist_snapshot"],
+      "required": ["title", "logline", "target_market", "genre", "episode_count", "episode_duration_min"],
       "properties": {
-        "project_title": { "type": "string" },
+        "title": { "type": "string" },
         "logline": { "type": "string" },
         "target_market": { "type": "string" },
         "genre": { "type": "string" },
-        "episode_count": { "type": "integer" },
-        "episode_duration": { "type": "string" },
-        "mood_tags": { "type": "array", "items": { "type": "string" } },
-        "protagonist_snapshot": { "type": "string" }
-      }
-    },
-
-    "character_snapshot": {
-      "type": "array",
-      "minItems": 1,
-      "items": {
-        "type": "object",
-        "required": ["character_id", "name", "function"],
-        "properties": {
-          "character_id": { "type": "string" },
-          "name": { "type": "string" },
-          "function": { "type": "string", "description": "One-line role in the screenplay." }
+        "episode_count": { "type": "integer", "minimum": 1 },
+        "episode_duration_min": {
+          "type": "string",
+          "description": "e.g. '1-2 min' or '90s'"
         }
       }
     },
 
     "episode_briefs": {
+      "description": "One entry per episode. Mirrors the [EPISODE BRIEF] block at the top of each episode in the .docx.",
       "type": "array",
       "minItems": 1,
-      "description": "One entry per episode. Count must equal quick_reference.episode_count. Mirrors [EPISODE BRIEF] blocks in screenplay_markdown. Must align with outline episode_outlines for the same episode_id.",
       "items": {
         "type": "object",
         "required": [
@@ -54,117 +37,128 @@
           "target_emotion"
         ],
         "properties": {
-          "episode_id": { "type": "string", "description": "e.g. EP01" },
+          "episode_id": {
+            "type": "string",
+            "description": "e.g. 'EP01'"
+          },
           "plot_summary": {
             "type": "string",
-            "description": "2-4 sentences: what happens this episode and what advances."
+            "description": "2-4 sentences summarising all scenes in the episode."
           },
           "opening_hook": {
             "type": "string",
-            "description": "One sentence: what retains the audience at episode open (conflict, information, visual tension)."
+            "description": "What grabs the audience in the first few seconds."
           },
           "cold_open_focus": {
             "type": "string",
-            "description": "One sentence: what must appear on screen in the first seconds to hold retention; aligns with first scene opening."
+            "description": "The specific visible element required in the first 3-5 seconds of the episode."
           },
           "closing_hook": {
             "type": "string",
-            "description": "One sentence: unresolved question or crisis left for the next episode; must match final scene [SCENE ENDING]."
+            "description": "The unresolved suspense or crisis at episode end. Must match the final scene's [SCENE ENDING]."
           },
           "core_satisfaction_beat": {
             "type": "string",
-            "description": "One sentence: primary satisfaction payoff type + landing; align with outline satisfaction_beat for this episode."
+            "description": "Satisfaction type + landing point. Must match outline episode_outlines[n].satisfaction_beat."
           },
           "target_emotion": {
             "type": "string",
-            "description": "One sentence: target audience emotion by episode end."
+            "description": "Dominant viewer emotion at the final second of the episode."
           }
         }
       }
     },
 
-    "screenplay_markdown": {
-      "type": "string",
-      "description": "Full screenplay text covering every episode. After each ## EPISODE XX, include [EPISODE BRIEF] with six labeled lines (Episode Plot, Opening Hook, Cold Open Focus, Closing Hook, Core Satisfaction, Target Emotion) before the first ### SCENE. Every scene: scene header (6 fields) + [OPENING STATE] + [MAIN BODY] in action blocks + [SCENE ENDING]. No episode may be replaced with a summary or placeholder."
+    "episodes": {
+      "description": "Full screenplay text, one entry per episode.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["episode_id", "screenplay_markdown"],
+        "properties": {
+          "episode_id": { "type": "string" },
+          "screenplay_markdown": {
+            "type": "string",
+            "description": "Full Markdown of the episode. Must use the 4-part scene structure per rules/12_剧本规范.md."
+          }
+        }
+      }
     },
 
     "scene_crosswalk": {
+      "description": "Index of every scene across all episodes. Used by storyboard-builder to map scenes to shot rows.",
       "type": "array",
       "minItems": 1,
-      "description": "One entry per scene. Feeds directly into the storyboard scene_index. scene_id must match the SCENE heading in screenplay_markdown exactly.",
       "items": {
         "type": "object",
         "required": [
-          "episode_id",
           "scene_id",
+          "episode_id",
           "time",
-          "slugline",
+          "location",
           "characters",
           "core_event",
           "scene_result",
-          "hook_type",
-          "emotional_function",
-          "character_ids",
-          "location_id"
+          "outline_ref"
         ],
         "properties": {
-          "episode_id": {
-            "type": "string",
-            "description": "e.g. EP01"
-          },
           "scene_id": {
             "type": "string",
-            "description": "e.g. 01.01. Must match SCENE heading in screenplay_markdown."
+            "description": "e.g. 'S01.01' — episode + scene index"
           },
+          "episode_id": { "type": "string" },
           "time": {
             "type": "string",
             "enum": ["Day", "Night", "Dawn", "Dusk", "Pre-Dawn", "Continuous"],
-            "description": "Time of day for this scene."
+            "description": "Lighting condition at scene open."
           },
-          "slugline": {
+          "location": {
             "type": "string",
-            "description": "e.g. INT. HALE CHARITY GALA - NIGHT"
+            "description": "INT./EXT. + location name."
           },
           "characters": {
-            "type": "array",
-            "items": { "type": "string" },
-            "description": "Character names as they appear in the screenplay (display names)."
+            "type": "string",
+            "description": "Comma-separated display names of all characters present."
           },
           "core_event": {
             "type": "string",
-            "description": "One sentence: the central narrative event of this scene. Mirrors the scene header Core Event field."
+            "description": "One sentence — the primary narrative event of the scene."
           },
           "scene_result": {
             "type": "string",
-            "description": "One sentence: how the scene ends / what changes. Mirrors the scene header Scene Result field."
+            "description": "One sentence — how the situation has changed by scene end."
           },
-          "hook_type": {
+          "outline_ref": {
             "type": "string",
-            "enum": ["cliffhanger", "reversal", "emotional_peak", "setup", "none"],
-            "description": "Episode-ending scenes: must use cliffhanger / reversal / emotional_peak / setup. Mid-episode scenes: none."
-          },
-          "emotional_function": {
-            "type": "string",
-            "enum": ["establish", "escalate", "release", "reset"],
-            "description": "The emotional arc function of this scene within the episode."
-          },
-          "character_ids": {
-            "type": "array",
-            "items": { "type": "string" },
-            "description": "character_id values aligned with setting_bible and outline character_cards."
-          },
-          "location_id": {
-            "type": "string",
-            "description": "location_id aligned with setting_bible."
+            "enum": [
+              "core_event",
+              "turn",
+              "emotional_goal",
+              "relationship_shift",
+              "antagonist_pressure",
+              "satisfaction_beat",
+              "setup"
+            ],
+            "description": "Which outline field this scene primarily delivers. Each episode's scenes must collectively include core_event and turn."
           },
           "key_props": {
             "type": "array",
-            "items": { "type": "string" },
-            "description": "Optional. prop_id values for props that play a narrative role in this scene. Used by storyboard to pre-identify prop shots."
+            "description": "Optional — prop IDs from setting_bible that appear in this scene.",
+            "items": { "type": "string" }
+          },
+          "scene_ending_type": {
+            "type": "string",
+            "enum": ["cliffhanger", "reversal", "emotional_peak", "setup"],
+            "description": "The [SCENE ENDING] type used in this scene."
+          },
+          "action_block_count": {
+            "type": "integer",
+            "minimum": 3,
+            "description": "Number of action blocks in [MAIN BODY]. Dialogue scenes ≥5; conflict scenes ≥7; emotional/reveal scenes ≥6; quick transition ≥3."
           }
         }
       }
     }
-
   }
 }

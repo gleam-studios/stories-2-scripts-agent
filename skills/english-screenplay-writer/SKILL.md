@@ -1,246 +1,233 @@
-# english-screenplay-writer
+# SKILL: English Screenplay Writer
 
 ## Purpose
 
-Write the English screenplay only.
+Transform the `outline_pack.json` into a full English screenplay — structured by episode and scene — that functions as the stable middle layer between the outline and the storyboard table.
 
-The screenplay is the middle layer between the outline and the storyboard table. It takes the episode structure from the outline and turns it into fully executable scenes. The storyboard table then derives directly from the screenplay — every action block, every prop placement, every scene ending becomes shot material.
+Every scene must be written in a format that allows the storyboard builder to extract shot rows directly, without any additional interpretation or invention.
 
-The screenplay must be written so that the storyboard can grow naturally from it. Not by including camera directions, but by writing in a form where shot boundaries are self-evident.
+---
 
 ## Input
 
-- `adaptation_plan`
-- `english_setting_bible`
-- `english_outline_pack` (primary: `episode_outlines`, `character_cards`, `signature_scenes`)
+- `outline_pack.json` (required — the single source of truth for story structure, characters, hooks, and paywall beats)
+- `adaptation_plan.json` (required — target market, tone, paywall strategy)
+- `setting_bible.json` (required — world rules, location names, prop inventory)
+- `rules/12_剧本规范.md` (required — governs every structural and content decision in this skill)
+- `rules/08_英文对白写作规则.md` (required — governs all dialogue writing)
+
+---
 
 ## Output
 
-- `screenplay_pack.json`
-- final document target: `02_<剧名>_英文剧本.docx`
+- `screenplay_pack.json` (intermediate JSON, matches `schema.json`)
+- `02_<title>_EnglishScreenplay.docx` (final delivery — full Markdown converted to Word)
+
+---
 
 ## Required content
 
-1. `Quick Reference`
-2. Character snapshot
-3. `episode_briefs` (one object per episode — mirrors `[EPISODE BRIEF]` in markdown)
-4. Screenplay markdown (full, all episodes, all scenes)
-5. Scene crosswalk
+### Episode briefs
+
+Every episode in `screenplay_pack.json` must include an `episode_brief` object with all 6 fields:
+
+| Field | Content |
+|-------|---------|
+| `plot_summary` | 2-4 sentences covering all scenes in the episode |
+| `opening_hook` | What grabs the audience in the first seconds (conflict / info / image) |
+| `cold_open_focus` | Specific visible element required in the first 3-5 seconds |
+| `closing_hook` | The suspense or crisis left unresolved at the episode end |
+| `core_satisfaction_beat` | The satisfaction type + landing point — must match `outline.episode_outlines[n].satisfaction_beat` |
+| `target_emotion` | The dominant emotion the viewer should feel at the final second |
+
+**Alignment rules:**
+- `opening_hook` and `cold_open_focus` must be delivered in the first half of Scene 01 of the episode
+- `closing_hook` must match the `[SCENE ENDING]` type and beat of the episode's final scene
+- `plot_summary` must reference events from every scene — not just the first
 
 ---
 
-## Episode brief (mandatory before every episode's first scene)
+### Scene structure (mandatory 4-part format for every scene)
 
-Immediately after each `## EPISODE XX` heading and **before** the first `### SCENE`, include a labeled block:
-
-```
-[EPISODE BRIEF]
-Episode Plot: [2-4 sentences — what happens this episode, what advances]
-Opening Hook: [one sentence — what retains the audience at episode open]
-Cold Open Focus: [one sentence — what must be on screen in the first seconds; aligns with first scene]
-Closing Hook: [one sentence — what is left unresolved for the next episode; must match final scene [SCENE ENDING]]
-Core Satisfaction: [one sentence — primary satisfaction payoff; align with outline satisfaction_beat]
-Target Emotion: [one sentence — audience emotion by episode end]
-```
-
-Rules:
-- `episode_briefs` in JSON must have one entry per episode; count must equal `episode_count`.
-- `Opening Hook` / `Cold Open Focus` must be **paid off** in the first scene's `[OPENING STATE]` and early `[MAIN BODY]`.
-- `Closing Hook` must be **consistent** with the last scene's `[SCENE ENDING]` (same beat; wording may vary).
-- `Episode Plot` must summarize **all scenes** in the episode, not only the first.
-
----
-
-## Scene structure (mandatory for every scene)
-
-Every scene must have all four components in order:
-
-### 1. Scene header (6 fields)
+#### Part 1 — Scene header (7 fields)
 
 ```
-EPISODE XX  SCENE XX.XX
-Time: [Day / Night / Dawn / Dusk / Pre-Dawn]
-Location: [INT./EXT. LOCATION NAME]
+### SCENE XX.XX
+Time: [Day / Night / Dawn / Dusk / Pre-Dawn / Continuous]
+Location: [INT./EXT. Location Name]
 Characters: [all characters present]
-Core Event: [one sentence: the central narrative event]
-Scene Result: [one sentence: how the scene ends / what changes]
+Core Event: [single sentence — the primary narrative event]
+Scene Result: [single sentence — how the situation changes by scene end]
+Outline Ref: [which outline field this scene primarily delivers: core_event / turn / emotional_goal / relationship_shift / antagonist_pressure / satisfaction_beat / setup]
 ```
 
-The scene header feeds directly into the storyboard's `scene_index`. Keep it precise.
+The 7 scene-header fields are copied verbatim into `scene_crosswalk` in `screenplay_pack.json`.
 
-### 2. [OPENING STATE]
+#### Part 2 — [OPENING STATE]
 
-1-4 sentences. Not prose. Cover:
+1-4 sentences. Must cover:
+- Environment (space, light, atmosphere)
+- Initial character position/posture
+- Key props — first mention of any prop that will be used later MUST include its exact location
+- Current situation (power/emotional status quo at scene open)
 
-- Environment: space, light, atmosphere
-- Characters' initial position and physical state
-- Key props: anything that will matter in this scene, named and placed
-- Current situation: what is the state of play when the scene begins
+This block produces the first 1-2 establishing shots in the storyboard.
 
-The storyboard's first 1-2 shots (establishing, prop insert) derive from this block.
+#### Part 3 — [MAIN BODY]
 
-### 3. [MAIN BODY]
+Written in **action blocks** — not prose paragraphs.
 
-Written in **action blocks** — one paragraph per continuous action or exchange. Do not run multiple beats into a single block.
+One action block = one continuous action or one short exchange. Each block produces 1-3 storyboard shot rows.
 
-Action block structure:
-```
-(action / state change)
+**Minimum action block count by scene type:**
 
-CHARACTER NAME
-Dialogue.
+| Scene type | Minimum blocks | Expected storyboard shots |
+|-----------|---------------|--------------------------|
+| Dialogue-driven | 5 blocks | 6-10 shots |
+| Confrontation / conflict | 7 blocks | 9-14 shots |
+| Emotional peak / reversal / reveal | 6 blocks | 8-12 shots |
+| Quick transition (≤20s) | 3 blocks | 4-6 shots |
 
-(reaction / situation shift)
-```
+**What triggers a new block (each situation = its own block):**
+- A character enters or exits
+- Any physical action (pick up / push / stand / turn)
+- Dialogue — always surrounded by: action line → dialogue → reaction line
+- A power shift, information reveal, or emotional turn
+- A key prop appearing or being used
 
-Rules for action blocks:
-- Any character entering or leaving: its own line
-- Any visible physical action (grab, push, stand, turn): its own paragraph
-- Every significant line of dialogue must have an action or reaction before and after it
-- Every situation shift (power change, information reveal, emotional turn): its own paragraph
-- Every key prop appearing or being used: explicit sentence with location
+**3-question self-check per block:**
+1. What is visible in this block? (must be describable as a camera image)
+2. Who is driving the action?
+3. What changes by the end of this block?
 
-The storyboard's shot rows derive from action blocks. One block typically = 1-3 shots.
+#### Part 4 — [SCENE ENDING]
 
-### 4. [SCENE ENDING]
+A separate labeled block. Must use one of:
+- `cliffhanger` — action frozen, danger not resolved
+- `reversal` — dialogue or action that flips the situation
+- `emotional_peak` — high-intensity action line, hard cut
+- `setup` — stakes-raising beat pointing to next scene or episode
 
-Written as a separate labeled block. Never buried in the main body. Never a flat descriptive line.
-
-Must be one of:
-- `cliffhanger` — crisis action or unresolved threat, no resolution given
-- `reversal` — reveal line or reversal action, dropped and not explained
-- `emotional_peak` — high-intensity physical action, space left after
-- `setup` — line or action that directly forecasts the next scene's danger
-
-The final scene of every episode must use one of these types as its episode-ending hook.
+The final scene's `[SCENE ENDING]` must match the episode's `closing_hook`.
 
 ---
 
-## Writing rules (storyboard-readiness principles)
+### COLD OPEN (optional per episode)
 
-### One scene = one primary event
+Pre-title sequence. Written as a full scene using the 4-part structure, labeled:
 
-A scene carries one core narrative push. If location or time changes, open a new scene. Do not stack: argument + backstory explanation + confession + reversal + fight in one scene.
+```
+### COLD OPEN
+...
+[SCENE ENDING / END COLD OPEN]
+```
 
-### Write in event order
-
-Every main body block must follow natural event sequence:
-
-`what happens first → who does what → who says what → what is the reaction → how the situation changes`
-
-### Write what can be seen, not what is felt
-
-| Do not write | Write instead |
-|--------------|---------------|
-| She was devastated | Her grip on the phone turns white |
-| He was shocked | He looks at the photo. Doesn't speak for a long time. |
-| The air froze | Nobody moves. Only the HVAC. |
-| She felt fate was cruel | She's still smiling. The tears are already falling. |
-
-Every sentence must have a visual equivalent. If it cannot be photographed, rewrite it.
-
-### Key props must have explicit placement
-
-Any prop that will become a shot must be placed in [OPENING STATE] or at its first mention in [MAIN BODY]:
-
-- What is on the phone screen
-- What is on the table
-- Who is at the door
-- Who is holding the contract
-- When the ring falls
-- When the photo is first seen
-
-Missing prop placement = missing shots in the storyboard.
-
-### Turning points must be written explicitly
-
-The following must appear as action lines — not implied through dialogue:
-
-- Who goes silent first
-- Who's expression changes
-- Who stands up
-- Who pushes something across / takes it back
-- Who interrupts
-- Who enters suddenly
-
-### No bare dialogue runs
-
-Every significant line must have action or reaction before or after it. No back-and-forth dialogue blocks without physical grounding.
+Duration target: 15-25s. Does not receive a SCENE XX.XX number.
 
 ---
 
-## Coverage requirement (anti-shrinkage)
+## Dialogue rules (summary — full spec in rules/08)
 
-1. Write complete screenplay text for every episode. No gaps, no summaries, no "same pattern continues."
-2. Every episode must have at least 2 scenes.
-3. Every `scene_id` in the scene crosswalk must match a `SCENE` heading in the screenplay body exactly.
-4. `scene_crosswalk` must include `time`, `core_event`, and `scene_result` for every scene.
+Every dialogue line must do at least one:
+- Advance conflict (shift the power dynamic)
+- Reveal information (something the viewer or the other character didn't know)
+- Change emotion (pivot the scene's emotional direction)
+
+Additional constraints:
+- No line repeats information already established in this scene
+- Character voices must be distinguishable — each major character has a stable linguistic register
+- High-pressure scenes: max 15 words per line
+- No explanatory monologue (3+ consecutive lines, same character, no interruption)
+- Parentheticals: max 3 per scene; use only when tone cannot be inferred from context
+
+Dialogue formatting:
+- Normal: `CHARACTER NAME` on its own line, dialogue below
+- Off screen (in scene, not in frame): `CHARACTER NAME (O.S.)`
+- Voice over / narration: `CHARACTER NAME (V.O.)`
+- Continuation after action interruption: `CHARACTER NAME (CONT'D)`
 
 ---
 
-## Alignment with outline
+## Scene count and episode duration
 
-Before writing, read `english_outline_pack` fully:
+| Target episode length | Recommended scene count | Per-scene duration |
+|----------------------|------------------------|--------------------|
+| 1 min | 2-3 scenes | 20-35s |
+| 1.5 min | 3-4 scenes | 20-35s |
+| 2 min | 3-5 scenes | 25-40s |
 
-1. Each episode's scenes must deliver the `core_event`, `turn`, `emotional_goal`, and `satisfaction_beat` from the episode outline.
-2. `signature_scenes` from the outline must be present and written at appropriate density.
-3. Episode-ending `[SCENE ENDING]` must match the `end_hook.hook_type` from the episode outline.
-4. Character behavior must be consistent with `character_cards` from the outline.
+Hard minimum: **2 scenes per episode.**
+
+The density chain: action blocks in [MAIN BODY] → storyboard shot rows → screen seconds.
+Do not increase scene count to fill time — write each scene's action blocks to the minimum count.
+
+---
+
+## Coverage requirements
+
+- Every episode in `outline_pack.json.episode_outlines` must have a corresponding episode in the screenplay
+- Every episode must have complete scene text — no summary substitutes
+- Each episode's scenes collectively must cover `core_event` and `turn` from the outline (verified via `Outline Ref` fields)
+- `scene_crosswalk` in `screenplay_pack.json` must list every scene, with all 7 header fields populated
+
+---
+
+## Alignment with outline_pack.json
+
+| Outline field | Where it appears in screenplay |
+|--------------|-------------------------------|
+| `episode_outlines[n].core_event` | Scene with `Outline Ref: core_event` |
+| `episode_outlines[n].turn` | Scene with `Outline Ref: turn` |
+| `episode_outlines[n].emotional_goal` | Scene with `Outline Ref: emotional_goal` |
+| `episode_outlines[n].satisfaction_beat` | `episode_brief.core_satisfaction_beat` + matching scene |
+| `episode_outlines[n].end_hook` | Episode final `[SCENE ENDING]` + `episode_brief.closing_hook` |
+| `episode_outlines[n].relationship_shift` | Scene with `Outline Ref: relationship_shift` |
+| `episode_outlines[n].antagonist_pressure` | Scene with `Outline Ref: antagonist_pressure` |
+| `character_cards` | Character names, identity, arc must be consistent throughout |
+| `signature_scenes` | Each must appear as a full scene — no compression |
+| `paywall_map` | Paywall beats must appear as `[SCENE ENDING]` or a distinct action block |
 
 ---
 
 ## Prohibitions
 
-1. Do not include shot sizes, camera moves, transitions, or AI notes — these belong in the storyboard.
-2. Do not write literary prose: extended interior monologue, lyrical description, abstract metaphor.
-3. Do not write summary-style main body ("they argued and eventually reconciled").
-4. Do not run multiple locations or time periods in a single scene.
-5. Do not write bare dialogue without surrounding action/reaction.
-6. Do not omit [OPENING STATE], [MAIN BODY], or [SCENE ENDING] from any scene.
-7. Do not omit any episode or replace it with a note.
-8. Do not write Chinese-translated dialogue patterns — apply `rules/08_英文对白写作规则.md` throughout.
+1. Omitting `[EPISODE BRIEF]` or any of its 6 fields
+2. `[EPISODE BRIEF]` content not matching actual scene content (detached summary)
+3. No scene delivering the outline's `core_event` or `turn` for that episode
+4. Prose-style / summary-style body text ("they argued and eventually made up")
+5. Bare dialogue (no action or reaction lines surrounding it)
+6. Key props appearing without explicit location at first mention
+7. Turning points implied only by dialogue, not written as visible actions
+8. `[SCENE ENDING]` missing, buried in body text, or using a plain narrative close
+9. Parentheticals used to express emotions that action lines should carry
+10. Long explanatory monologue (3+ lines, same character, no interruption)
+11. Character voices indistinguishable across the scene
+12. Dialogue repeating information already established earlier in the scene
+13. Shot sizes, camera angles, or AI notes written inside the screenplay (storyboard layer only)
+14. Any episode delivered as a summary or abstract instead of full scene text
+15. More than one primary conflict or location change inside a single scene
 
 ---
 
-## Per-block self-check
-
-After writing each action block, verify:
+## Pre-output self-audit
 
 ```
-□ What is happening in the frame right now? (visible)
-□ Who is actively driving the situation? (clear)
-□ What changes after this block ends? (something shifts)
+□ Every episode has [EPISODE BRIEF] with all 6 fields complete
+□ Every [EPISODE BRIEF] matches actual scene content (opening and closing beats)
+□ Every episode has full scene text — no summaries
+□ Scene count per episode is within the duration-appropriate range
+□ Every scene has all 4 structural parts (header + OPENING STATE + MAIN BODY + SCENE ENDING)
+□ Every scene header has all 7 fields including Outline Ref
+□ Each episode's Outline Ref fields collectively cover core_event and turn
+□ Every scene meets the minimum action block count for its type
+□ [OPENING STATE] includes environment, character position, key props, and situation
+□ All key props have an explicit location at first mention
+□ [SCENE ENDING] is a separate labeled block using one of the 4 typed endings
+□ Final scene [SCENE ENDING] matches episode_brief.closing_hook
+□ Every dialogue line has surrounding action / reaction lines
+□ No explanatory monologue; character voices are distinguishable
+□ No parentheticals used for emotions expressible in action lines
+□ Parentheticals do not exceed 3 per scene
+□ scene_crosswalk in screenplay_pack.json lists every scene with all 7 header fields
+□ episode_briefs in screenplay_pack.json cover all episodes
 ```
-
-If a block cannot answer all three, rewrite it.
-
----
-
-## Pre-output self-audit (mandatory)
-
-```
-□ Every episode has [EPISODE BRIEF] with all 6 labeled lines before the first scene
-□ episode_briefs array length equals episode_count
-□ Opening Hook / Cold Open Focus paid off in first scene; Closing Hook matches final [SCENE ENDING]
-□ All episodes have complete screenplay text (not summaries)
-□ Every episode has at least 2 scenes
-□ Every scene has all 4 components: header / [OPENING STATE] / [MAIN BODY] / [SCENE ENDING]
-□ Scene header has all 6 fields for every scene
-□ [MAIN BODY] uses action blocks — no prose paragraphs, no bare dialogue runs
-□ Key props placed explicitly in [OPENING STATE] or at first mention
-□ Every [SCENE ENDING] is labeled and uses a named hook type
-□ Every episode's final scene ends with an episode-level hook
-□ scene_crosswalk entries match screenplay SCENE headings exactly
-□ scene_crosswalk includes time / core_event / scene_result for every scene
-□ Episode hook types match outline episode_outlines.end_hook.hook_type
-```
-
----
-
-## References
-
-- `rules/12_剧本规范.md`
-- `rules/08_英文对白写作规则.md`
-- `rules/05_节奏曲线.md`
-- `examples/中间产物样例/screenplay_pack.json`
-- `examples/最终交付样例/02_英文剧本.md`

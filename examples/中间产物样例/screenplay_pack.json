@@ -1,98 +1,123 @@
 {
-  "quick_reference": {
-    "project_title": "Midnight Heiress",
-    "logline": "A dead heiress returns under a false name to reclaim her empire in public.",
-    "target_market": "NA-English",
-    "genre": "Hidden Identity / Revenge Romance",
-    "episode_count": 40,
-    "episode_duration": "1-2 min",
-    "mood_tags": ["sharp", "glossy", "humiliating", "addictive"],
-    "protagonist_snapshot": "Nora weaponizes composure."
+  "project": {
+    "title": "Sterling Bond",
+    "logline": "A disgraced ex-CIA operative running a London pawnshop discovers the antique she just bought is the key to a cartel's billion-dollar account — and the cartel already knows her face.",
+    "target_market": "EN/US Short-Drama Platform",
+    "genre": "Thriller / Action",
+    "episode_count": 20,
+    "episode_duration_min": "~90s"
   },
-
-  "character_snapshot": [
-    {
-      "character_id": "CHAR-01",
-      "name": "Nora Hale / Eva Stone",
-      "function": "revenge engine; controls the room through stillness"
-    },
-    {
-      "character_id": "CHAR-02",
-      "name": "Adrian Vale",
-      "function": "ally-threat romance axis; watching before he moves"
-    },
-    {
-      "character_id": "CHAR-03",
-      "name": "Celia Hale",
-      "function": "public humiliation initiator; performs legitimacy under pressure"
-    }
-  ],
 
   "episode_briefs": [
     {
       "episode_id": "EP01",
-      "plot_summary": "Nora enters the gala as Eva Stone. Celia strikes first in public; Nora deflects. The fight moves to a private corridor; Adrian interrupts — all three know the war has started.",
-      "opening_hook": "A stranger walks into a room that buried her — and the woman on the throne doesn't know it yet.",
-      "cold_open_focus": "Ballroom in motion, crystal light, Nora alone at the entrance with a champagne glass she does not drink.",
-      "closing_hook": "Adrian asks a question only someone inside the family war would dare answer; Nora answers without flinching; he still doesn't look away.",
-      "core_satisfaction_beat": "Status reversal — Celia's public dismissal fails clean; Nora takes the social high ground in one line.",
-      "target_emotion": "Controlled exhilaration — the audience knows Nora is dangerous before anyone in the room does."
+      "plot_summary": "Maya reluctantly buys a silver pocket watch from Piotr, a visibly panicked stranger who sells it for far below asking price. An hour later, a man named Elliot offers ten times the price with no explanation — Maya refuses. That night she finds Piotr dead in her back alley, a photograph of herself in his coat pocket.",
+      "opening_hook": "A cash register slammed on a man's fingers — Maya owns this room before we know her name.",
+      "cold_open_focus": "The silver pocket watch under the shop's UV lamp, a hairline alphanumeric engraving catching the light.",
+      "closing_hook": "The dead man's coat holds a photograph of Maya's face, taken through her own window — someone has been watching.",
+      "core_satisfaction_beat": "Identity Overwhelm — Maya dismisses a high-stakes buyer with zero visible effort, making the viewer realise she is more than a pawnbroker.",
+      "target_emotion": "Gripped and slightly afraid — viewer knows more than Maya does."
     },
     {
       "episode_id": "EP02",
-      "plot_summary": "Nora tracks Miriam Cross, the retired archivist. First meeting is cautious and coded. Miriam opens her portfolio without handing anything over — and names something only an insider would recognize.",
-      "opening_hook": "The one witness everyone needs is the one person who chose silence for years.",
-      "cold_open_focus": "Institutional waiting room, muffled board session behind a closed door, Miriam alone with a leather portfolio on her lap.",
-      "closing_hook": "Miriam says Nora has her mother's way of standing; Nora does not deny it; the folder stays open between them.",
-      "core_satisfaction_beat": "Truth drop tease — information is offered as presence, not as a gift yet.",
-      "target_emotion": "Tight hope under fear — the key is in the room but not yet turned."
+      "plot_summary": "Maya calls the burner number; Elliot is already outside — he was watching. He reveals the watch holds cartel account credentials worth $900M. Maya refuses to hand it over without signed immunity and full access to existing intelligence. Elliot agrees — but when Maya opens the safe, the watch is already gone.",
+      "opening_hook": "Elliot's car is at the kerb when Maya calls — six minutes is not response time, it is surveillance confirmed.",
+      "cold_open_focus": "Maya's thumb hovering over the call button, the dead man's photograph pinned under her other hand.",
+      "closing_hook": "The safe is open. The watch is gone. Maya didn't move it.",
+      "core_satisfaction_beat": "Underdog Rise — Maya forces a senior intelligence operator to accept her terms instead of steamrolling her.",
+      "target_emotion": "Charged and curious — who is Maya, really, and who got into that safe?"
     }
   ],
 
-  "screenplay_markdown": "# 02_英文剧本\n\n## EPISODE 01\n\n[EPISODE BRIEF]\nEpisode Plot: ...\nOpening Hook: ...\nCold Open Focus: ...\nClosing Hook: ...\nCore Satisfaction: ...\nTarget Emotion: ...\n\n### SCENE 01.01\nTime: Night\nLocation: INT. HALE CHARITY GALA\nCharacters: NORA HALE / EVA STONE, CELIA HALE, ADRIAN VALE\nCore Event: Celia publicly attempts to socially eject Eva at the entrance; Eva deflects and takes the high ground\nScene Result: Celia is left without a clean move; Adrian clocks that Eva knows something she shouldn't\n\n[OPENING STATE]\nThe ballroom is in full donor-gala motion. Crystal overhead. Warm gold light with an edge beneath the polish.\n\nNora steps through the entrance alone. A champagne glass lifted from the nearest tray. She holds it without drinking.\n\n[MAIN BODY]\nCelia clocks Eva from across the room. She crosses toward her with the ease of a woman who owns it.\n\nShe stops directly in Eva's path.\n\nCELIA\nYou must be lost.\n\nNora turns. Unhurried. Holds the look one beat too long.\n\nNORA\nNot at all. I came exactly where I was invited.\n\nCelia steps closer, lowering her voice.\n\nCELIA\nI don't know who sent you through those doors. But this is a private event.\n\nNora glances at the room — the donors, the photographers, the cameras — then back at Celia.\n\nNORA\nThen you should have locked them better.\n\nA beat. Celia has nothing left to say.\n\nAdrian stands at the edge of the frame, watching. He hasn't moved on.\n\n[SCENE ENDING]\nA hotel photographer's camera sweeps across the entrance group — and catches Nora's wrist. The scar. Just for a moment.\n",
-
-  "scene_crosswalk": [
+  "episodes": [
     {
       "episode_id": "EP01",
-      "scene_id": "01.01",
-      "time": "Night",
-      "slugline": "INT. HALE CHARITY GALA - NIGHT",
-      "characters": ["Nora Hale / Eva Stone", "Celia Hale", "Adrian Vale"],
-      "core_event": "Celia publicly attempts to socially eject Eva at the entrance; Eva deflects and takes the high ground.",
-      "scene_result": "Celia is left without a clean move; Adrian clocks that Eva knows something she shouldn't.",
-      "hook_type": "none",
-      "emotional_function": "establish",
-      "character_ids": ["CHAR-01", "CHAR-03", "CHAR-02"],
-      "location_id": "LOC-01",
-      "key_props": []
-    },
-    {
-      "episode_id": "EP01",
-      "scene_id": "01.02",
-      "time": "Night",
-      "slugline": "INT. GALA SIDE CORRIDOR - NIGHT",
-      "characters": ["Nora Hale / Eva Stone", "Celia Hale", "Adrian Vale"],
-      "core_event": "Celia steers Eva into the private corridor for a harder confrontation; Adrian interrupts before Celia can land the final move.",
-      "scene_result": "All three know the social war has started; the portrait nameplate is caught in frame — the identity tease lands.",
-      "hook_type": "reversal",
-      "emotional_function": "escalate",
-      "character_ids": ["CHAR-01", "CHAR-03", "CHAR-02"],
-      "location_id": "LOC-01",
-      "key_props": ["PROP-NAMEPLATE-01"]
+      "screenplay_markdown": "## EPISODE 01\n\n[EPISODE BRIEF]\nEpisode Plot: Maya reluctantly buys a silver pocket watch...\nOpening Hook: A cash register slammed on a man's fingers...\n(see full text in 02_英文剧本.md)"
     },
     {
       "episode_id": "EP02",
-      "scene_id": "02.01",
+      "screenplay_markdown": "## EPISODE 02\n\n[EPISODE BRIEF]\nEpisode Plot: Maya calls the number; Elliot arrives in six minutes...\n(see full text in 02_英文剧本.md)"
+    }
+  ],
+
+  "scene_crosswalk": [
+    {
+      "scene_id": "S01.01",
+      "episode_id": "EP01",
       "time": "Day",
-      "slugline": "INT. HALE FOUNDATION BOARDROOM ANTECHAMBER - DAY",
-      "characters": ["Nora Hale / Eva Stone", "Miriam Cross"],
-      "core_event": "Nora finds Miriam Cross waiting outside the board session and makes first contact.",
-      "scene_result": "Miriam recognizes something she wasn't expecting and chooses to stay — cautiously.",
-      "hook_type": "setup",
-      "emotional_function": "establish",
-      "character_ids": ["CHAR-01", "CHAR-04"],
-      "location_id": "LOC-02",
-      "key_props": ["PROP-PORTFOLIO-01"]
+      "location": "INT. STERLING PAWNSHOP — SOHO, LONDON",
+      "characters": "MAYA STERLING, PIOTR VENN",
+      "core_event": "Piotr sells Maya the pocket watch for £200 under visible panic — far below asking price.",
+      "scene_result": "Maya has the watch; she notices the engraving and photographs it before putting it in the safe.",
+      "outline_ref": "core_event",
+      "key_props": ["prop_pocket_watch", "prop_uv_lamp", "prop_cash_register"],
+      "scene_ending_type": "setup",
+      "action_block_count": 8
+    },
+    {
+      "scene_id": "S01.02",
+      "episode_id": "EP01",
+      "time": "Day",
+      "location": "INT. STERLING PAWNSHOP — SOHO, LONDON",
+      "characters": "MAYA STERLING, ELLIOT MARSH",
+      "core_event": "Elliot offers £2,000 for the watch with no explanation; Maya refuses.",
+      "scene_result": "Maya refuses; Elliot leaves a burner card — on the back, a warning not to call the police.",
+      "outline_ref": "turn",
+      "key_props": ["prop_pocket_watch", "prop_burner_card", "prop_laptop"],
+      "scene_ending_type": "reversal",
+      "action_block_count": 7
+    },
+    {
+      "scene_id": "S01.03",
+      "episode_id": "EP01",
+      "time": "Night",
+      "location": "EXT. STERLING PAWNSHOP — BACK ALLEY",
+      "characters": "MAYA STERLING, PIOTR VENN (deceased)",
+      "core_event": "Maya finds Piotr dead; his coat holds a photograph of her taken through her own window.",
+      "scene_result": "Maya understands she is already a target; she takes out the burner card.",
+      "outline_ref": "turn",
+      "key_props": ["prop_photograph_maya", "prop_burner_card"],
+      "scene_ending_type": "cliffhanger",
+      "action_block_count": 6
+    },
+    {
+      "scene_id": "S02.COLD_OPEN",
+      "episode_id": "EP02",
+      "time": "Night",
+      "location": "INT. STERLING PAWNSHOP — BACK OFFICE",
+      "characters": "MAYA STERLING",
+      "core_event": "Maya retrieves a hidden case containing a false passport and an agency access card — she has a prior covert identity.",
+      "scene_result": "Viewer understands Maya is not an ordinary pawnbroker; she dials the burner number.",
+      "outline_ref": "setup",
+      "key_props": ["prop_hidden_case", "prop_false_passport", "prop_agency_card"],
+      "scene_ending_type": "setup",
+      "action_block_count": 4
+    },
+    {
+      "scene_id": "S02.01",
+      "episode_id": "EP02",
+      "time": "Night",
+      "location": "EXT. STERLING PAWNSHOP / INT. SHOP DOORWAY",
+      "characters": "MAYA STERLING, ELLIOT MARSH",
+      "core_event": "Elliot arrives in six minutes and confirms he was already watching; he reveals the watch holds $900M cartel account credentials.",
+      "scene_result": "Maya takes the intelligence document; it contains a photograph of her from a prior life — with a face cut out.",
+      "outline_ref": "core_event",
+      "key_props": ["prop_photograph_maya_prior", "prop_intelligence_document"],
+      "scene_ending_type": "reversal",
+      "action_block_count": 9
+    },
+    {
+      "scene_id": "S02.02",
+      "episode_id": "EP02",
+      "time": "Night",
+      "location": "INT. STERLING PAWNSHOP — BACK OFFICE",
+      "characters": "MAYA STERLING, ELLIOT MARSH",
+      "core_event": "Maya negotiates full immunity and intelligence access before handing over the watch; Elliot accepts.",
+      "scene_result": "Maya opens the safe — the watch is already gone; someone else got there first.",
+      "outline_ref": "turn",
+      "key_props": ["prop_pocket_watch", "prop_safe", "prop_burner_card"],
+      "scene_ending_type": "cliffhanger",
+      "action_block_count": 10
     }
   ]
 }
