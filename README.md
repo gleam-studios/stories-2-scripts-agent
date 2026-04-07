@@ -305,49 +305,55 @@ Scene Type / Screenplay Ref
 
 ### 设定集 `04_英文设定集.docx` / `08_中文设定集.docx`
 
+与 `rules/14_设定集规范.md` 一致：**12 章固定顺序**（字段级约束与自检见该规则；`08_` 为结构镜像，`CHAR/LOOK/LOC/PROP` 等 ID 与枚举不翻译）。
+
 ```
 # <剧名> — Setting Bible
 
-## Quick Reference
-Title / Logline / Target Market / Genre / Episode Count /
-Episode Duration / Emotional-Visual Tags / Lead Characters
+## §1 Quick Reference（9 字段）
+project_title / logline / target_market / genre / episode_count /
+episode_duration / mood_tags / visual_identity_line / protagonist_snapshot
 
-## 1. Project Positioning & World Background
+## §2 World Background & Positioning（5 字段）
+world_type / power_structure / social_rules / the_core_wound / tone_summary
 
-## 2. Timeline & Backstory
+## §3 Timeline & Backstory
+每条：year_or_phase / event / dramatic_impact（≥3 条）
 
-## 3. Character Profiles（详细设定）
-### CHAR-01 — [角色名]
-Full background / psychology / speech patterns / physical description /
-wardrobe notes / arc across season
+## §4 Character Profiles（≥4 角色，每角色 12 字段）
+### CHAR-01 — [Name]
+character_id / name / role_type / public_identity / hidden_identity /
+core_desire / core_fear / fatal_flaw / character_arc / voice_style /
+signature_behaviors[] / visual_design / look_ids[] / signature_props[]
 
-## 4. Character Visual Design
-### CHAR-01
-Key visual references / color palette / distinguishing features
+## §5 Character Relationship Matrix（≥3 对）
+char_a / char_b / relationship_type / hidden_tension / power_balance
 
-## 5. Character Relationships
-Relationship map / power dynamics / emotional dependencies
+## §6 Look Profiles（≥4 套 LOOK，每套 9 字段）
+### LOOK-01
+look_id / character_id / look_name / look_function / episodes_or_contexts /
+color_palette[] / key_garments[] / hair_and_makeup / ai_prompt_seed
 
-## 6. Location Profiles
-### LOC-01 — [场景名]
-Physical description / atmosphere / recurring props / lighting notes
+## §7 Location Profiles（≥3 场景，每场景 9 字段）
+### LOC-01
+location_id / name / type / dramatic_function / visual_keywords[] /
+lighting_mood / sound_environment / continuity_notes / ai_prompt_seed
 
-## 7. Props & Objects
-### PROP-01 — [道具名]
-Description / first appearance / narrative function / visual requirements
+## §8 Prop Profiles（≥3 道具，每道具 7 字段）
+### PROP-01
+prop_id / name / owner_char_id / story_function / first_appears_episode /
+visual_description / continuity_rules[] / ai_prompt_seed
 
-## 8. Costume & Visual System
-### LOOK-01 — [造型系统名]
-Episode range / character / key pieces / color story
+## §9 Visual System（5 字段）
+overall_color_palette{dominant,accent,shadow,highlight} / lighting_philosophy /
+texture_language[] / hero_vs_villain_contrast{hero_visual,villain_visual} /
+forbidden_aesthetics[]
 
-## 9. Color / Texture / Tone Tags
-Overall palette / per-character tone tags / per-location mood tags
+## §10 Continuity Rules（≥6 条，结构化）
+rule_id / rule_type / applies_to / rule_description / violation_severity
 
-## 10. Continuity & Story Prohibitions
-What must never change / what must always be consistent /
-facts locked by the plot that cannot be retconned
+## §11 AI Asset Matrix（每 LOOK/LOC/PROP 各 1 条）
+asset_id / asset_type / prompt_seed / must_have[] / must_avoid[] / resolution_hint
 
-## 11. AI Asset Generation Notes
-Per-character prompt anchors / per-location prompt anchors /
-style consistency rules for AI image/video generation
+## §12 Narrative Forbidden Zones（≥3 条）
 ```
