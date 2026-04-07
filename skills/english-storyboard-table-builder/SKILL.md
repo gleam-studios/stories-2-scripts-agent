@@ -1,122 +1,267 @@
-# english-storyboard-table-builder
+# SKILL: English Storyboard Table Builder
 
 ## Purpose
 
-Build the English storyboard table.
+Expand the English screenplay into a shot-level production table, structured by episode → scene → shot.
 
-This stage is not a screenplay rewrite. It is a shot-level production table derived from the final English screenplay and setting bible.
+This is not a screenplay rewrite. Every shot must be traceable back to a specific action block or dialogue line in the screenplay. Content and narrative direction must not deviate from the screenplay or the outline.
 
-Every scene from the screenplay must be expanded into a full shot sequence. The table must be usable for both human directors and AI image/video generation pipelines.
+The table must be usable for both human directors and AI image/video generation pipelines.
+
+---
 
 ## Input
 
-- `english_setting_bible`
-- `english_outline_pack`
-- `english_screenplay_pack`
+- `screenplay_pack.json` (required — source of scene structure, action blocks, scene_crosswalk)
+- `outline_pack.json` (required — governs character identity, world rules, paywall beats, signature scenes)
+- `setting_bible.json` (required — provides character_ids, location_ids, prop_ids, look_ids)
+- `rules/13_分镜表规范.md` (required — all structural and density rules)
+- `rules/08_英文对白写作规则.md` (required — dialogue_anchor field must conform)
+
+---
 
 ## Output
 
-- `storyboard_pack.json`
-- final document target: `03_<剧名>_英文分镜表.docx`
+- `storyboard_pack.json` (intermediate JSON, matches `schema.json`)
+- `03_<title>_EnglishStoryboard.docx` (final delivery)
 
-## Required content
+---
 
-1. `Quick Reference`
-2. scene index
-3. shot rows
-4. storyboard markdown
-
-## Required row fields
-
-- `shot_id`
-- `episode_id`
-- `scene_id`
-- `slugline`
-- `shot_size`
-- `camera_angle_or_move`
-- `visual_action`
-- `dialogue_anchor`
-- `emotion`
-- `character_ids`
-- `location_id`
-- `prop_ids`
-- `look_ids`
-- `sfx_music`
-- `transition`
-- `ai_note`
-- `estimated_duration_sec`
-
-## Minimum shot count per scene (anti-shrinkage rule)
-
-| Scene type | Minimum shots |
-|------------|--------------|
-| Dialogue-driven | 4 |
-| Action / conflict / chase | 6 |
-| Emotional peak / reversal / reveal | 5 |
-| Brief transitional scene (≤30s) | 2 |
-
-**Season floor: total shot_rows ≥ total scene count × 4**
-
-Do not compress multiple scenes into fewer rows than the minimum. The examples are condensed samples for format reference only — actual delivery must be full-volume.
-
-## Shot sequence template
-
-Each scene should follow this layered sequence (can be compressed; cannot skip establishing and emotional layers):
+## Three-level structure (mandatory)
 
 ```
-1. WIDE / ESTABLISHING     — space and character relationship
-2. MEDIUM TWO-SHOT         — dialogue / confrontation coverage
-3. MEDIUM / MCU            — protagonist reaction / emotional drive
-4. CLOSE / CU              — key emotion or visual detail
-5. INSERT / DETAIL         — prop, eyes, hands (if applicable)
-6. WIDE / PULL BACK        — closing frame before transition (if applicable)
+EPISODE  — total pacing + episode hook
+  └── SCENE  — one complete dramatic event
+        └── SHOT  — one continuous visual task unit
 ```
 
-Every scene must cover at minimum: **establishing + emotional + detail** layers.
+Every level must have its own header block before the shot table.
 
-## Duration budget
+---
 
-`estimated_duration_sec` reference:
+## Level 1 — Episode header (per episode)
 
-| Shot type | Suggested duration |
-|-----------|--------------------|
-| Wide / establishing | 3-6s |
-| Dialogue medium coverage | 2-4s per beat |
-| Emotional close-up | 2-5s |
-| Detail insert | 1-3s |
-| Transitional / cutaway | 1-2s |
+Write before the first scene of each episode:
 
-Per-episode cumulative `estimated_duration_sec` must fall in **60-120s**.
+```
+## EPISODE XX
+
+Episode Core Event:   [primary narrative event of the episode, one sentence]
+Episode Tone:         [emotional register: e.g. "tense / distrustful / stakes escalating"]
+Key Reversal:         [the episode's central turn, one sentence]
+Closing Hook:         [the unresolved beat at episode end — must match screenplay episode_brief.closing_hook]
+```
+
+---
+
+## Level 2 — Scene header (per scene)
+
+Write before the shot table of each scene:
+
+```
+### SCENE XX.XX — [scene nickname]
+Time:           [Day / Night / Dawn / Dusk / Pre-Dawn / Continuous]
+Location:       [INT./EXT. Location Name]
+Characters:     [all characters present]
+Core Event:     [primary narrative event of this scene]
+Start State:    [situation and power/emotional balance at scene open]
+End State:      [how the situation has changed by scene close]
+Scene Type:     [dialogue_driven / confrontation_conflict / emotional_peak_reversal_reveal / quick_transition]
+Screenplay Ref: [scene_id from screenplay_pack.scene_crosswalk, e.g. S01.03]
+```
+
+`Start State` and `End State` define the scene's entry and exit boundaries. All shots must stay within them.
+
+---
+
+## Level 3 — Shot rows
+
+Each shot row = one **continuous visual task unit** responsible for exactly one primary function.
+
+### Shot type (`shot_type`) — required enum
+
+| Value | Function |
+|-------|----------|
+| `environment_establish` | Establishes space, atmosphere, and key prop placement |
+| `character_enter` | Introduces a character; establishes initial position and state |
+| `action_advance` | Character executes a key physical action (pick up / push / stand / enter) |
+| `dialogue_delivery` | Delivers dialogue; must be preceded by an action shot |
+| `emotion_reaction` | Shows meaningful emotional or cognitive shift in response to new information |
+| `info_reveal` | Reveals key narrative information via prop / screen / visual element |
+| `reversal` | The power dynamic, information state, or emotional direction flips in this shot |
+| `hook` | Scene-ending or episode-ending suspense beat — always the last shot of a scene |
+
+**Rules:**
+- `environment_establish` must be the first or second shot of every scene
+- `hook` must be the last shot of every scene — never buried inside the table
+- `emotion_reaction` only when the reaction carries new dramatic weight (not for routine responses)
+
+---
+
+## Scene skeleton (every scene must have all 5 anchors)
+
+| Anchor | `shot_type` | Position |
+|--------|------------|----------|
+| Opening establish | `environment_establish` (+ optional `character_enter`) | First 1-2 shots |
+| Trigger action | `action_advance` | When conflict begins |
+| Core confrontation | `dialogue_delivery` + `emotion_reaction` alternating | Mid-scene |
+| Reversal point | `reversal` | Mid-to-late scene |
+| Scene-ending hook | `hook` | Final shot |
+
+`quick_transition` scenes may compress to: `environment_establish` + `hook`.
+
+---
+
+## Required shot fields (17 columns)
+
+| Field | Requirement |
+|-------|-------------|
+| `shot_id` | Format `01.03.S01` (episode.scene.Sshot_number) |
+| `shot_type` | Enum — see above |
+| `screenplay_ref` | Exact action line or dialogue from screenplay (e.g. "SCENE 01.03 OPENING STATE line 1" or the actual quoted action) |
+| `visual_content` | What is visible in this shot — physical action only, no plot summary |
+| `character_action` | Who does what (for performance / motion control) |
+| `key_info_point` | What the viewer must receive from this shot (determines whether the shot is necessary) |
+| `shot_language` | Frame size / angle / move / composition, in one string (e.g. `WIDE \| EYE-LEVEL \| STATIC \| character left, prop foreground`) |
+| `dialogue_anchor` | Exact dialogue line, or `None` |
+| `emotion` | Primary emotion in this shot, one per shot (e.g. `Maya: suppressed / Elliot: alert`) |
+| `rhythm` | `fast_cut` / `normal` / `pause` / `sustained_pressure` |
+| `estimated_duration_sec` | e.g. `3s` or `2-4s`; per-episode total must reach 60-120s |
+| `transition` | How this shot connects to the next (e.g. `CUT` / `REACTION-CUT` / `MATCH-CUT` / `SMASH CUT` / `HOLD`) |
+| `character_ids` | From setting bible |
+| `location_id` | From setting bible |
+| `prop_ids` | From setting bible |
+| `look_ids` | From setting bible |
+| `ai_note` | AI generation guidance — must not be empty (see AI note rules below) |
+
+---
+
+## Minimum shot count per scene
+
+| `scene_type` | Minimum | Expected (from screenplay density) |
+|-------------|---------|-------------------------------------|
+| `dialogue_driven` | 4 | 6-10 |
+| `confrontation_conflict` | 6 | 9-14 |
+| `emotional_peak_reversal_reveal` | 5 | 8-12 |
+| `quick_transition` | 2 | 4-6 |
+
+**Season floor:** `total shot_rows ≥ total scene count × 4`
+
+**Screenplay density cross-check:**
+```
+target_shot_count = ceil(action_block_count × 1.5) + 2
+actual_shot_count ≥ max(target_shot_count, scene_type_minimum)
+```
+Read `action_block_count` from `screenplay_pack.scene_crosswalk[scene_id]`.
+
+---
+
+## 7 shot-splitting rules
+
+**Rule 1 — One shot, one function**
+Do not combine environment establish + prop reveal + emotional reversal + three dialogue lines in one shot. The shot will be unexecutable.
+
+**Rule 2 — Split when visual focus changes**
+New shot when: focus subject changes / action subject changes / information emphasis changes / emotional lead changes / spatial position changes / speaking turn shifts.
+
+**Rule 3 — Split at every dramatic node**
+These are natural shot boundaries:
+Enter / Pause / See / Touch / Hand over / Stand up / Step closer / Interrupt / Counter-question / Freeze / Burst in / Drop / Reveal.
+Each node = its own shot.
+
+**Rule 4 — Dialogue splits by conflict unit, not by sentence**
+Not every sentence gets its own shot. Split when:
+- The line changes the situation → new shot
+- The line deserves a reaction shot → new shot + `emotion_reaction` follow
+- The line is an information bomb → new shot
+- The line is a hook or pressure move → new shot
+
+Routine responses can share a shot with an action. A counter-attack line or reveal line always gets its own shot.
+
+**Rule 5 — Reaction shots only when they carry value**
+Only add `emotion_reaction` when: clear emotional shift / cognitive change / truth lands / power reversal / hook falls on the reaction.
+Routine nods or acknowledgements: fold into the preceding dialogue shot.
+
+**Rule 6 — Hook shot must be standalone and explicit**
+`hook` type shot is always the last row of the scene table.
+- `transition`: `HARD CUT` or `SMASH CUT`
+- `rhythm`: `pause` or `sustained_pressure`
+- `ai_note`: describe the frozen moment — what expression, what prop state, what frame holds
+
+**Rule 7 — AI generation friendliness**
+- One primary action per shot (no multi-step motion sequences in one shot)
+- Character state must be continuous within the shot (no large state jumps from first to last frame)
+- Track costume, position, and prop state across shots in the same scene
+- `ai_note` must include: lighting direction, color tone reference, composition anchor, character appearance anchor
+
+---
+
+## `ai_note` writing rules
+
+Every shot's `ai_note` must include:
+
+| Component | Example |
+|-----------|---------|
+| Lighting | `low-key side lighting from left, cold blue tone` |
+| Color / mood | `desaturated interior, shadow-heavy` |
+| Composition | `Maya in left third, phone centered on table, Elliot's reaction in background right` |
+| Character anchor | `Maya: dark cardigan, tense posture, no eye contact` |
+| Generation note | `minimal motion, holds for 4s, subtle breath movement only` |
+
+Do not write abstract emotional labels in `ai_note` — describe what the camera sees.
+
+---
+
+## Alignment with screenplay and outline
+
+| Source field | Maps to storyboard |
+|-------------|-------------------|
+| `screenplay_pack.scene_crosswalk[n].core_event` | Scene Core Event in scene header |
+| `screenplay_pack.scene_crosswalk[n].scene_result` | Scene End State in scene header |
+| `screenplay_pack.scene_crosswalk[n].scene_ending_type` | `hook` shot `transition` type (cliffhanger → SMASH CUT) |
+| `screenplay_pack.scene_crosswalk[n].action_block_count` | Target shot count formula |
+| `screenplay_pack.episode_briefs[n].closing_hook` | Episode Closing Hook in episode header |
+| `outline_pack.signature_scenes` | Each must appear as a full scene — no compression |
+| `outline_pack.paywall_map` | Paywall beats must appear as a `hook` shot or standalone `reversal` shot |
+| `setting_bible.characters` | character_ids |
+| `setting_bible.locations` | location_id |
+| `setting_bible.props` | prop_ids |
+| `setting_bible.looks` | look_ids |
+
+---
 
 ## Prohibitions
 
-1. Do not write only 1 shot per scene (unless explicitly a short transitional scene).
-2. Do not output scene-level summaries as the main body.
-3. Do not restate the screenplay in prose.
-4. Do not omit IDs (`prop_ids`, `look_ids`, `location_id`).
-5. Do not leave `ai_note` blank — every shot must have a specific note usable for AI image or video generation.
-6. Do not use `visual_action` to summarize plot — describe the visible physical action only.
+1. Only 1 shot per scene (unless explicitly `quick_transition`)
+2. Scene-level prose summary as the main body instead of a shot table
+3. `visual_content` describing plot instead of visible physical action
+4. `ai_note` left empty
+5. `hook` shot missing from any scene
+6. `environment_establish` not placed first or second in a scene
+7. `screenplay_ref` empty or vague — must trace to a specific action block or dialogue line
+8. `emotion_reaction` used for routine responses (not every reaction deserves a shot)
+9. Asset IDs (`prop_ids`, `look_ids`, `location_id`) left empty when assets are present in the scene
+10. Shot count below `max(target_shot_count, scene_type_minimum)` for any scene
+11. Episode header block missing
 
-## Pre-output self-audit (mandatory)
+---
 
-Before submitting, verify all of the following:
+## Pre-output self-audit
 
 ```
-□ shot_rows.length ≥ scene_count × 4
-□ Every scene has shots covering: establishing + emotional + detail layers
-□ Every scene has at least one WIDE/ESTABLISHING and one CLOSE/CU
-□ All scene_ids in scene_index have corresponding shot rows (no missing scenes)
-□ estimated_duration_sec per episode sums to 60-120s
-□ All ai_note fields are filled with specific generation guidance
-□ All prop_ids, look_ids, location_id fields are populated (not empty where assets exist)
+□ Every episode has an episode header block (Core Event / Tone / Key Reversal / Closing Hook)
+□ Every scene has a scene header block (7 fields, including Start State / End State / Scene Type / Screenplay Ref)
+□ total shot_rows ≥ total scene count × 4
+□ Each scene's shot count ≥ scene_type minimum AND ≥ action_block_count × 1.5 + 2
+□ Every scene has all 5 skeleton anchors (establish / trigger / confrontation / reversal / hook)
+□ environment_establish is the first or second shot of every scene
+□ hook is the last shot of every scene — standalone row, typed transition
+□ All 17 shot fields are populated, no blanks
+□ screenplay_ref traces to a specific action block or dialogue line for every shot
+□ ai_note has substantive generation guidance for every shot (light / tone / composition / character anchor)
+□ estimated_duration_sec sums to 60-120s per episode
+□ All scene_ids in scene_index have corresponding shot rows
+□ All scene_ids from screenplay_pack.scene_crosswalk are covered — no missing scenes
+□ Signature scenes from outline are fully expanded, not compressed
+□ Paywall beats from outline appear as hook or reversal shots
 ```
-
-Any check that fails must be resolved before submission.
-
-## References
-
-- `rules/13_分镜表规范.md`
-- `rules/05_节奏曲线.md`
-- `rules/07_反派设计体系.md`
-- `examples/中间产物样例/storyboard_pack.json`
-- `examples/最终交付样例/03_英文分镜表.md`

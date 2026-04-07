@@ -1,100 +1,250 @@
 {
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "storyboard_pack",
+  "description": "Intermediate JSON produced by english-storyboard-table-builder. Three-level structure: episode → scene → shot.",
   "type": "object",
-  "required": [
-    "quick_reference",
-    "scene_index",
-    "shot_rows",
-    "storyboard_markdown"
-  ],
+  "required": ["quick_reference", "episode_summaries", "scene_index", "shot_rows", "storyboard_markdown"],
   "properties": {
-    "quick_reference": { "type": "object" },
-    "scene_index": {
+
+    "quick_reference": {
+      "type": "object",
+      "required": ["title", "logline", "target_market", "genre", "episode_count", "episode_duration_min"],
+      "properties": {
+        "title": { "type": "string" },
+        "logline": { "type": "string" },
+        "target_market": { "type": "string" },
+        "genre": { "type": "string" },
+        "episode_count": { "type": "integer", "minimum": 1 },
+        "episode_duration_min": { "type": "string" }
+      }
+    },
+
+    "episode_summaries": {
+      "description": "Level-1 headers. One entry per episode, placed before the first scene of that episode.",
       "type": "array",
       "minItems": 1,
       "items": {
         "type": "object",
-        "required": ["episode_id", "scene_id", "slugline", "purpose"],
+        "required": ["episode_id", "core_event", "tone", "key_reversal", "closing_hook"],
         "properties": {
           "episode_id": { "type": "string" },
-          "scene_id": { "type": "string" },
-          "slugline": { "type": "string" },
-          "purpose": { "type": "string" }
+          "core_event": {
+            "type": "string",
+            "description": "Primary narrative event of this episode."
+          },
+          "tone": {
+            "type": "string",
+            "description": "Emotional register, e.g. 'tense / distrustful / stakes escalating'."
+          },
+          "key_reversal": {
+            "type": "string",
+            "description": "The episode's central turn, one sentence."
+          },
+          "closing_hook": {
+            "type": "string",
+            "description": "The unresolved beat at episode end. Must match screenplay_pack.episode_briefs[n].closing_hook."
+          }
         }
       }
     },
+
+    "scene_index": {
+      "description": "Level-2 headers. One entry per scene across all episodes.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "scene_id", "episode_id", "time", "location", "characters",
+          "core_event", "start_state", "end_state", "scene_type", "screenplay_ref"
+        ],
+        "properties": {
+          "scene_id": {
+            "type": "string",
+            "description": "e.g. 'S01.03'"
+          },
+          "episode_id": { "type": "string" },
+          "time": {
+            "type": "string",
+            "enum": ["Day", "Night", "Dawn", "Dusk", "Pre-Dawn", "Continuous"]
+          },
+          "location": {
+            "type": "string",
+            "description": "INT./EXT. + location name."
+          },
+          "characters": {
+            "type": "string",
+            "description": "All characters present, comma-separated."
+          },
+          "core_event": {
+            "type": "string",
+            "description": "Primary narrative event of this scene."
+          },
+          "start_state": {
+            "type": "string",
+            "description": "Situation and power/emotional balance at scene open."
+          },
+          "end_state": {
+            "type": "string",
+            "description": "How the situation has changed by scene close."
+          },
+          "scene_type": {
+            "type": "string",
+            "enum": [
+              "dialogue_driven",
+              "confrontation_conflict",
+              "emotional_peak_reversal_reveal",
+              "quick_transition"
+            ]
+          },
+          "screenplay_ref": {
+            "type": "string",
+            "description": "scene_id from screenplay_pack.scene_crosswalk."
+          }
+        }
+      }
+    },
+
     "shot_rows": {
+      "description": "Level-3 shot table. All shots from all episodes, ordered by shot_id.",
       "type": "array",
       "minItems": 4,
-      "description": "Total shot_rows must be >= total scene count × 4. Each scene must have at minimum 4 shot rows (dialogue) or more per scene type rules.",
       "items": {
         "type": "object",
         "required": [
           "shot_id",
           "episode_id",
           "scene_id",
-          "slugline",
-          "shot_size",
-          "camera_angle_or_move",
-          "visual_action",
+          "shot_type",
+          "screenplay_ref",
+          "visual_content",
+          "character_action",
+          "key_info_point",
+          "shot_language",
           "dialogue_anchor",
           "emotion",
+          "rhythm",
+          "estimated_duration_sec",
+          "transition",
           "character_ids",
           "location_id",
           "prop_ids",
           "look_ids",
-          "sfx_music",
-          "transition",
-          "ai_note",
-          "estimated_duration_sec"
+          "ai_note"
         ],
         "properties": {
+
           "shot_id": {
             "type": "string",
-            "description": "Format: 01.01.S01 (episode.scene.Sshot_number)"
+            "description": "Format: 01.03.S01 (episode.scene.Sshot_number). Traceable to episode → scene → shot."
           },
           "episode_id": { "type": "string" },
-          "scene_id": { "type": "string" },
-          "slugline": { "type": "string" },
-          "shot_size": {
+          "scene_id": {
             "type": "string",
-            "description": "e.g. WIDE, MEDIUM, MCU, CLOSE, INSERT, TWO-SHOT, OVER-SHOULDER"
+            "description": "Must match an entry in scene_index."
           },
-          "camera_angle_or_move": { "type": "string" },
-          "visual_action": {
+
+          "shot_type": {
             "type": "string",
-            "description": "Describe the visible physical action only, not plot summary."
+            "enum": [
+              "environment_establish",
+              "character_enter",
+              "action_advance",
+              "dialogue_delivery",
+              "emotion_reaction",
+              "info_reveal",
+              "reversal",
+              "hook"
+            ],
+            "description": "Functional category. environment_establish must be first/second shot of scene. hook must be last shot of scene."
           },
+
+          "screenplay_ref": {
+            "type": "string",
+            "description": "Traces this shot back to a specific action block or dialogue line in the screenplay. E.g. 'SCENE 01.03 OPENING STATE line 1' or quoted action text."
+          },
+
+          "visual_content": {
+            "type": "string",
+            "description": "What is visible in this shot. Physical action only — no plot summary, no abstract emotion."
+          },
+
+          "character_action": {
+            "type": "string",
+            "description": "Who does what in this shot. Used for performance and motion control. E.g. 'Maya slides phone across table toward Elliot'."
+          },
+
+          "key_info_point": {
+            "type": "string",
+            "description": "What the viewer must receive from this shot. Determines whether the shot is necessary. E.g. 'Viewer learns Elliot already knew Maya's identity'."
+          },
+
+          "shot_language": {
+            "type": "string",
+            "description": "Frame size | angle | move | composition focus. E.g. 'WIDE | EYE-LEVEL | STATIC | Maya left third, phone centered on table'."
+          },
+
           "dialogue_anchor": {
             "type": "string",
-            "description": "Key line or 'None' if no dialogue in this shot."
+            "description": "Exact dialogue line delivered in this shot, or 'None'."
           },
-          "emotion": { "type": "string" },
-          "character_ids": {
-            "type": "array",
-            "items": { "type": "string" }
-          },
-          "location_id": { "type": "string" },
-          "prop_ids": {
-            "type": "array",
-            "items": { "type": "string" }
-          },
-          "look_ids": {
-            "type": "array",
-            "items": { "type": "string" }
-          },
-          "sfx_music": { "type": "string" },
-          "transition": { "type": "string" },
-          "ai_note": {
+
+          "emotion": {
             "type": "string",
-            "description": "Specific guidance for AI image or video generation. Must not be empty."
+            "description": "Primary emotion for this shot. One per shot. E.g. 'Maya: suppressed anger / Elliot: calculating'."
           },
+
+          "rhythm": {
+            "type": "string",
+            "enum": ["fast_cut", "normal", "pause", "sustained_pressure"],
+            "description": "Pacing instruction. fast_cut=1-2s / normal=2-4s / pause=3-5s / sustained_pressure=4-8s."
+          },
+
           "estimated_duration_sec": {
             "type": "string",
-            "description": "Estimated shot duration, e.g. '3-5s'. Per-episode total must sum to 60-120s."
+            "description": "Estimated shot duration, e.g. '3s' or '2-4s'. Per-episode total must sum to 60-120s."
+          },
+
+          "transition": {
+            "type": "string",
+            "description": "How this shot connects to the next. E.g. CUT / REACTION-CUT / MATCH-CUT / SMASH CUT / HOLD / DISSOLVE."
+          },
+
+          "character_ids": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Character IDs from setting bible."
+          },
+
+          "location_id": {
+            "type": "string",
+            "description": "Location ID from setting bible."
+          },
+
+          "prop_ids": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Prop IDs from setting bible. Do not leave empty when props are present in the shot."
+          },
+
+          "look_ids": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Costume/look IDs from setting bible."
+          },
+
+          "ai_note": {
+            "type": "string",
+            "description": "AI generation guidance. Must include: lighting direction, color tone, composition, character appearance anchor. Never empty."
           }
         }
       }
     },
-    "storyboard_markdown": { "type": "string" }
+
+    "storyboard_markdown": {
+      "type": "string",
+      "description": "Full Markdown of the storyboard, matching the .docx output."
+    }
+
   }
 }
