@@ -51,15 +51,16 @@
 
 ## 推荐阅读顺序
 
-1. `SKILL.md`
-2. `role/README.md`
-3. `role/快捷指令规范.md`
-4. `role/总控Agent角色.md`
-5. `role/单篇执行流程.md`
-6. `role/启动与导出规范.md`
-7. 按需读取 `rules/`
-8. 按需读取 `skills/`
-9. 对照 `examples/`
+1. `soul.md`（北极星：目标、分层、非妥协项）
+2. `SKILL.md`
+3. `role/README.md`
+4. `role/快捷指令规范.md`
+5. `role/总控Agent角色.md`
+6. `role/单篇执行流程.md`
+7. `role/启动与导出规范.md`
+8. 按需读取 `rules/`
+9. 按需读取 `skills/`
+10. 对照 `examples/`
 
 ## 当前口径
 
