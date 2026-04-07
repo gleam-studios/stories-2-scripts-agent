@@ -27,6 +27,10 @@ This stage outputs the Chinese outline, screenplay, storyboard table, and settin
 1. Chinese must be a complete structural mirror of the English pack.
 2. All `episode_id` / `scene_id` / `shot_id` / asset IDs remain aligned.
 3. Chinese must read naturally for internal teams, not like mechanical translation.
+4. **Storyboard table (`07`)** must mirror the English storyboard (`03`) **row-for-row** with the same **21-column** header and column order as `rules/13_分镜表规范.md` / `english-storyboard-table-builder/schema.json`.
+5. In the Chinese storyboard, **localize** narrative cells (`visual_content`, `character_action`, `key_info_point`, `sfx_music`, `continuity_notes`, `ai_note`, and Chinese `dialogue_anchor`). **Do not localize** enums: `shot_type`, `rhythm`, `transition`, or any asset IDs. Keep `emotion` strings **identical** to the English row for bilingual diff and downstream tagging.
+6. For `dialogue_anchor`, use Chinese dialogue when present; use `无` when there is no line (maps to English `None` in the pipeline).
+7. `transition` must use only: `CUT` / `HARD_CUT` / `SMASH_CUT` / `MATCH_CUT` / `REACTION_CUT` / `HOLD` / `DISSOLVE` / `FADE_OUT`.
 
 ## Prohibitions
 
@@ -34,6 +38,8 @@ This stage outputs the Chinese outline, screenplay, storyboard table, and settin
 2. Do not change scene order, shot order, or asset IDs.
 3. Do not add or remove content blocks.
 4. Do not treat the Chinese pack as a rewrite.
+5. Do not rename, reorder, or drop storyboard columns relative to the English table.
+6. Do not write free-text Chinese for `transition` (e.g. 硬切) instead of the enum tokens.
 
 ## References
 

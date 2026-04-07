@@ -273,7 +273,7 @@ Dialogue.
 ### 分镜表 `03_英文分镜表.docx` / `07_中文分镜表.docx`
 
 ```
-# <剧名> — Storyboard
+# <剧名> — Storyboard（英文主表）/ 中文分镜表（镜像）
 
 ## Quick Reference
 Title / Logline / Target Market / Genre / Episode Count /
@@ -283,23 +283,17 @@ Episode Duration / Emotional-Visual Tags / Lead Characters
 
 ## EPISODE 01
 
-### Scene Index
-| scene_id | time | location | characters | core_event | scene_result |
+Episode Core Event / Episode Tone / Key Reversal / Closing Hook
 
----
+### SCENE 01.01 — [场次简称]
+Time / Location / Characters / Core Event / Start State / End State /
+Scene Type / Screenplay Ref
 
-### Shot Table
+| shot_id | episode_id | scene_id | shot_type | screenplay_ref | visual_content | character_action | key_info_point | shot_language | dialogue_anchor | emotion | rhythm | estimated_duration_sec | transition | sfx_music | continuity_notes | character_ids | location_id | prop_ids | look_ids | ai_note |
 
-| shot_id   | episode_id | scene_id | slugline | shot_size | camera_angle_or_move |
-| visual_action | dialogue_anchor | emotion | character_ids | location_id |
-| prop_ids | look_ids | sfx_music | transition | ai_note | estimated_duration_sec |
-
-示例行：
-| 01.01.S01 | EP01 | S01.01 | INT. PAWNSHOP - DAY | WIDE | STATIC |
-| Maya stands behind counter, UV lamp on, examining rings | — | neutral/alert | CHAR-01 | LOC-01 |
-| PROP-03 | LOOK-01 | ambient shop noise | CUT | 宽镜建立空间，光线偏冷，陈列密集感 | 4s |
-
-...（每场至少 4–6 行，对话场≥4 shot，冲突场≥6 shot，情绪场≥5 shot）
+说明：
+- `07_中文分镜表` 与 `03` **列名、列序、`shot_id` 行数**完全一致；叙事类单元格用中文，`shot_type` / `rhythm` / `transition` / 资产 ID 与英文一致（`rules/15_双语镜像规范.md` §四）。
+- `transition` 仅允许：CUT / HARD_CUT / SMASH_CUT / MATCH_CUT / REACTION_CUT / HOLD / DISSOLVE / FADE_OUT
 
 ---
 

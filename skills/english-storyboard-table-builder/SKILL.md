@@ -112,11 +112,13 @@ Each shot row = one **continuous visual task unit** responsible for exactly one 
 
 ---
 
-## Required shot fields (17 columns)
+## Required shot fields (21 columns)
 
 | Field | Requirement |
 |-------|-------------|
 | `shot_id` | Format `01.03.S01` (episode.scene.Sshot_number) |
+| `episode_id` | Must match the episode header block and `episode_summaries` |
+| `scene_id` | Must match `scene_index` and screenplay `scene_crosswalk` |
 | `shot_type` | Enum — see above |
 | `screenplay_ref` | Exact action line or dialogue from screenplay (e.g. "SCENE 01.03 OPENING STATE line 1" or the actual quoted action) |
 | `visual_content` | What is visible in this shot — physical action only, no plot summary |
@@ -127,7 +129,9 @@ Each shot row = one **continuous visual task unit** responsible for exactly one 
 | `emotion` | Primary emotion in this shot, one per shot (e.g. `Maya: suppressed / Elliot: alert`) |
 | `rhythm` | `fast_cut` / `normal` / `pause` / `sustained_pressure` |
 | `estimated_duration_sec` | e.g. `3s` or `2-4s`; per-episode total must reach 60-120s |
-| `transition` | How this shot connects to the next (e.g. `CUT` / `REACTION-CUT` / `MATCH-CUT` / `SMASH CUT` / `HOLD`) |
+| `transition` | Enum only: `CUT` / `HARD_CUT` / `SMASH_CUT` / `MATCH_CUT` / `REACTION_CUT` / `HOLD` / `DISSOLVE` / `FADE_OUT` |
+| `sfx_music` | Sound strategy for this shot: ambience / music cue / silence / impact accent |
+| `continuity_notes` | State continuity: position, prop state, wardrobe state, screen state, wound/wetness state |
 | `character_ids` | From setting bible |
 | `location_id` | From setting bible |
 | `prop_ids` | From setting bible |
@@ -184,7 +188,7 @@ Routine nods or acknowledgements: fold into the preceding dialogue shot.
 
 **Rule 6 — Hook shot must be standalone and explicit**
 `hook` type shot is always the last row of the scene table.
-- `transition`: `HARD CUT` or `SMASH CUT`
+- `transition`: `HARD_CUT` or `SMASH_CUT`
 - `rhythm`: `pause` or `sustained_pressure`
 - `ai_note`: describe the frozen moment — what expression, what prop state, what frame holds
 
@@ -192,6 +196,7 @@ Routine nods or acknowledgements: fold into the preceding dialogue shot.
 - One primary action per shot (no multi-step motion sequences in one shot)
 - Character state must be continuous within the shot (no large state jumps from first to last frame)
 - Track costume, position, and prop state across shots in the same scene
+- `continuity_notes` must explicitly record any state that the next shot must inherit
 - `ai_note` must include: lighting direction, color tone reference, composition anchor, character appearance anchor
 
 ---
@@ -210,6 +215,21 @@ Every shot's `ai_note` must include:
 
 Do not write abstract emotional labels in `ai_note` — describe what the camera sees.
 
+## `sfx_music` and `continuity_notes` rules
+
+`sfx_music` must state one of the following for every shot:
+- ambient bed only
+- music enters / sustains / dips / cuts
+- silence / air drop for tension
+- impact accent (door slam / shutter click / hit / ring / buzz)
+
+`continuity_notes` must record any state that affects downstream generation:
+- character position at shot end
+- which hand holds which prop
+- whether phone/laptop screen is on and what it displays
+- wardrobe condition (jacket on/off, sleeves rolled, blood/wet marks)
+- prop state (opened / closed / folded / broken / on table / pocketed)
+
 ---
 
 ## Alignment with screenplay and outline
@@ -218,7 +238,7 @@ Do not write abstract emotional labels in `ai_note` — describe what the camera
 |-------------|-------------------|
 | `screenplay_pack.scene_crosswalk[n].core_event` | Scene Core Event in scene header |
 | `screenplay_pack.scene_crosswalk[n].scene_result` | Scene End State in scene header |
-| `screenplay_pack.scene_crosswalk[n].scene_ending_type` | `hook` shot `transition` type (cliffhanger → SMASH CUT) |
+| `screenplay_pack.scene_crosswalk[n].scene_ending_type` | `hook` shot `transition` type (cliffhanger → `SMASH_CUT`) |
 | `screenplay_pack.scene_crosswalk[n].action_block_count` | Target shot count formula |
 | `screenplay_pack.episode_briefs[n].closing_hook` | Episode Closing Hook in episode header |
 | `outline_pack.signature_scenes` | Each must appear as a full scene — no compression |
@@ -243,6 +263,9 @@ Do not write abstract emotional labels in `ai_note` — describe what the camera
 9. Asset IDs (`prop_ids`, `look_ids`, `location_id`) left empty when assets are present in the scene
 10. Shot count below `max(target_shot_count, scene_type_minimum)` for any scene
 11. Episode header block missing
+12. `transition` written as free text instead of the enum
+13. `sfx_music` left empty
+14. `continuity_notes` left empty
 
 ---
 
@@ -250,14 +273,17 @@ Do not write abstract emotional labels in `ai_note` — describe what the camera
 
 ```
 □ Every episode has an episode header block (Core Event / Tone / Key Reversal / Closing Hook)
-□ Every scene has a scene header block (7 fields, including Start State / End State / Scene Type / Screenplay Ref)
+□ Every scene has a scene header block (8 fields, including Start State / End State / Scene Type / Screenplay Ref)
 □ total shot_rows ≥ total scene count × 4
 □ Each scene's shot count ≥ scene_type minimum AND ≥ action_block_count × 1.5 + 2
 □ Every scene has all 5 skeleton anchors (establish / trigger / confrontation / reversal / hook)
 □ environment_establish is the first or second shot of every scene
 □ hook is the last shot of every scene — standalone row, typed transition
-□ All 17 shot fields are populated, no blanks
+□ All 21 shot fields are populated, no blanks
 □ screenplay_ref traces to a specific action block or dialogue line for every shot
+□ transition uses enum values only
+□ sfx_music is filled for every shot
+□ continuity_notes is filled for every shot
 □ ai_note has substantive generation guidance for every shot (light / tone / composition / character anchor)
 □ estimated_duration_sec sums to 60-120s per episode
 □ All scene_ids in scene_index have corresponding shot rows

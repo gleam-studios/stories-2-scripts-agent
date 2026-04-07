@@ -18,7 +18,10 @@
       "All episode IDs preserved",
       "All scene IDs preserved",
       "All shot IDs preserved",
-      "All asset IDs preserved"
+      "All asset IDs preserved",
+      "Storyboard: 21-column header and column order identical to English 03",
+      "Storyboard: shot_type / rhythm / transition enums not localized",
+      "Storyboard: sfx_music and continuity_notes present on every shot row"
     ]
   },
   "file_crosswalk": [

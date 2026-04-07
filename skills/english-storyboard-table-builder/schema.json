@@ -126,6 +126,8 @@
           "rhythm",
           "estimated_duration_sec",
           "transition",
+          "sfx_music",
+          "continuity_notes",
           "character_ids",
           "location_id",
           "prop_ids",
@@ -207,7 +209,27 @@
 
           "transition": {
             "type": "string",
-            "description": "How this shot connects to the next. E.g. CUT / REACTION-CUT / MATCH-CUT / SMASH CUT / HOLD / DISSOLVE."
+            "enum": [
+              "CUT",
+              "HARD_CUT",
+              "SMASH_CUT",
+              "MATCH_CUT",
+              "REACTION_CUT",
+              "HOLD",
+              "DISSOLVE",
+              "FADE_OUT"
+            ],
+            "description": "How this shot connects to the next. Enum only for automation parsing."
+          },
+
+          "sfx_music": {
+            "type": "string",
+            "description": "Sound strategy for this shot: ambient bed / music cue / silence / impact accent."
+          },
+
+          "continuity_notes": {
+            "type": "string",
+            "description": "State continuity at shot end: character position, prop state, wardrobe state, screen state, wound/wetness state."
           },
 
           "character_ids": {
