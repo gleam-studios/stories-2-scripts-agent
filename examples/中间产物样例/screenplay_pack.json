@@ -6,38 +6,72 @@
     "genre": "Hidden Identity / Revenge Romance",
     "episode_count": 40,
     "episode_duration": "1-2 min",
-    "mood_tags": ["sharp", "glossy", "humiliating"],
+    "mood_tags": ["sharp", "glossy", "humiliating", "addictive"],
     "protagonist_snapshot": "Nora weaponizes composure."
   },
+
   "character_snapshot": [
     {
       "character_id": "CHAR-01",
       "name": "Nora Hale / Eva Stone",
-      "function": "revenge engine"
+      "function": "revenge engine; controls the room through stillness"
     },
     {
       "character_id": "CHAR-02",
       "name": "Adrian Vale",
-      "function": "ally-threat romance axis"
+      "function": "ally-threat romance axis; watching before he moves"
+    },
+    {
+      "character_id": "CHAR-03",
+      "name": "Celia Hale",
+      "function": "public humiliation initiator; performs legitimacy under pressure"
     }
   ],
-  "screenplay_markdown": "# 02_英文剧本\n\n## Quick Reference\n- Project Title: Midnight Heiress\n\n## EPISODE 01\n\n### SCENE 01.01\nINT. HALE CHARITY GALA - NIGHT\n\nCrystal light washes over the ballroom as Nora steps in wearing anonymity like armor.\n\nCELIA\nYou must be lost.\n\nNORA\nNot at all. I came exactly where I was invited.\n",
+
+  "screenplay_markdown": "# 02_英文剧本\n\n## EPISODE 01\n\n### SCENE 01.01\nTime: Night\nLocation: INT. HALE CHARITY GALA\nCharacters: NORA HALE / EVA STONE, CELIA HALE, ADRIAN VALE\nCore Event: Celia publicly attempts to socially eject Eva at the entrance; Eva deflects and takes the high ground\nScene Result: Celia is left without a clean move; Adrian clocks that Eva knows something she shouldn't\n\n[OPENING STATE]\nThe ballroom is in full donor-gala motion. Crystal overhead. Warm gold light with an edge beneath the polish.\n\nNora steps through the entrance alone. A champagne glass lifted from the nearest tray. She holds it without drinking.\n\n[MAIN BODY]\nCelia clocks Eva from across the room. She crosses toward her with the ease of a woman who owns it.\n\nShe stops directly in Eva's path.\n\nCELIA\nYou must be lost.\n\nNora turns. Unhurried. Holds the look one beat too long.\n\nNORA\nNot at all. I came exactly where I was invited.\n\nCelia steps closer, lowering her voice.\n\nCELIA\nI don't know who sent you through those doors. But this is a private event.\n\nNora glances at the room — the donors, the photographers, the cameras — then back at Celia.\n\nNORA\nThen you should have locked them better.\n\nA beat. Celia has nothing left to say.\n\nAdrian stands at the edge of the frame, watching. He hasn't moved on.\n\n[SCENE ENDING]\nA hotel photographer's camera sweeps across the entrance group — and catches Nora's wrist. The scar. Just for a moment.\n",
+
   "scene_crosswalk": [
     {
       "episode_id": "EP01",
       "scene_id": "01.01",
+      "time": "Night",
       "slugline": "INT. HALE CHARITY GALA - NIGHT",
-      "purpose": "Establish Nora's return and Celia's first strike.",
+      "characters": ["Nora Hale / Eva Stone", "Celia Hale", "Adrian Vale"],
+      "core_event": "Celia publicly attempts to socially eject Eva at the entrance; Eva deflects and takes the high ground.",
+      "scene_result": "Celia is left without a clean move; Adrian clocks that Eva knows something she shouldn't.",
+      "hook_type": "none",
+      "emotional_function": "establish",
       "character_ids": ["CHAR-01", "CHAR-03", "CHAR-02"],
-      "location_id": "LOC-01"
+      "location_id": "LOC-01",
+      "key_props": []
     },
     {
       "episode_id": "EP01",
       "scene_id": "01.02",
+      "time": "Night",
       "slugline": "INT. GALA SIDE CORRIDOR - NIGHT",
-      "purpose": "Reveal the scar clue and Adrian's intervention.",
+      "characters": ["Nora Hale / Eva Stone", "Celia Hale", "Adrian Vale"],
+      "core_event": "Celia steers Eva into the private corridor for a harder confrontation; Adrian interrupts before Celia can land the final move.",
+      "scene_result": "All three know the social war has started; the portrait nameplate is caught in frame — the identity tease lands.",
+      "hook_type": "reversal",
+      "emotional_function": "escalate",
       "character_ids": ["CHAR-01", "CHAR-03", "CHAR-02"],
-      "location_id": "LOC-01"
+      "location_id": "LOC-01",
+      "key_props": ["PROP-NAMEPLATE-01"]
+    },
+    {
+      "episode_id": "EP02",
+      "scene_id": "02.01",
+      "time": "Day",
+      "slugline": "INT. HALE FOUNDATION BOARDROOM ANTECHAMBER - DAY",
+      "characters": ["Nora Hale / Eva Stone", "Miriam Cross"],
+      "core_event": "Nora finds Miriam Cross waiting outside the board session and makes first contact.",
+      "scene_result": "Miriam recognizes something she wasn't expecting and chooses to stay — cautiously.",
+      "hook_type": "setup",
+      "emotional_function": "establish",
+      "character_ids": ["CHAR-01", "CHAR-04"],
+      "location_id": "LOC-02",
+      "key_props": ["PROP-PORTFOLIO-01"]
     }
   ]
 }

@@ -7,7 +7,22 @@
     "scene_crosswalk"
   ],
   "properties": {
-    "quick_reference": { "type": "object" },
+
+    "quick_reference": {
+      "type": "object",
+      "required": ["project_title", "logline", "target_market", "genre", "episode_count", "episode_duration", "mood_tags", "protagonist_snapshot"],
+      "properties": {
+        "project_title": { "type": "string" },
+        "logline": { "type": "string" },
+        "target_market": { "type": "string" },
+        "genre": { "type": "string" },
+        "episode_count": { "type": "integer" },
+        "episode_duration": { "type": "string" },
+        "mood_tags": { "type": "array", "items": { "type": "string" } },
+        "protagonist_snapshot": { "type": "string" }
+      }
+    },
+
     "character_snapshot": {
       "type": "array",
       "minItems": 1,
@@ -17,55 +32,93 @@
         "properties": {
           "character_id": { "type": "string" },
           "name": { "type": "string" },
-          "function": { "type": "string" }
+          "function": { "type": "string", "description": "One-line role in the screenplay." }
         }
       }
     },
+
     "screenplay_markdown": {
       "type": "string",
-      "description": "Full screenplay text covering every episode. No episode may be replaced with a summary or placeholder."
+      "description": "Full screenplay text covering every episode. Every scene must have: scene header (6 fields) + [OPENING STATE] + [MAIN BODY] in action blocks + [SCENE ENDING]. No episode may be replaced with a summary or placeholder."
     },
+
     "scene_crosswalk": {
       "type": "array",
       "minItems": 1,
-      "description": "One entry per scene. scene_id must match the SCENE heading in screenplay_markdown exactly.",
+      "description": "One entry per scene. Feeds directly into the storyboard scene_index. scene_id must match the SCENE heading in screenplay_markdown exactly.",
       "items": {
         "type": "object",
         "required": [
           "episode_id",
           "scene_id",
+          "time",
           "slugline",
-          "purpose",
+          "characters",
+          "core_event",
+          "scene_result",
           "hook_type",
           "emotional_function",
           "character_ids",
           "location_id"
         ],
         "properties": {
-          "episode_id": { "type": "string" },
-          "scene_id": { "type": "string" },
-          "slugline": { "type": "string" },
-          "purpose": {
+          "episode_id": {
             "type": "string",
-            "description": "What this scene accomplishes in the story."
+            "description": "e.g. EP01"
+          },
+          "scene_id": {
+            "type": "string",
+            "description": "e.g. 01.01. Must match SCENE heading in screenplay_markdown."
+          },
+          "time": {
+            "type": "string",
+            "enum": ["Day", "Night", "Dawn", "Dusk", "Pre-Dawn", "Continuous"],
+            "description": "Time of day for this scene."
+          },
+          "slugline": {
+            "type": "string",
+            "description": "e.g. INT. HALE CHARITY GALA - NIGHT"
+          },
+          "characters": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Character names as they appear in the screenplay (display names)."
+          },
+          "core_event": {
+            "type": "string",
+            "description": "One sentence: the central narrative event of this scene. Mirrors the scene header Core Event field."
+          },
+          "scene_result": {
+            "type": "string",
+            "description": "One sentence: how the scene ends / what changes. Mirrors the scene header Scene Result field."
           },
           "hook_type": {
             "type": "string",
             "enum": ["cliffhanger", "reversal", "emotional_peak", "setup", "none"],
-            "description": "Episode-ending scenes must use cliffhanger / reversal / emotional_peak / setup. Mid-episode scenes use 'none'."
+            "description": "Episode-ending scenes: must use cliffhanger / reversal / emotional_peak / setup. Mid-episode scenes: none."
           },
           "emotional_function": {
             "type": "string",
             "enum": ["establish", "escalate", "release", "reset"],
-            "description": "The emotional arc function of this scene in the episode."
+            "description": "The emotional arc function of this scene within the episode."
           },
           "character_ids": {
             "type": "array",
-            "items": { "type": "string" }
+            "items": { "type": "string" },
+            "description": "character_id values aligned with setting_bible and outline character_cards."
           },
-          "location_id": { "type": "string" }
+          "location_id": {
+            "type": "string",
+            "description": "location_id aligned with setting_bible."
+          },
+          "key_props": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Optional. prop_id values for props that play a narrative role in this scene. Used by storyboard to pre-identify prop shots."
+          }
         }
       }
     }
+
   }
 }
