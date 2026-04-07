@@ -113,41 +113,247 @@
 
 ---
 
-## 大纲、剧本、分镜表、设定集：格式与内容结构
+## 四大交付物：完整格式骨架
 
-以下为交付物层面的**结构摘要**；字段级硬性要求、枚举与自检清单以 `rules/11_大纲规范.md`～`rules/15_双语镜像规范.md` 为准。样例见 `examples/最终交付样例/`。
+字段级约束、枚举与自检清单见对应 `rules/` 文件。完整带内容样例见 `examples/最终交付样例/`。
 
-### 大纲（`01` 英文 / `05` 中文）
+---
 
-- **定位**：全案**主控文档**；剧本、分镜、设定集在其上展开，不在大纲里写逐场正文或镜头语言。
-- **章节顺序（固定 14 节，缺一不可）**：`Quick Reference` → `Core Selling Points` → `Adaptation Positioning` → `World Setting Summary` → `Character Cards` → `Main Plot` → `Subplot Map` → `Overall Story Structure` → `Episode Outline` → `Season Hook Map` → `Episode Hook Map` → `Paywall Map` → `Signature Scenes` → `Viral Clip Candidates`。
-- **要点**：
-  - `Quick Reference`：项目名、Logline、市场、类型、集数、单集时长、情绪/视觉标签、主角速览等。
-  - `Episode Outline`：每集 **11 个结构化字段**（如 `episode_id`、`logline`、`core_event`、`turn`、`end_hook` 等），集数必须与 `episode_count` 一致。
-  - 钩子图、卡点表、名场面与切片候选须为**结构化表格/条目**，不得用散文替代；设定细节只摘要，完整版在设定集。
+### 大纲 `01_英文大纲.docx` / `05_中文大纲.docx`
 
-### 剧本（`02` 英文 / `06` 中文）
+```
+# <剧名> — Outline
 
-- **定位**：大纲与分镜之间的**中间层**——把集级结构落实为可拍的「场」，**不写**景别、机位、运镜（那些归分镜表）。
-- **整体层级**：`EPISODE` → 可选 `COLD OPEN` → 若干 `SCENE`；每场固定四段：**场次头信息** → `[OPENING STATE]` → `[MAIN BODY]` → `[SCENE ENDING]`。
-- **集头 `[EPISODE BRIEF]`**（每集第一场之前，全集只写一次）：6 项必填——`Episode Plot`、`Opening Hook`、`Cold Open Focus`、`Closing Hook`、`Core Satisfaction`、`Target Emotion`；须与首场开场、末场结尾钩子对齐。
-- **场次头（7 字段）**：`Time`、`Location`、`Characters`、`Core Event`、`Scene Result`、`Outline Ref`（对齐大纲某字段，且全集须覆盖本集 `core_event` 与 `turn`）。
-- **`[MAIN BODY]`**：按**动作块**分段；标准**英文剧本对白格式**（全大写角色名、`(O.S.)` / `(V.O.)` / `(CONT'D)` 等）；可视化动作行可拍、道具位置明确。
-- **附录级**：需有与正文场次一致的 **scene crosswalk**（含 time、core_event、scene_result、outline_ref 等），供分镜索引对齐。
+## Quick Reference
+Title / Logline / Target Market / Genre / Episode Count /
+Episode Duration / Emotional-Visual Tags / Lead Characters
 
-### 分镜表（`03` 英文 / `07` 中文）
+## Core Selling Points
+Genre Hook:
+Emotional Hook:
+Character Hook:
+Differentiation:
 
-- **定位**：**镜头级**生产表；主体为 **shot 一行一条** 的表格，不是剧情散文。
-- **每行至少包含**（列名与细则见 `rules/13_分镜表规范.md`）：`shot_id`、`episode_id`、`scene_id`、`slugline`、`shot_size`、`camera_angle_or_move`、`visual_action`、`dialogue_anchor`、`emotion`、`character_ids`、`location_id`、`prop_ids`、`look_ids`、`sfx_music`、`transition`、`ai_note`、`estimated_duration_sec`。
-- **`shot_id` 格式**：`集.场.S镜序`，例如 `01.01.S01`，可回溯到集与场。
-- **密度**：按场次类型有**最低镜头数**；单集各 shot 时长累计宜落在 **60–120s**；`ai_note` 不得留空（需可指导 AI 生图/视频）。
-- **可先列场次索引（scene_index）**，再列全表 shot 行，与剧本场次一一对应。
+## Adaptation Positioning
+Core Hook:
+Audience Positioning:
+Similarity Avoidance Direction:
 
-### 设定集（`04` 英文 / `08` 中文）
+## World Setting Summary
+Era & Environment:
+Social Rules:
+Industry / Special Setting:
+Key Constraints:
 
-- **定位**：**超重设计册**（非轻量人物卡）：服务美术、道具、造型与连续性，不是剧本摘要。
-- **Quick Reference**：与大纲/剧本等一致的元信息块。
-- **主体须覆盖**（顺序与深度见 `rules/14_设定集规范.md`）：项目定位与世界背景；时间线与前史；角色详细设定；角色形象设计；角色关系；场景设定；道具/物品；服装与视觉系统；色彩/材质/气质标签；连续性与叙事禁区；AI 资产生成注意事项。
-- **ID 体系**：主要角色、主场景、关键道具、主要造型系统须有稳定的 **`character_id` / `location_id` / `prop_id` / `look_id`**，与大纲、分镜表引用对齐。
+## Character Cards
+### CHAR-01 — [角色名]
+Role Type / Identity / Personality Keywords / Desire Goal /
+Relation to Protagonist / Contrast Point / Arc Note
+（每个主要角色一张，至少 4 张）
 
-中文四件套除翻译与本地化外，须遵守 **`rules/15_双语镜像规范.md`**，与英文结构与字段对齐。
+## Main Plot
+Protagonist Want:
+Antagonist Block:
+Escalation Path:
+Resolution Direction:
+
+## Subplot Map
+### SUB-01
+Type / Characters Involved / Arc Summary / Function in Story
+（至少 2 条）
+
+## Overall Story Structure
+### Opening
+### Development
+### Midpoint Reversal
+### Climax
+### Ending
+
+## Episode Outline
+### EP01 — [集标题]
+arc_phase / logline / core_event / turn / emotional_goal /
+relationship_shift / antagonist_pressure / satisfaction_beat / end_hook
+（每集一条，集数等于 episode_count）
+
+## Season Hook Map
+| phase | ratio_range | hook_direction |
+
+## Episode Hook Map
+| episode_id | hook_type | hook_out |
+
+## Paywall Map
+| episode_id | position_ratio | phase | type | beat | viewer_task |
+
+## Signature Scenes
+### SIG-01
+episode_id / scene_type / description / why_unmissable / production_weight
+（3–8 条）
+
+## Viral Clip Candidates
+### CLIP-01
+episode_id / clip_type / description / hook_in_3s
+（3–6 条）
+```
+
+---
+
+### 剧本 `02_英文剧本.docx` / `06_中文剧本.docx`
+
+```
+# <剧名> — Screenplay
+
+## Quick Reference
+Title / Logline / Target Market / Genre / Episode Count /
+Episode Duration / Emotional-Visual Tags / Lead Characters
+
+---
+
+## EPISODE 01
+
+[EPISODE BRIEF]
+Episode Plot:
+Opening Hook:
+Cold Open Focus:
+Closing Hook:
+Core Satisfaction:
+Target Emotion:
+
+### COLD OPEN（可选）
+Time:
+Location:
+Characters:
+Core Event:
+Scene Result:
+Outline Ref: setup
+
+[OPENING STATE]
+
+[MAIN BODY]
+
+[SCENE ENDING / END COLD OPEN]
+
+---
+
+### SCENE 01.01
+Time:
+Location:
+Characters:
+Core Event:
+Scene Result:
+Outline Ref:
+
+[OPENING STATE]
+
+[MAIN BODY]
+
+CHARACTER NAME
+Dialogue.
+
+CHARACTER NAME (O.S.)
+Dialogue.
+
+CHARACTER NAME (CONT'D)
+Dialogue.
+
+[SCENE ENDING — cliffhanger / reversal / emotional_peak / setup]
+
+---
+
+### SCENE 01.02
+...（每集 2–5 场）
+
+---
+
+## EPISODE 02
+...（重复上述结构，全剧每集均完整展开）
+```
+
+---
+
+### 分镜表 `03_英文分镜表.docx` / `07_中文分镜表.docx`
+
+```
+# <剧名> — Storyboard
+
+## Quick Reference
+Title / Logline / Target Market / Genre / Episode Count /
+Episode Duration / Emotional-Visual Tags / Lead Characters
+
+---
+
+## EPISODE 01
+
+### Scene Index
+| scene_id | time | location | characters | core_event | scene_result |
+
+---
+
+### Shot Table
+
+| shot_id   | episode_id | scene_id | slugline | shot_size | camera_angle_or_move |
+| visual_action | dialogue_anchor | emotion | character_ids | location_id |
+| prop_ids | look_ids | sfx_music | transition | ai_note | estimated_duration_sec |
+
+示例行：
+| 01.01.S01 | EP01 | S01.01 | INT. PAWNSHOP - DAY | WIDE | STATIC |
+| Maya stands behind counter, UV lamp on, examining rings | — | neutral/alert | CHAR-01 | LOC-01 |
+| PROP-03 | LOOK-01 | ambient shop noise | CUT | 宽镜建立空间，光线偏冷，陈列密集感 | 4s |
+
+...（每场至少 4–6 行，对话场≥4 shot，冲突场≥6 shot，情绪场≥5 shot）
+
+---
+
+## EPISODE 02
+...（全剧每集均完整展开）
+```
+
+---
+
+### 设定集 `04_英文设定集.docx` / `08_中文设定集.docx`
+
+```
+# <剧名> — Setting Bible
+
+## Quick Reference
+Title / Logline / Target Market / Genre / Episode Count /
+Episode Duration / Emotional-Visual Tags / Lead Characters
+
+## 1. Project Positioning & World Background
+
+## 2. Timeline & Backstory
+
+## 3. Character Profiles（详细设定）
+### CHAR-01 — [角色名]
+Full background / psychology / speech patterns / physical description /
+wardrobe notes / arc across season
+
+## 4. Character Visual Design
+### CHAR-01
+Key visual references / color palette / distinguishing features
+
+## 5. Character Relationships
+Relationship map / power dynamics / emotional dependencies
+
+## 6. Location Profiles
+### LOC-01 — [场景名]
+Physical description / atmosphere / recurring props / lighting notes
+
+## 7. Props & Objects
+### PROP-01 — [道具名]
+Description / first appearance / narrative function / visual requirements
+
+## 8. Costume & Visual System
+### LOOK-01 — [造型系统名]
+Episode range / character / key pieces / color story
+
+## 9. Color / Texture / Tone Tags
+Overall palette / per-character tone tags / per-location mood tags
+
+## 10. Continuity & Story Prohibitions
+What must never change / what must always be consistent /
+facts locked by the plot that cannot be retconned
+
+## 11. AI Asset Generation Notes
+Per-character prompt anchors / per-location prompt anchors /
+style consistency rules for AI image/video generation
+```
