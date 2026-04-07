@@ -1,115 +1,309 @@
 {
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "setting_bible",
   "type": "object",
   "required": [
     "quick_reference",
     "world_background",
     "timeline",
     "character_profiles",
+    "relationship_matrix",
+    "look_profiles",
     "location_profiles",
     "prop_profiles",
     "visual_system",
     "continuity_rules",
     "ai_asset_matrix",
-    "setting_bible_markdown"
+    "narrative_forbidden_zones"
   ],
   "properties": {
-    "quick_reference": { "type": "object" },
-    "world_background": { "type": "string" },
+    "quick_reference": {
+      "type": "object",
+      "required": [
+        "project_title",
+        "logline",
+        "target_market",
+        "genre",
+        "episode_count",
+        "episode_duration",
+        "mood_tags",
+        "visual_identity_line",
+        "protagonist_snapshot"
+      ],
+      "properties": {
+        "project_title":        { "type": "string" },
+        "logline":              { "type": "string" },
+        "target_market":        { "type": "string" },
+        "genre":                { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+        "episode_count":        { "type": "integer", "minimum": 1 },
+        "episode_duration":     { "type": "string" },
+        "mood_tags":            { "type": "array", "items": { "type": "string" }, "minItems": 3, "maxItems": 5 },
+        "visual_identity_line": { "type": "string" },
+        "protagonist_snapshot": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+
+    "world_background": {
+      "type": "object",
+      "required": ["world_type", "power_structure", "social_rules", "the_core_wound", "tone_summary"],
+      "properties": {
+        "world_type":       { "type": "string", "enum": ["contemporary", "period", "fantasy", "sci-fi"] },
+        "power_structure":  { "type": "string" },
+        "social_rules":     { "type": "string" },
+        "the_core_wound":   { "type": "string" },
+        "tone_summary":     { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+
     "timeline": {
       "type": "array",
+      "minItems": 3,
       "items": {
         "type": "object",
-        "required": ["year_or_phase", "event"],
+        "required": ["year_or_phase", "event", "dramatic_impact"],
         "properties": {
-          "year_or_phase": { "type": "string" },
-          "event": { "type": "string" }
-        }
+          "year_or_phase":    { "type": "string" },
+          "event":            { "type": "string" },
+          "dramatic_impact":  { "type": "string" }
+        },
+        "additionalProperties": false
       }
     },
+
     "character_profiles": {
       "type": "array",
+      "minItems": 4,
       "items": {
         "type": "object",
         "required": [
-          "character_id",
-          "name",
-          "public_identity",
-          "hidden_identity",
-          "core_desire",
-          "core_fear",
-          "voice_style",
-          "visual_design",
-          "wardrobe_system",
-          "signature_props",
-          "relationship_notes"
+          "character_id", "name", "role_type",
+          "public_identity", "hidden_identity",
+          "core_desire", "core_fear", "fatal_flaw",
+          "character_arc", "voice_style",
+          "signature_behaviors", "visual_design",
+          "look_ids", "signature_props"
         ],
         "properties": {
-          "character_id": { "type": "string" },
-          "name": { "type": "string" },
-          "public_identity": { "type": "string" },
-          "hidden_identity": { "type": "string" },
-          "core_desire": { "type": "string" },
-          "core_fear": { "type": "string" },
-          "voice_style": { "type": "string" },
-          "visual_design": { "type": "string" },
-          "wardrobe_system": { "type": "string" },
-          "signature_props": {
-            "type": "array",
-            "items": { "type": "string" }
+          "character_id":       { "type": "string", "pattern": "^CHAR-\\d{2}$" },
+          "name":               { "type": "string" },
+          "role_type": {
+            "type": "string",
+            "enum": ["protagonist", "antagonist", "ally", "rival", "love_interest", "neutral"]
           },
-          "relationship_notes": { "type": "string" }
-        }
+          "public_identity":    { "type": "string" },
+          "hidden_identity":    { "type": "string" },
+          "core_desire":        { "type": "string" },
+          "core_fear":          { "type": "string" },
+          "fatal_flaw":         { "type": "string" },
+          "character_arc":      { "type": "string" },
+          "voice_style":        { "type": "string" },
+          "signature_behaviors": {
+            "type": "array",
+            "items": { "type": "string" },
+            "minItems": 2
+          },
+          "visual_design":      { "type": "string" },
+          "look_ids":           { "type": "array", "items": { "type": "string" } },
+          "signature_props":    { "type": "array", "items": { "type": "string" } }
+        },
+        "additionalProperties": false
       }
     },
+
+    "relationship_matrix": {
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "type": "object",
+        "required": ["char_a", "char_b", "relationship_type", "hidden_tension", "power_balance"],
+        "properties": {
+          "char_a":             { "type": "string", "pattern": "^CHAR-\\d{2}$" },
+          "char_b":             { "type": "string", "pattern": "^CHAR-\\d{2}$" },
+          "relationship_type":  { "type": "string" },
+          "hidden_tension":     { "type": "string" },
+          "power_balance": {
+            "type": "string",
+            "enum": ["a_dominant", "b_dominant", "equal", "shifting"]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+
+    "look_profiles": {
+      "type": "array",
+      "minItems": 4,
+      "items": {
+        "type": "object",
+        "required": [
+          "look_id", "character_id", "look_name", "look_function",
+          "episodes_or_contexts", "color_palette",
+          "key_garments", "hair_and_makeup", "ai_prompt_seed"
+        ],
+        "properties": {
+          "look_id":                { "type": "string", "pattern": "^LOOK-\\d{2}$" },
+          "character_id":           { "type": "string", "pattern": "^CHAR-\\d{2}$" },
+          "look_name":              { "type": "string" },
+          "look_function": {
+            "type": "string",
+            "enum": ["power", "vulnerable", "disguise", "casual", "formal", "confrontation"]
+          },
+          "episodes_or_contexts":   { "type": "string" },
+          "color_palette":          { "type": "array", "items": { "type": "string" }, "minItems": 3 },
+          "key_garments":           { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+          "hair_and_makeup":        { "type": "string" },
+          "ai_prompt_seed":         { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+
     "location_profiles": {
       "type": "array",
+      "minItems": 3,
       "items": {
         "type": "object",
-        "required": ["location_id", "name", "dramatic_function", "visual_keywords", "asset_notes"],
+        "required": [
+          "location_id", "name", "type", "dramatic_function",
+          "visual_keywords", "lighting_mood",
+          "sound_environment", "continuity_notes", "ai_prompt_seed"
+        ],
         "properties": {
-          "location_id": { "type": "string" },
-          "name": { "type": "string" },
-          "dramatic_function": { "type": "string" },
-          "visual_keywords": {
-            "type": "array",
-            "items": { "type": "string" }
+          "location_id":        { "type": "string", "pattern": "^LOC-\\d{2}$" },
+          "name":               { "type": "string" },
+          "type": {
+            "type": "string",
+            "enum": ["interior", "exterior", "vehicle", "virtual"]
           },
-          "asset_notes": { "type": "string" }
-        }
+          "dramatic_function":  { "type": "string" },
+          "visual_keywords":    { "type": "array", "items": { "type": "string" }, "minItems": 4 },
+          "lighting_mood":      { "type": "string" },
+          "sound_environment":  { "type": "string" },
+          "continuity_notes":   { "type": "string" },
+          "ai_prompt_seed":     { "type": "string" }
+        },
+        "additionalProperties": false
       }
     },
+
     "prop_profiles": {
       "type": "array",
+      "minItems": 3,
       "items": {
         "type": "object",
-        "required": ["prop_id", "name", "story_function", "visual_description"],
+        "required": [
+          "prop_id", "name", "owner_char_id", "story_function",
+          "first_appears_episode", "visual_description",
+          "continuity_rules", "ai_prompt_seed"
+        ],
         "properties": {
-          "prop_id": { "type": "string" },
-          "name": { "type": "string" },
-          "story_function": { "type": "string" },
-          "visual_description": { "type": "string" }
-        }
+          "prop_id":               { "type": "string", "pattern": "^PROP-\\d{2}$" },
+          "name":                  { "type": "string" },
+          "owner_char_id":         { "type": "string" },
+          "story_function": {
+            "type": "string",
+            "enum": ["evidence", "symbol", "weapon", "personal_item", "plot_device", "status_marker"]
+          },
+          "first_appears_episode": { "type": "integer", "minimum": 1 },
+          "visual_description":    { "type": "string" },
+          "continuity_rules":      { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+          "ai_prompt_seed":        { "type": "string" }
+        },
+        "additionalProperties": false
       }
     },
-    "visual_system": { "type": "string" },
+
+    "visual_system": {
+      "type": "object",
+      "required": [
+        "overall_color_palette",
+        "lighting_philosophy",
+        "texture_language",
+        "hero_vs_villain_contrast",
+        "forbidden_aesthetics"
+      ],
+      "properties": {
+        "overall_color_palette": {
+          "type": "object",
+          "required": ["dominant", "accent", "shadow", "highlight"],
+          "properties": {
+            "dominant":  { "type": "string" },
+            "accent":    { "type": "string" },
+            "shadow":    { "type": "string" },
+            "highlight": { "type": "string" }
+          },
+          "additionalProperties": false
+        },
+        "lighting_philosophy":  { "type": "string" },
+        "texture_language":     { "type": "array", "items": { "type": "string" }, "minItems": 3 },
+        "hero_vs_villain_contrast": {
+          "type": "object",
+          "required": ["hero_visual", "villain_visual"],
+          "properties": {
+            "hero_visual":    { "type": "string" },
+            "villain_visual": { "type": "string" }
+          },
+          "additionalProperties": false
+        },
+        "forbidden_aesthetics": { "type": "array", "items": { "type": "string" }, "minItems": 1 }
+      },
+      "additionalProperties": false
+    },
+
     "continuity_rules": {
       "type": "array",
-      "items": { "type": "string" }
-    },
-    "ai_asset_matrix": {
-      "type": "array",
+      "minItems": 6,
       "items": {
         "type": "object",
-        "required": ["asset_type", "asset_id", "prompt_seed", "must_have", "avoid"],
+        "required": ["rule_id", "rule_type", "applies_to", "rule_description", "violation_severity"],
         "properties": {
-          "asset_type": { "type": "string" },
-          "asset_id": { "type": "string" },
-          "prompt_seed": { "type": "string" },
-          "must_have": { "type": "string" },
-          "avoid": { "type": "string" }
-        }
+          "rule_id":            { "type": "string", "pattern": "^CONT-\\d{2}$" },
+          "rule_type": {
+            "type": "string",
+            "enum": ["character", "prop", "location", "costume", "timeline"]
+          },
+          "applies_to":         { "type": "string" },
+          "rule_description":   { "type": "string" },
+          "violation_severity": {
+            "type": "string",
+            "enum": ["blocking", "warning"]
+          }
+        },
+        "additionalProperties": false
       }
     },
-    "setting_bible_markdown": { "type": "string" }
-  }
+
+    "ai_asset_matrix": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["asset_id", "asset_type", "prompt_seed", "must_have", "must_avoid", "resolution_hint"],
+        "properties": {
+          "asset_id":        { "type": "string" },
+          "asset_type": {
+            "type": "string",
+            "enum": ["character_look", "location", "prop", "vfx"]
+          },
+          "prompt_seed":     { "type": "string" },
+          "must_have":       { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+          "must_avoid":      { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+          "resolution_hint": {
+            "type": "string",
+            "enum": ["portrait", "landscape", "square"]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+
+    "narrative_forbidden_zones": {
+      "type": "array",
+      "minItems": 3,
+      "items": { "type": "string" }
+    }
+  },
+  "additionalProperties": false
 }

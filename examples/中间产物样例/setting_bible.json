@@ -1,71 +1,475 @@
 {
   "quick_reference": {
     "project_title": "Midnight Heiress",
-    "logline": "A dead heiress returns under a false name to reclaim her empire in public.",
+    "logline": "Presumed dead for five years, the true Hale heiress returns under a false name and weaponizes public space to dismantle the people who stole her life.",
     "target_market": "NA-English",
-    "genre": "Hidden Identity / Revenge Romance",
+    "genre": ["Hidden Identity", "Revenge Romance"],
     "episode_count": 40,
     "episode_duration": "1-2 min",
-    "mood_tags": ["glossy", "cold luxury", "public humiliation"],
-    "protagonist_snapshot": "Nora weaponizes stillness, evidence, and spectacle."
+    "mood_tags": ["cold luxury", "public humiliation", "black crystal gold", "witness-as-power", "controlled fury"],
+    "visual_identity_line": "Severe black silhouettes in overlit public arenas where status is performed and shattered.",
+    "protagonist_snapshot": "Nora never retreats — she turns the room into a courtroom and lets the evidence speak."
   },
-  "world_background": "The Hale family empire sits at the intersection of social prestige, donor politics, and corporate control. Public rooms matter because witness equals power.",
+
+  "world_background": {
+    "world_type": "contemporary",
+    "power_structure": "The Hale world runs on performative legitimacy — public witness, donor networks, and corporate alliances. Whoever controls the room controls the narrative. Private truth is worthless until it lands in front of witnesses.",
+    "social_rules": "Status must be constantly performed and publicly defended. Backing down in public is permanent defeat. The person who stays composed under attack is assumed to be right.",
+    "the_core_wound": "Nora was erased — her identity stolen, her death staged — so that wealth could be transferred before she could claim it. The system rewarded the theft.",
+    "tone_summary": "Cold luxury revenge: controlled devastation delivered in evening wear, in front of cameras."
+  },
+
   "timeline": [
     {
-      "year_or_phase": "Five years ago",
-      "event": "Nora disappears after a staged accident tied to inheritance fraud."
+      "year_or_phase": "Six years ago",
+      "event": "Amelia Hale, the family matriarch, dies under suspicious circumstances and leaves her estate in a trust requiring her biological heir to claim it by age 30.",
+      "dramatic_impact": "Establishes the inheritance mechanism that makes Nora's identity worth stealing."
     },
     {
-      "year_or_phase": "Present day",
-      "event": "Nora returns as Eva Stone to launch a public legitimacy war."
+      "year_or_phase": "Five years ago",
+      "event": "Nora is involved in a staged car accident arranged by her stepmother Diane and stepsister Celia. She survives but is assumed dead.",
+      "dramatic_impact": "The inciting wound — introduces the conspiracy and raises the question of who orchestrated it."
+    },
+    {
+      "year_or_phase": "Five years ago — aftermath",
+      "event": "Celia is declared the sole Hale heiress. Adrian Hale, Nora's estranged half-brother, publicly accepts the transition without resistance.",
+      "dramatic_impact": "Sets up Celia as usurper and Adrian as the ambiguous insider — ally or accomplice?"
+    },
+    {
+      "year_or_phase": "Present — six months before Episode 1",
+      "event": "Nora, under the alias Eva Stone, builds a network of legal allies and collects documentation proving the inheritance fraud.",
+      "dramatic_impact": "Nora enters the story with a plan already in motion — she is never reactive, only strategic."
+    },
+    {
+      "year_or_phase": "Episode 1",
+      "event": "Eva Stone is introduced as a London-based auction consultant hired to appraise a Hale estate item. She is in the same room as Celia for the first time in five years.",
+      "dramatic_impact": "The story begins in public, with Nora already holding one piece of evidence, and Celia not knowing she's in danger."
     }
   ],
+
   "character_profiles": [
     {
       "character_id": "CHAR-01",
       "name": "Nora Hale / Eva Stone",
-      "public_identity": "Auction consultant",
-      "hidden_identity": "True Hale heiress",
-      "core_desire": "Take back her name and company",
-      "core_fear": "Being exposed before the evidence chain is complete",
+      "role_type": "protagonist",
+      "public_identity": "Eva Stone — high-end auction consultant recently returned from London",
+      "hidden_identity": "Nora Hale — the biological heir to the Hale estate, presumed dead",
+      "core_desire": "Reclaim her name, her company, and her grandmother's legacy — in public, on record",
+      "core_fear": "Being exposed before the evidence chain is complete, losing the element of surprise",
+      "fatal_flaw": "She trusts the plan more than people — she will sacrifice emotional connection to protect the strategy",
+      "character_arc": "Solitary weapon with nothing to lose → woman who chooses to rebuild rather than only destroy",
       "voice_style": "short, cool, precise",
-      "visual_design": "dark formalwear, severe silhouette, minimal jewelry",
-      "wardrobe_system": "LOOK-01 / black satin power looks",
-      "signature_props": ["PROP-01"],
-      "relationship_notes": "She dominates Celia in public and destabilizes Adrian through control."
+      "signature_behaviors": [
+        "She straightens the item in front of her — a glass, a document, a chair — before responding to provocation",
+        "She never raises her voice; she lowers it",
+        "She makes eye contact with the most powerful person in the room first, before addressing anyone else"
+      ],
+      "visual_design": "Tall, lean, early 30s. Angular features that read as cold in low emotion and lethal when she smiles. Severe posture — never slouches, never fidgets.",
+      "look_ids": ["LOOK-01", "LOOK-02"],
+      "signature_props": ["PROP-01", "PROP-02"]
+    },
+    {
+      "character_id": "CHAR-02",
+      "name": "Celia Hale",
+      "role_type": "antagonist",
+      "public_identity": "The Hale heiress — poised, charitable, socially beloved",
+      "hidden_identity": "Knows the accident was staged; benefits from Nora's erasure; increasingly aware the past is returning",
+      "core_desire": "Keep what she has — the name, the money, the room's approval",
+      "core_fear": "Public exposure — not guilt, but the audience watching her fall",
+      "fatal_flaw": "She performs strength instead of having it — when the audience turns, she collapses",
+      "character_arc": "Secure usurper who believes she has won → exposed, publicly dismantled, stripped of audience and identity",
+      "voice_style": "warm, polished, slightly over-rehearsed",
+      "signature_behaviors": [
+        "She touches her pearl bracelet when she lies",
+        "She laughs one beat too early — performing delight before she's processed the situation",
+        "She positions herself at the center of group photos and social arrangements"
+      ],
+      "visual_design": "Mid 30s. Conventionally beautiful, polished presentation. Always slightly over-styled — every detail curated for maximum social approval.",
+      "look_ids": ["LOOK-03"],
+      "signature_props": ["PROP-03"]
+    },
+    {
+      "character_id": "CHAR-03",
+      "name": "Adrian Cole",
+      "role_type": "love_interest",
+      "public_identity": "Independent investor and former Hale family legal counsel",
+      "hidden_identity": "Secretly investigated the accident five years ago and suppressed the findings — he doesn't know if he was protecting Nora or complicit in burying her",
+      "core_desire": "Absolve himself — prove he tried to protect Nora rather than betray her",
+      "core_fear": "That Nora already knows what he did and has come back to destroy him too",
+      "fatal_flaw": "He resolves moral crises by choosing the option that preserves his own position",
+      "character_arc": "Morally compromised observer who avoided accountability → forced to choose sides in public with everything on the line",
+      "voice_style": "measured, deliberate, controlled pauses",
+      "signature_behaviors": [
+        "He goes still when he's computing risk — no expression, no movement for two to three seconds",
+        "He asks a question instead of making a statement when he already knows the answer",
+        "He positions himself near exits in social settings"
+      ],
+      "visual_design": "Late 30s. Well-built, dark formal wear. Handsome in a way that reads as trustworthy until you notice his eyes are always calculating.",
+      "look_ids": ["LOOK-04"],
+      "signature_props": ["PROP-02"]
+    },
+    {
+      "character_id": "CHAR-04",
+      "name": "Diane Hale",
+      "role_type": "antagonist",
+      "public_identity": "Hale family matriarch by marriage — gracious, philanthropic",
+      "hidden_identity": "Architect of the inheritance fraud and the staged accident",
+      "core_desire": "Maintain control of the Hale estate and ensure Celia's permanent claim",
+      "core_fear": "A piece of physical evidence she has not yet located and destroyed",
+      "fatal_flaw": "She underestimates people she has already hurt — she doesn't believe they come back",
+      "character_arc": "Untouchable orchestrator who believes the past is sealed → systematically exposed from the outside in",
+      "voice_style": "gracious, unhurried, each word chosen",
+      "signature_behaviors": [
+        "She smooths the tablecloth or adjusts a centerpiece when she's losing control of a situation",
+        "She uses first names in every sentence to assert social ownership of a conversation",
+        "She never visibly reacts to bad news in public — she absorbs it and responds in private"
+      ],
+      "visual_design": "Early 60s. Elegant, silver-haired, always dressed as if photographed. Movements are deliberate and controlled — she is a performance.",
+      "look_ids": ["LOOK-05"],
+      "signature_props": ["PROP-03"]
     }
   ],
+
+  "relationship_matrix": [
+    {
+      "char_a": "CHAR-01",
+      "char_b": "CHAR-02",
+      "relationship_type": "Usurped heir vs. usurper — public rivals masking a five-year vendetta",
+      "hidden_tension": "Celia doesn't know Eva is Nora. Nora knows exactly who Celia is and has been waiting.",
+      "power_balance": "a_dominant"
+    },
+    {
+      "char_a": "CHAR-01",
+      "char_b": "CHAR-03",
+      "relationship_type": "Forced professional proximity escalating toward trust and romantic tension",
+      "hidden_tension": "Nora doesn't know how much Adrian knows. Adrian doesn't know if Nora is here to take him down too.",
+      "power_balance": "shifting"
+    },
+    {
+      "char_a": "CHAR-01",
+      "char_b": "CHAR-04",
+      "relationship_type": "Target and hunter — Nora has Diane in her sights but must not show it yet",
+      "hidden_tension": "Diane senses something familiar about Eva but cannot place it. Nora is waiting for the right moment to make it unmistakable.",
+      "power_balance": "a_dominant"
+    },
+    {
+      "char_a": "CHAR-02",
+      "char_b": "CHAR-04",
+      "relationship_type": "Mother-daughter alliance built on shared complicity",
+      "hidden_tension": "Celia is starting to fear Diane would sacrifice her to protect herself if the exposure came.",
+      "power_balance": "b_dominant"
+    }
+  ],
+
+  "look_profiles": [
+    {
+      "look_id": "LOOK-01",
+      "character_id": "CHAR-01",
+      "look_name": "Power Black",
+      "look_function": "power",
+      "episodes_or_contexts": "All public confrontation scenes, Episodes 1-40",
+      "color_palette": ["#0a0a0a", "#1a1a2e", "#c9a84c", "#e8e8e8"],
+      "key_garments": ["tailored black satin blazer", "high-neck fitted black dress or trouser", "minimal structured clutch"],
+      "hair_and_makeup": "Low chignon or severe straight blowout. Skin: matte, no warmth. Lip: deep berry or clean nude. Eyes: precise liner, restrained.",
+      "ai_prompt_seed": "female late 20s, severe black satin power blazer, high-neck fitted black dress, sharp angular silhouette, single small gold earring, controlled low chignon, cool skin tone, matte makeup, cold confidence, studio editorial lighting with harsh top light, fashion portrait, 4K"
+    },
+    {
+      "look_id": "LOOK-02",
+      "character_id": "CHAR-01",
+      "look_name": "Disguise Consultant",
+      "look_function": "disguise",
+      "episodes_or_contexts": "Early episodes when Nora must not draw attention, Episodes 1-8",
+      "color_palette": ["#2d3748", "#718096", "#f7fafc"],
+      "key_garments": ["charcoal structured coat", "cream silk blouse", "dark slim trousers", "minimal leather tote"],
+      "hair_and_makeup": "Hair down in soft waves — less severe than Power Black. Slightly warmer makeup, approachable but professional.",
+      "ai_prompt_seed": "female late 20s, charcoal structured coat over cream silk blouse, dark slim trousers, hair in loose waves, professional but understated, consultancy office environment, soft directional lighting, photorealistic, 4K"
+    },
+    {
+      "look_id": "LOOK-03",
+      "character_id": "CHAR-02",
+      "look_name": "Social Heiress",
+      "look_function": "formal",
+      "episodes_or_contexts": "All social events and public appearances, Episodes 1-40",
+      "color_palette": ["#f5e6ca", "#d4a5a5", "#8b6f47", "#faf0e6"],
+      "key_garments": ["champagne or blush gown", "pearl bracelet", "statement earrings", "structured evening bag"],
+      "hair_and_makeup": "Polished updo with soft face-framing pieces. Dewy skin, rose-gold palette — warm, approachable, curated for photographs.",
+      "ai_prompt_seed": "female mid 30s, champagne evening gown, pearl bracelet, warm rose-gold makeup, soft updo with loose pieces, polished social event styling, elegant ballroom background, warm fill light, photorealistic portrait, 4K"
+    },
+    {
+      "look_id": "LOOK-04",
+      "character_id": "CHAR-03",
+      "look_name": "Dark Formal",
+      "look_function": "formal",
+      "episodes_or_contexts": "All professional and social appearances, Episodes 1-40",
+      "color_palette": ["#1a1a2e", "#2d3561", "#8b9dc3"],
+      "key_garments": ["navy or charcoal bespoke suit", "dark tie or no tie", "quality watch"],
+      "hair_and_makeup": "Clean professional cut. No visible makeup. Groomed but not styled — deliberately leaving room for ambiguity.",
+      "ai_prompt_seed": "male late 30s, navy bespoke suit, clean professional appearance, calculating expression, slight distance in the eyes, formal event or boardroom setting, mixed directional lighting, photorealistic portrait, 4K"
+    },
+    {
+      "look_id": "LOOK-05",
+      "character_id": "CHAR-04",
+      "look_name": "Silver Authority",
+      "look_function": "power",
+      "episodes_or_contexts": "All appearances, Episodes 1-40",
+      "color_palette": ["#c0c0c0", "#f5f5f5", "#2c2c2c", "#8b7355"],
+      "key_garments": ["dove grey or silver structured jacket", "white or ivory blouse", "tailored skirt or trousers", "understated diamond or pearl jewelry"],
+      "hair_and_makeup": "Silver-white hair, always perfectly set. Skin flawless, makeup invisible but present. Everything about her says she has never made a mistake in public.",
+      "ai_prompt_seed": "female early 60s, dove grey structured jacket, silver-white hair perfectly set, invisible but immaculate makeup, aristocratic bearing, old-money elegance, formal interior setting, cool diffused lighting, photorealistic portrait, 4K"
+    }
+  ],
+
   "location_profiles": [
     {
       "location_id": "LOC-01",
       "name": "Hale Charity Gala Ballroom",
-      "dramatic_function": "public status arena",
-      "visual_keywords": ["crystal", "marble", "gold light", "cold wealth"],
-      "asset_notes": "Must feel elite, expensive, and emotionally hostile."
+      "type": "interior",
+      "dramatic_function": "Primary arena for public status performance and dismantling — Nora's key battleground",
+      "visual_keywords": ["crystal chandeliers", "cold marble floor", "gold and black", "overlit event space", "expensive hostility"],
+      "lighting_mood": "Harsh overhead event lighting that exposes rather than flatters. No warmth. Shadows are sharp. The room is a stage.",
+      "sound_environment": "Live string quartet, crystal glasses, controlled murmur of social performance — silence cuts through when a scene lands",
+      "continuity_notes": "Same chandelier arrangement and marble floor in every appearance. The main entrance doors must always be visible from the primary stage position.",
+      "ai_prompt_seed": "luxury charity gala ballroom interior, crystal chandeliers, cold white marble floor, black and gold color scheme, harsh overhead lighting, elegant but emotionally hostile, event photography style, wide establishing shot, 4K"
+    },
+    {
+      "location_id": "LOC-02",
+      "name": "Nora's Private Apartment",
+      "type": "interior",
+      "dramatic_function": "The only space where Nora is not performing — where strategy is built and vulnerability is allowed",
+      "visual_keywords": ["minimal furniture", "evidence boards", "cold blue tones", "controlled clutter of documents", "no warmth"],
+      "lighting_mood": "Cool blue-white task lighting. Single pendant light over the work table. No ambient warmth — this is a command center, not a home.",
+      "sound_environment": "Near silence. Low hum of a city outside. Occasional paper shuffle. Music only when Nora is processing emotion alone.",
+      "continuity_notes": "The evidence board on the east wall must always be partially visible but never fully legible in wide shots. The same notebook must appear on the table in every scene.",
+      "ai_prompt_seed": "modern minimal apartment interior, cool blue-white lighting, sparse furniture, one work table with documents and a notebook, evidence board partially visible on wall, no warmth, photorealistic interior, wide angle, 4K"
+    },
+    {
+      "location_id": "LOC-03",
+      "name": "Hale Corporation Boardroom",
+      "type": "interior",
+      "dramatic_function": "Power legitimacy arena — where corporate control is asserted and the inheritance battle plays out formally",
+      "visual_keywords": ["long dark table", "floor-to-ceiling windows", "city skyline", "cold grey", "institutional authority"],
+      "lighting_mood": "Natural daylight from floor-to-ceiling windows, slightly cold. Overhead panels add institutional flatness. Power is environmental, not warm.",
+      "sound_environment": "Silence with weight. Air conditioning hum. No music — every word lands in empty space.",
+      "continuity_notes": "City skyline outside the windows must always appear at day or dusk — never full night (that is the gala location's domain). The same chairs and table configuration in every scene.",
+      "ai_prompt_seed": "corporate boardroom interior, long dark conference table, floor-to-ceiling windows, city skyline, cold grey and steel palette, institutional authority, natural daylight, photorealistic interior, wide shot, 4K"
     }
   ],
+
   "prop_profiles": [
     {
       "prop_id": "PROP-01",
-      "name": "Amelia Hale Seal",
-      "story_function": "proof of lineage and evidence trigger",
-      "visual_description": "engraved family crest with aged metal patina"
+      "name": "Amelia Hale Family Seal",
+      "owner_char_id": "CHAR-01",
+      "story_function": "evidence",
+      "first_appears_episode": 1,
+      "visual_description": "A heavy engraved metal crest, approximately 6cm diameter, housed in a navy velvet-lined case. The engraving shows an intertwined HH monogram with a crown. The metal has the patina of age — not decorative gold, but real old metal.",
+      "continuity_rules": [
+        "The seal must always appear identical — same patina, same case, same engravings",
+        "The velvet case lining is navy, never black — this distinction matters for close-up shots",
+        "The seal is always handled by Nora using both hands — never one-handed"
+      ],
+      "ai_prompt_seed": "antique family seal crest, engraved metal HH monogram with crown, aged patina, heavy authoritative object, housed in navy velvet case, still life product photography, dramatic single light source, dark background, 4K macro"
+    },
+    {
+      "prop_id": "PROP-02",
+      "name": "The Suppressed Report",
+      "owner_char_id": "shared",
+      "story_function": "plot_device",
+      "first_appears_episode": 5,
+      "visual_description": "A physical document — legal-sized pages in a plain manila envelope, labeled only with a case number. The pages are slightly worn at the edges, suggesting they have been held and put away many times.",
+      "continuity_rules": [
+        "The envelope must always show the same handwritten case number in the same position",
+        "Pages inside are never fully legible on camera — only partial text visible in close-up",
+        "The envelope is always slightly crumpled — it has been handled under stress"
+      ],
+      "ai_prompt_seed": "legal document manila envelope, slightly worn edges, handwritten case number on front, isolated on dark surface, dramatic side lighting, still life, photorealistic, 4K"
+    },
+    {
+      "prop_id": "PROP-03",
+      "name": "Celia's Pearl Bracelet",
+      "owner_char_id": "CHAR-02",
+      "story_function": "symbol",
+      "first_appears_episode": 1,
+      "visual_description": "A delicate single-strand pearl bracelet with a small gold clasp. Traditional and expensive — the kind of thing given by a family to mark an occasion. Worn on the left wrist.",
+      "continuity_rules": [
+        "Always on Celia's left wrist in every scene she appears in",
+        "When Celia is under severe stress, the bracelet may be absent — this signals her performance has broken",
+        "The bracelet must never look fake or costume — always high-quality pearl"
+      ],
+      "ai_prompt_seed": "delicate single-strand pearl bracelet on feminine wrist, small gold clasp, elegant jewelry detail, studio macro photography, clean white or dark background, soft directional light, photorealistic, 4K"
     }
   ],
-  "visual_system": "The series language is cold luxury: black, crystal, gold, and precise silhouettes. Public spaces should feel weaponized by geometry and witness.",
+
+  "visual_system": {
+    "overall_color_palette": {
+      "dominant": "deep black (#0a0a0a)",
+      "accent": "cold gold (#c9a84c)",
+      "shadow": "navy void (#0d0d1f)",
+      "highlight": "brittle white (#f8f8f8)"
+    },
+    "lighting_philosophy": "Harsh top light and cold fill — nothing is softened. Public spaces are over-lit like a courtroom. Private spaces have single-source cold task light. There is no warmth in this world except what characters perform.",
+    "texture_language": ["satin", "engraved metal", "cold marble", "pressed paper", "cut crystal"],
+    "hero_vs_villain_contrast": {
+      "hero_visual": "Nora: severe black silhouette, minimal surface, controlled negative space — reads as force through restraint",
+      "villain_visual": "Celia: warm saturated palette, maximum surface decoration, high information density — reads as desperation dressed as confidence"
+    },
+    "forbidden_aesthetics": [
+      "warm filter or golden hour glow on any scene",
+      "pastel softness or romantic diffusion",
+      "handheld shaky-cam realism",
+      "naturalistic clutter in Nora's spaces",
+      "any shot that makes Celia look vulnerable or sympathetic before Episode 30"
+    ]
+  },
+
   "continuity_rules": [
-    "Nora's scar is always on the same wrist.",
-    "Celia must always read brighter and more performative than Nora.",
-    "The family seal must visually match every mention of Hale lineage."
+    {
+      "rule_id": "CONT-01",
+      "rule_type": "character",
+      "applies_to": "CHAR-01",
+      "rule_description": "Nora's small crescent scar is always on the inside of her left wrist. It is never covered by clothing in close-up shots and must appear in the same position across all appearances.",
+      "violation_severity": "blocking"
+    },
+    {
+      "rule_id": "CONT-02",
+      "rule_type": "costume",
+      "applies_to": "LOOK-01",
+      "rule_description": "Nora's Power Black look must never include warm-toned accessories. Gold is permitted only as minimal hardware (earrings, clasp). No red, no warm brown, no champagne.",
+      "violation_severity": "blocking"
+    },
+    {
+      "rule_id": "CONT-03",
+      "rule_type": "prop",
+      "applies_to": "PROP-01",
+      "rule_description": "The Hale family seal must always appear visually identical across all appearances — same patina, same navy velvet case. Any color or material deviation is a continuity error.",
+      "violation_severity": "blocking"
+    },
+    {
+      "rule_id": "CONT-04",
+      "rule_type": "character",
+      "applies_to": "CHAR-02",
+      "rule_description": "Celia must always read visually warmer, brighter, and more decorated than Nora in any shared scene. If they appear together, Celia's color temperature and surface decoration must be measurably higher.",
+      "violation_severity": "blocking"
+    },
+    {
+      "rule_id": "CONT-05",
+      "rule_type": "location",
+      "applies_to": "LOC-01",
+      "rule_description": "The gala ballroom must always show the same chandelier arrangement and marble floor. Camera angles may vary but the physical space must be visually consistent.",
+      "violation_severity": "warning"
+    },
+    {
+      "rule_id": "CONT-06",
+      "rule_type": "prop",
+      "applies_to": "PROP-03",
+      "rule_description": "Celia's pearl bracelet must be on her left wrist in every scene she appears in, except scenes where her public performance has broken — bracelet absence is a deliberate signal, not an oversight.",
+      "violation_severity": "blocking"
+    },
+    {
+      "rule_id": "CONT-07",
+      "rule_type": "timeline",
+      "applies_to": "CHAR-01",
+      "rule_description": "Before Episode 10, Nora must never be visually recognizable as Nora Hale to other characters. Any framing that lets in-world characters see the scar too clearly before the story's reveal window is a timing error.",
+      "violation_severity": "blocking"
+    }
   ],
+
   "ai_asset_matrix": [
     {
-      "asset_type": "character_look",
       "asset_id": "LOOK-01",
-      "prompt_seed": "female revenge heiress in black satin, cold luxury, high restraint",
-      "must_have": "sharp silhouette, minimal jewelry, composure",
-      "avoid": "soft pastel romance styling"
+      "asset_type": "character_look",
+      "prompt_seed": "female late 20s, severe black satin power blazer over high-neck fitted black dress, sharp angular silhouette, single small cold gold earring, controlled low chignon, cool skin tone, matte makeup, cold confidence, harsh top studio lighting, fashion editorial portrait, 4K",
+      "must_have": ["black satin material visible", "sharp silhouette", "cold skin tone", "minimal jewelry only", "controlled hair"],
+      "must_avoid": ["warm filter", "pastel tones", "loose or romantic hair", "multiple accessories", "smile or approachable expression"],
+      "resolution_hint": "portrait"
+    },
+    {
+      "asset_id": "LOOK-02",
+      "asset_type": "character_look",
+      "prompt_seed": "female late 20s, charcoal structured coat, cream silk blouse, dark slim trousers, hair in soft professional waves, neutral makeup, consultancy setting, soft office directional lighting, photorealistic portrait, 4K",
+      "must_have": ["charcoal structured coat", "cream blouse visible", "professional but understated", "soft waves hair"],
+      "must_avoid": ["Power Black severity", "harsh lighting", "obvious luxury signals"],
+      "resolution_hint": "portrait"
+    },
+    {
+      "asset_id": "LOOK-03",
+      "asset_type": "character_look",
+      "prompt_seed": "female mid 30s, champagne or blush evening gown, pearl bracelet visible on left wrist, rose-gold makeup, soft polished updo, warm event lighting, social performance, elegant ballroom background, photorealistic portrait, 4K",
+      "must_have": ["champagne or blush gown", "pearl bracelet on left wrist", "warm rose-gold palette", "polished updo"],
+      "must_avoid": ["black tones", "severity or restraint", "cold lighting"],
+      "resolution_hint": "portrait"
+    },
+    {
+      "asset_id": "LOOK-04",
+      "asset_type": "character_look",
+      "prompt_seed": "male late 30s, navy bespoke suit, clean professional haircut, calculating slight distance in expression, formal social or boardroom setting, mixed directional lighting, photorealistic portrait, 4K",
+      "must_have": ["navy bespoke suit", "professional clean appearance", "ambiguous calculated expression"],
+      "must_avoid": ["warm or open expression", "casual styling", "uniform or obvious villain signaling"],
+      "resolution_hint": "portrait"
+    },
+    {
+      "asset_id": "LOOK-05",
+      "asset_type": "character_look",
+      "prompt_seed": "female early 60s, dove grey structured jacket, silver-white hair perfectly set, invisible immaculate makeup, aristocratic old-money bearing, cool diffused interior lighting, photorealistic portrait, 4K",
+      "must_have": ["dove grey or silver jacket", "silver-white perfectly set hair", "aristocratic bearing", "controlled expression"],
+      "must_avoid": ["warmth or approachability", "casual or relaxed posture", "visible emotion"],
+      "resolution_hint": "portrait"
+    },
+    {
+      "asset_id": "LOC-01",
+      "asset_type": "location",
+      "prompt_seed": "luxury charity gala ballroom, crystal chandeliers, cold white marble floor, black and gold event decor, harsh overhead event lighting, emotionally hostile elegance, wide establishing shot, photorealistic, 4K",
+      "must_have": ["crystal chandeliers visible", "marble floor", "black and gold palette", "harsh overhead lighting", "sense of a performance stage"],
+      "must_avoid": ["warm romantic lighting", "cozy atmosphere", "casual event decor"],
+      "resolution_hint": "landscape"
+    },
+    {
+      "asset_id": "LOC-02",
+      "asset_type": "location",
+      "prompt_seed": "modern minimal apartment interior, cool blue-white task lighting, sparse furniture, single work table with documents and a closed notebook, evidence board partially visible on east wall, no warmth, photorealistic, wide angle, 4K",
+      "must_have": ["cool blue-white light source", "work table with documents", "sparse minimal furniture", "evidence board partially in frame"],
+      "must_avoid": ["warm tones", "decorative personal items", "plants or soft textiles"],
+      "resolution_hint": "landscape"
+    },
+    {
+      "asset_id": "LOC-03",
+      "asset_type": "location",
+      "prompt_seed": "corporate boardroom, long dark conference table, floor-to-ceiling windows with city skyline, cold grey and steel palette, institutional authority, natural cold daylight, wide shot, photorealistic, 4K",
+      "must_have": ["long dark conference table", "floor-to-ceiling windows", "city skyline visible", "cold grey palette"],
+      "must_avoid": ["night sky outside windows", "warm wood tones", "decorative personal items on table"],
+      "resolution_hint": "landscape"
+    },
+    {
+      "asset_id": "PROP-01",
+      "asset_type": "prop",
+      "prompt_seed": "antique family seal crest, engraved metal HH monogram with crown, aged patina surface, heavy authoritative object, navy velvet case open beside it, still life macro photography, single dramatic side light, dark background, 4K",
+      "must_have": ["HH monogram engraving", "aged metal patina", "navy velvet case", "heavy authoritative appearance"],
+      "must_avoid": ["shiny new gold", "decorative fussy ornament", "modern appearance"],
+      "resolution_hint": "square"
+    },
+    {
+      "asset_id": "PROP-02",
+      "asset_type": "prop",
+      "prompt_seed": "plain manila legal envelope, slightly worn edges, handwritten case number on front label, isolated on dark surface, dramatic side light, photorealistic still life, 4K",
+      "must_have": ["manila envelope", "worn edges", "handwritten case number label", "sense of weight and history"],
+      "must_avoid": ["bright colors", "modern digital labels", "pristine clean condition"],
+      "resolution_hint": "square"
+    },
+    {
+      "asset_id": "PROP-03",
+      "asset_type": "prop",
+      "prompt_seed": "delicate single-strand pearl bracelet with small gold clasp, worn on feminine left wrist, elegant jewelry macro, soft directional studio light, clean background, photorealistic, 4K",
+      "must_have": ["single-strand pearl design", "small gold clasp", "left wrist placement", "high-quality pearl appearance"],
+      "must_avoid": ["fake or costume appearance", "multi-strand design", "chunky or statement styling"],
+      "resolution_hint": "square"
     }
   ],
-  "setting_bible_markdown": "# 04_<剧名>_英文设定集\n\n## Quick Reference\n- Project Title: Midnight Heiress\n- Logline: A dead heiress returns under a false name to reclaim her empire in public.\n\n## World Background\nPublic witness is power in the Hale world.\n\n## Character Profiles\n### CHAR-01 Nora Hale / Eva Stone\nCold luxury, severe silhouette, controlled speech.\n"
+
+  "narrative_forbidden_zones": [
+    "Nora must never beg, cry first, or physically retreat from a confrontation — she may be wounded but she does not break in front of an enemy.",
+    "The family seal must never appear damaged, incomplete, or different from its established visual description.",
+    "Celia must not be portrayed sympathetically or as a victim until after Episode 30 — her suffering must be clearly a consequence of her own choices, not audience manipulation.",
+    "Adrian must never be definitively established as innocent or guilty before Episode 25 — his ambiguity is a core dramatic engine.",
+    "No character may reveal that they know Eva is Nora before the story's designed reveal window without being given a specific scene that seals their silence."
+  ]
 }
