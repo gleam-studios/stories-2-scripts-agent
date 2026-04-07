@@ -9,43 +9,145 @@
     "mood_tags": ["sharp", "glossy", "addictive", "cold luxury"],
     "protagonist_snapshot": "Nora uses public rooms like a battlefield."
   },
+
+  "core_selling_points": {
+    "genre_hook": "Hidden-identity revenge romance set inside the NA elite philanthropic world — every public event is a war stage.",
+    "emotional_hook": "The pleasure of watching a dead woman walk back into the room that buried her, and systematically dismantle everyone who profited from her disappearance.",
+    "character_hook": "Nora never raises her voice. She wins by being the only person in the room who already knows the ending.",
+    "differentiation": "Conflict lives entirely in public elite venues — galas, auctions, board rooms — where social witnesses are weaponized and every reversal is performed in front of cameras."
+  },
+
   "adaptation_positioning": {
     "core_hook": "The presumed-dead heiress walks into her family's gala under another name and starts dismantling their power in front of cameras.",
     "audience_positioning": "Female-skewing overseas short-drama audience seeking status reversal, revenge payoff, and high-tension romance.",
-    "similarity_avoidance_direction": "Shift conflict into public elite venues, boardroom legitimacy warfare, and fast alliance pressure."
+    "similarity_avoidance_direction": "Shift conflict into public elite venues, boardroom legitimacy warfare, and fast alliance pressure — not household confrontations."
   },
-  "season_outline": {
-    "story_premise": "The real heiress returns under an alias to destroy the lie holding her cousin on the throne.",
-    "main_conflict": "Nora must win legitimacy in public before the board can erase her again.",
-    "arc_segments": [
-      {
-        "phase": "launch",
-        "goal": "False-name return, first public reversal, and male lead enters the war.",
-        "episode_span": "EP01-EP08"
-      },
-      {
-        "phase": "rise",
-        "goal": "Alliance deepens, public wins stack, evidence becomes addictive.",
-        "episode_span": "EP09-EP20"
-      },
-      {
-        "phase": "storm",
-        "goal": "Betrayal, false defeat, and villain pressure closes in from all sides.",
-        "episode_span": "EP21-EP32"
-      },
-      {
-        "phase": "finale",
-        "goal": "Public truth revealed, board collapses, Nora reclaims power without surrender.",
-        "episode_span": "EP33-EP40"
-      }
-    ],
-    "major_twists": [
-      "Adrian knows Eva is lying earlier than he admits — and chose to protect her anyway.",
-      "The forgery ring reaches the board, implicating a director Nora initially trusted.",
-      "Nora's legal identity was erased through a document Nora's own father signed under duress."
-    ],
-    "final_payoff": "Nora reclaims her name in public, with Adrian beside her by choice — not contract."
+
+  "world_setting_summary": {
+    "era_and_environment": "Contemporary NA elite philanthropic society — old-money families with donor seats at universities, hospitals, and cultural boards. Power is performed publicly.",
+    "social_rules": "Legitimacy is the currency. A name on a building buys you authority; losing that name loses you everything. Social humiliation in public spaces has real legal and economic consequences.",
+    "industry_or_special_setting": "The Hale family controls their legitimacy through charitable foundations, board seats, and a network of loyalist attorneys. Every social event is also a business meeting.",
+    "key_constraints": [
+      "Nora cannot reveal her true identity until she has enough public proof to survive the legal counterattack.",
+      "Evidence only has power if presented in a public setting where it cannot be quietly suppressed.",
+      "Adrian operates under a fiduciary obligation that limits how openly he can assist Nora."
+    ]
   },
+
+  "character_cards": [
+    {
+      "character_id": "CHAR-01",
+      "name": "Nora Hale / Eva Stone",
+      "role_type": "protagonist",
+      "identity": "The legal heiress of the Hale Foundation, returning under a false name after being declared dead.",
+      "personality_keywords": ["composed", "strategic", "precise", "cold", "patient"],
+      "desire_goal": "Reclaim her legal identity and the foundation from Celia — publicly, so it cannot be reversed.",
+      "relation_to_protagonist": "—",
+      "contrast_point": "She weaponizes stillness: the less she does, the more dangerous she becomes.",
+      "arc_note": "Moves from controlled strategic player to someone who must choose between winning and letting someone in."
+    },
+    {
+      "character_id": "CHAR-02",
+      "name": "Adrian Vale",
+      "role_type": "romance",
+      "identity": "Independent board attorney with a fiduciary seat on the Hale Foundation.",
+      "personality_keywords": ["perceptive", "guarded", "dry", "principled", "drawn in"],
+      "desire_goal": "Protect the foundation's legal integrity — while privately deciding whose side the truth is actually on.",
+      "relation_to_protagonist": "Begins as a neutral threat; becomes a covert ally; ends as a chosen partner.",
+      "contrast_point": "He knows Eva is lying from week two, and says nothing — which is its own kind of commitment.",
+      "arc_note": "Moves from institutional observer to someone who puts his license on the line for a woman he can't legally defend."
+    },
+    {
+      "character_id": "CHAR-03",
+      "name": "Celia Hale",
+      "role_type": "antagonist",
+      "identity": "Nora's cousin, installed as the public face of the Hale Foundation after Nora's disappearance.",
+      "personality_keywords": ["polished", "paranoid", "socially aggressive", "performative", "brittle under pressure"],
+      "desire_goal": "Keep the Hale name and everything it controls — including the secret of what happened to Nora.",
+      "relation_to_protagonist": "Public face of everything Nora lost; aware that Eva is too dangerous to ignore.",
+      "contrast_point": "She is genuinely good at performing legitimacy, which makes her harder to expose than a simple villain.",
+      "arc_note": "Escalates from social exclusion to active evidence destruction to institutional weaponization — each step revealing how much she's hiding."
+    },
+    {
+      "character_id": "CHAR-04",
+      "name": "Miriam Cross",
+      "role_type": "catalyst",
+      "identity": "Former Hale family archivist, now retired, the only living person who can verify Nora's identity independently.",
+      "personality_keywords": ["meticulous", "fearful", "loyal to the truth", "isolated"],
+      "desire_goal": "Stay safe — until she decides the truth is worth more than her safety.",
+      "relation_to_protagonist": "The one witness Nora needs and cannot force; she has to be earned.",
+      "contrast_point": "She knows everything and has said nothing for years — making her both the key and the lock.",
+      "arc_note": "Moves from silence to testimony at the moment the cost of staying silent becomes higher than the cost of speaking."
+    }
+  ],
+
+  "main_plot": {
+    "protagonist_want": "Nora wants to reclaim her legal name and the Hale Foundation — publicly, irreversibly, and without surrendering the power she's built as Eva.",
+    "antagonist_block": "Celia controls the board, the attorneys, and the social infrastructure; any private confrontation can be suppressed, so Nora must build public proof that is too visible to erase.",
+    "escalation_path": [
+      "Nora enters as Eva Stone and begins collecting public proof — each appearance tightens the net around Celia's forged legitimacy.",
+      "Celia identifies Eva as a genuine threat and escalates from social exclusion to institutional weaponization.",
+      "A board director Nora trusted turns out to be part of the original erasure — forcing Nora to rebuild her alliance from scratch.",
+      "The final confrontation requires Nora to make a public move that exposes herself before the proof is fully locked — a calculated risk she has to decide to take."
+    ],
+    "resolution_direction": "Nora forces a public board vote with Miriam's testimony and the recovered documents — Celia's position collapses legally, and Nora reclaims the Hale name in the same room where she was first declared dead."
+  },
+
+  "subplot_map": [
+    {
+      "subplot_id": "SUB-01",
+      "subplot_type": "romance",
+      "characters_involved": ["CHAR-01", "CHAR-02"],
+      "arc_summary": "Adrian suspects Eva from the beginning but says nothing, choosing instead to position himself as her shadow protection. Their alliance deepens into something neither can name until Nora's identity is almost exposed and Adrian steps in front of the bullet. By the end, the romance is not resolved by the identity reveal — it was already decided before it.",
+      "function_in_story": "The romance axis creates a second layer of tension underneath the revenge plot — every scene between them carries both strategic and emotional weight."
+    },
+    {
+      "subplot_id": "SUB-02",
+      "subplot_type": "identity_secret",
+      "characters_involved": ["CHAR-01", "CHAR-04"],
+      "arc_summary": "Miriam knows the truth and has chosen silence for years out of fear. Nora finds her early but cannot force her hand. Over the middle act, Nora earns Miriam's trust through a series of small choices that demonstrate she isn't there for revenge alone — she's there to correct a wrong. Miriam's testimony is the keystone of the final act.",
+      "function_in_story": "The Miriam subplot controls the timing of the climax — her arc determines when the truth can go public, adding a human countdown to the structural pressure."
+    },
+    {
+      "subplot_id": "SUB-03",
+      "subplot_type": "power_struggle",
+      "characters_involved": ["CHAR-03", "CHAR-02"],
+      "arc_summary": "Celia repeatedly attempts to use the board structure to co-opt or neutralize Adrian, correctly identifying him as the weak point in Nora's position. Adrian navigates this through procedural precision, but by the storm phase he is forced to choose between institutional neutrality and active intervention.",
+      "function_in_story": "This subplot raises the institutional cost of Adrian's alliance with Nora, making his final choice feel genuinely earned rather than easy."
+    }
+  ],
+
+  "story_structure": {
+    "opening": {
+      "protagonist_intro": "Nora enters the Hale charity gala as Eva Stone — composed, anonymous, and already planning.",
+      "situation_setup": "The Hale Foundation is thriving under Celia's public face; Nora's legal death has been filed, processed, and largely forgotten by everyone except the people who arranged it.",
+      "inciting_event": "Celia publicly humiliates Eva without knowing who she is — and a camera catches the scar on Nora's wrist that only the real heiress would have.",
+      "first_hook": "Adrian notices Eva knows family-only information no outsider should have — and chooses not to say anything."
+    },
+    "development": {
+      "protagonist_action": "Nora uses each public event as a surgical strike — surfacing one layer of forged legitimacy at a time, building public record without triggering a legal counterattack she isn't ready for.",
+      "conflict_escalation": "Celia escalates from social exclusion to loyalist deployment to active board manipulation; Adrian's fiduciary position becomes increasingly untenable as the evidence mounts.",
+      "relationship_changes": "Nora and Adrian move from strategic mutual recognition to covert alliance to something that can no longer be called professional; Celia and Nora move from social warfare to open institutional combat.",
+      "satisfaction_crisis_pattern": "Each public event ends with Nora winning status and Celia losing ground — followed immediately by a private threat that erases the safety of the win. The rhythm is: public high → private danger → harder move required."
+    },
+    "midpoint_reversal": {
+      "partial_truth_reveal": "A board director Nora has been using as a passive ally is revealed to have signed the original erasure documents — he was not neutral; he was managed.",
+      "major_setback": "The evidence chain Nora has spent twelve episodes building is legally discredited overnight by a document Celia filed six months before Nora returned.",
+      "antagonist_gains": "Celia forces an emergency board vote that strips Eva of all public standing — and the room watches it happen."
+    },
+    "climax": {
+      "ultimate_conflict": "Nora must decide whether to wait for safer proof or force the final public confrontation now, before Celia destroys the last remaining witness.",
+      "biggest_secret_revealed": "The document that erased Nora's identity was signed by Nora's own father under legal duress — the forgery ring goes deeper than Celia, implicating foundation architects who are still on the board.",
+      "relationship_reconstruction": "Adrian steps outside his fiduciary role publicly for the first time — a move that costs him his board seat and makes his position on Nora's side unambiguous."
+    },
+    "ending": {
+      "main_plot_resolution": "Miriam testifies in an open board session; the recovered documents — including the duress clause on Nora's father's signature — are read into the record. The board vote reverses. Celia's position collapses legally.",
+      "character_fates": "Nora reclaims the Hale name and takes the foundation chair; Celia faces civil proceedings; Adrian resigns from the board by choice and takes independent counsel; Miriam's testimony is entered into the public archive.",
+      "emotional_landing": "The final scene is not a victory speech. It is Nora, alone in the room where she was declared dead, signing her real name for the first time in years.",
+      "season2_hook": "A letter arrives addressed to Nora Hale — postmarked three weeks before her father's death — suggesting the erasure was not Celia's idea originally."
+    }
+  },
+
   "episode_outlines": [
     {
       "episode_id": "EP01",
@@ -86,6 +188,7 @@
       }
     }
   ],
+
   "season_hook_map": [
     {
       "phase": "launch",
@@ -108,6 +211,7 @@
       "hook_direction": "Who is left standing when the truth finally goes fully public?"
     }
   ],
+
   "episode_hook_map": [
     {
       "episode_id": "EP01",
@@ -120,13 +224,14 @@
       "hook_out": "The board is forced to ask who Eva really is — and someone in the room already knows."
     }
   ],
+
   "paywall_map": [
     {
       "episode_id": "EP08",
       "position_ratio": "0.20",
       "phase": "first_lock",
       "type": "identity confirmation",
-      "beat": "A witness confirms Nora knew a family protocol no outsider could ever know.",
+      "beat": "A witness confirms Nora knew a family protocol no outsider could know — on the record.",
       "viewer_task": "Is Eva actually Nora — and will Adrian use that knowledge to help or destroy her?"
     },
     {
@@ -141,7 +246,7 @@
       "episode_id": "EP28",
       "position_ratio": "0.70",
       "phase": "storm_lock",
-      "type": "反派阶段性得逞",
+      "type": "antagonist gains",
       "beat": "The board strips Eva of all public standing using the forged identity Celia planted six months earlier.",
       "viewer_task": "Has Nora lost everything — or is this the moment she finally burns the whole house down?"
     },
@@ -149,10 +254,85 @@
       "episode_id": "EP36",
       "position_ratio": "0.90",
       "phase": "finale_lock",
-      "type": "真相即将大白",
+      "type": "truth imminent",
       "beat": "The erased document surfaces live on broadcast — signed by Nora's father under duress.",
       "viewer_task": "Will the truth survive the institution's last attempt to bury it?"
     }
   ],
-  "outline_markdown": "# 01_英文大纲\n\n## Quick Reference\n- Project Title: Midnight Heiress\n- Episode Count: 40\n\n## Adaptation Positioning\n...(see full sample in 01_英文大纲.md)\n\n## Episode Outline\n### EP01 - Back From the Grave\n- arc_phase: launch\n- Core Event: Celia publicly humiliates Eva without knowing who she is.\n- Turn: Adrian notices Eva knows family-only information.\n- Emotional Goal: Audience feels the pleasure of watching a predator underestimate the wrong person.\n- Relationship Shift: Nora and Adrian move from strangers to mutual threat.\n- Antagonist Pressure: Celia deploys social exclusion to remove Eva from the power circle.\n- Satisfaction Beat: [status_reversal] Nora deflects Celia's dismissal with a single line.\n- End Hook: [identity_tease] A camera catches the scar only the real heiress had.\n"
+
+  "signature_scenes": [
+    {
+      "scene_id": "SIG-01",
+      "episode_id": "EP01",
+      "scene_type": "public_reversal",
+      "description": "Celia corners Eva in the portrait corridor and delivers what should be a final social execution. Eva responds with one sentence and lifts a glass of champagne. The camera that catches it is rolling for the donor recap reel.",
+      "why_unmissable": "This is the audience's first proof that Eva is not a victim — she is the predator in the room.",
+      "production_weight": "highest"
+    },
+    {
+      "scene_id": "SIG-02",
+      "episode_id": "EP08",
+      "scene_type": "identity_reveal",
+      "description": "Miriam Cross sits across from a board recorder and confirms that Eva Stone knew the family protocol — a procedure so private it was never written down. The room goes quiet. Adrian doesn't move.",
+      "why_unmissable": "The first on-record confirmation that Eva might be who she says she is — and the moment the board can no longer pretend the question isn't real.",
+      "production_weight": "highest"
+    },
+    {
+      "scene_id": "SIG-03",
+      "episode_id": "EP20",
+      "scene_type": "romance_peak",
+      "description": "After the board strips Eva's standing, Adrian finds her in the parking structure. He doesn't say anything useful. He just stands there until she stops pretending to be fine. It is the first time in twenty episodes that Nora lets someone see her without the armor.",
+      "why_unmissable": "The emotional turning point of the romance — the moment the audience understands this is not a strategic alliance anymore.",
+      "production_weight": "highest"
+    },
+    {
+      "scene_id": "SIG-04",
+      "episode_id": "EP28",
+      "scene_type": "confrontation",
+      "description": "Celia calls a public board vote to strip Eva's remaining access. Every vote goes against Eva. The room watches. Celia smiles. And then Eva stands up and reads the clause in the foundation charter that Celia's motion just accidentally triggered.",
+      "why_unmissable": "The ultimate fake-out — apparent total defeat that is actually the trap closing.",
+      "production_weight": "highest"
+    },
+    {
+      "scene_id": "SIG-05",
+      "episode_id": "EP40",
+      "scene_type": "truth_drop",
+      "description": "Nora sits alone in the room where she was declared dead, and signs her real name for the first time in years. No speech. No celebration. Just her hand and the paper and the silence.",
+      "why_unmissable": "The emotional payoff of the entire series — the moment that makes every prior scene feel inevitable.",
+      "production_weight": "highest"
+    }
+  ],
+
+  "viral_clip_candidates": [
+    {
+      "clip_id": "CLIP-01",
+      "episode_id": "EP01",
+      "clip_type": "status_reversal",
+      "description": "Celia delivers a social death sentence in a corridor. Eva responds with a single line and walks away. Celia has nothing left to say.",
+      "hook_in_3s": "A woman in a corridor tells another woman she doesn't belong here — and the second woman doesn't blink."
+    },
+    {
+      "clip_id": "CLIP-02",
+      "episode_id": "EP08",
+      "clip_type": "plot_twist",
+      "description": "The board recorder is still running when Miriam confirms the protocol. The entire room processes in real time that they have been wrong about Eva Stone.",
+      "hook_in_3s": "An old woman sits down in front of a microphone and says: 'She knew the fourth clause. Nobody outside the family knew the fourth clause.'"
+    },
+    {
+      "clip_id": "CLIP-03",
+      "episode_id": "EP28",
+      "clip_type": "face_slap",
+      "description": "Celia's victory board vote triggers the exact charter clause that gives Nora emergency restoration rights. The attorney reads it aloud into the record while Celia's expression dissolves.",
+      "hook_in_3s": "A board room. A vote. A woman winning. And then the attorney starts reading something no one was supposed to remember."
+    },
+    {
+      "clip_id": "CLIP-04",
+      "episode_id": "EP20",
+      "clip_type": "romance_moment",
+      "description": "Adrian finds Eva alone after her public defeat. He doesn't try to fix it. He just stands there. She finally stops pretending. Neither of them says anything for a long time.",
+      "hook_in_3s": "He just stands there. And she just — stops."
+    }
+  ],
+
+  "outline_markdown": "# 01_英文大纲\n\n(Full markdown in 01_英文大纲.md sample file)\n"
 }

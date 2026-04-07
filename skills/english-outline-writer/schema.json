@@ -2,15 +2,23 @@
   "type": "object",
   "required": [
     "quick_reference",
+    "core_selling_points",
     "adaptation_positioning",
-    "season_outline",
+    "world_setting_summary",
+    "character_cards",
+    "main_plot",
+    "subplot_map",
+    "story_structure",
     "episode_outlines",
     "season_hook_map",
     "episode_hook_map",
     "paywall_map",
+    "signature_scenes",
+    "viral_clip_candidates",
     "outline_markdown"
   ],
   "properties": {
+
     "quick_reference": {
       "type": "object",
       "required": ["project_title", "logline", "target_market", "genre", "episode_count", "episode_duration", "mood_tags", "protagonist_snapshot"],
@@ -25,6 +33,18 @@
         "protagonist_snapshot": { "type": "string" }
       }
     },
+
+    "core_selling_points": {
+      "type": "object",
+      "required": ["genre_hook", "emotional_hook", "character_hook", "differentiation"],
+      "properties": {
+        "genre_hook": { "type": "string", "description": "Genre type and core attraction." },
+        "emotional_hook": { "type": "string", "description": "The emotion that drives bingeing." },
+        "character_hook": { "type": "string", "description": "What makes the protagonist or key character unforgettable." },
+        "differentiation": { "type": "string", "description": "What distinguishes this from similar projects." }
+      }
+    },
+
     "adaptation_positioning": {
       "type": "object",
       "required": ["core_hook", "audience_positioning", "similarity_avoidance_direction"],
@@ -34,105 +54,176 @@
         "similarity_avoidance_direction": { "type": "string" }
       }
     },
-    "season_outline": {
+
+    "world_setting_summary": {
       "type": "object",
-      "required": ["story_premise", "main_conflict", "arc_segments", "major_twists", "final_payoff"],
+      "required": ["era_and_environment", "social_rules", "industry_or_special_setting", "key_constraints"],
       "properties": {
-        "story_premise": { "type": "string" },
-        "main_conflict": { "type": "string" },
-        "arc_segments": {
+        "era_and_environment": { "type": "string", "description": "Time period and world environment." },
+        "social_rules": { "type": "string", "description": "Core social order and power structure." },
+        "industry_or_special_setting": { "type": "string", "description": "Industry background or special world rules." },
+        "key_constraints": {
           "type": "array",
-          "minItems": 4,
-          "maxItems": 4,
-          "description": "Exactly 4 entries: launch, rise, storm, finale.",
-          "items": {
-            "type": "object",
-            "required": ["phase", "goal", "episode_span"],
-            "properties": {
-              "phase": {
-                "type": "string",
-                "enum": ["launch", "rise", "storm", "finale"]
-              },
-              "goal": { "type": "string" },
-              "episode_span": { "type": "string", "description": "e.g. EP01-EP08" }
-            }
-          }
-        },
-        "major_twists": {
-          "type": "array",
-          "minItems": 2,
-          "items": { "type": "string" }
-        },
-        "final_payoff": { "type": "string" }
+          "minItems": 1,
+          "items": { "type": "string" },
+          "description": "Hard narrative constraints (e.g. identity cannot be revealed; evidence only works in public)."
+        }
       }
     },
+
+    "character_cards": {
+      "type": "array",
+      "minItems": 4,
+      "description": "Must include protagonist, antagonist, romance character, and at least one key supporting character.",
+      "items": {
+        "type": "object",
+        "required": ["character_id", "name", "role_type", "identity", "personality_keywords", "desire_goal", "relation_to_protagonist", "contrast_point", "arc_note"],
+        "properties": {
+          "character_id": { "type": "string", "description": "Aligned with adaptation_plan.role_function_map and setting_bible." },
+          "name": { "type": "string" },
+          "role_type": {
+            "type": "string",
+            "enum": ["protagonist", "antagonist", "ally", "romance", "catalyst", "supporting"]
+          },
+          "identity": { "type": "string", "description": "Role/position in the story world." },
+          "personality_keywords": {
+            "type": "array",
+            "minItems": 3,
+            "maxItems": 5,
+            "items": { "type": "string" }
+          },
+          "desire_goal": { "type": "string", "description": "One sentence: what they want most." },
+          "relation_to_protagonist": { "type": "string", "description": "One sentence: how they relate to the main character." },
+          "contrast_point": { "type": "string", "description": "One sentence: the contradiction that makes them three-dimensional." },
+          "arc_note": { "type": "string", "description": "One sentence: full-season growth or reversal trajectory." }
+        }
+      }
+    },
+
+    "main_plot": {
+      "type": "object",
+      "required": ["protagonist_want", "antagonist_block", "escalation_path", "resolution_direction"],
+      "properties": {
+        "protagonist_want": { "type": "string", "description": "What does the protagonist want?" },
+        "antagonist_block": { "type": "string", "description": "Who/what blocks them and how?" },
+        "escalation_path": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 4,
+          "items": { "type": "string" },
+          "description": "3-4 key escalation nodes, in order."
+        },
+        "resolution_direction": { "type": "string", "description": "How is the main plot resolved?" }
+      }
+    },
+
+    "subplot_map": {
+      "type": "array",
+      "minItems": 2,
+      "description": "At least 2 subplots. Each must have at least one intersection with the main plot.",
+      "items": {
+        "type": "object",
+        "required": ["subplot_id", "subplot_type", "characters_involved", "arc_summary", "function_in_story"],
+        "properties": {
+          "subplot_id": { "type": "string", "description": "e.g. SUB-01" },
+          "subplot_type": {
+            "type": "string",
+            "enum": ["romance", "revenge", "identity_secret", "family", "power_struggle", "investigation", "competition", "friendship"]
+          },
+          "characters_involved": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "arc_summary": { "type": "string", "description": "2-3 sentences: what happens in this subplot start to finish." },
+          "function_in_story": { "type": "string", "description": "One sentence: what it does for the main plot." }
+        }
+      }
+    },
+
+    "story_structure": {
+      "type": "object",
+      "required": ["opening", "development", "midpoint_reversal", "climax", "ending"],
+      "properties": {
+        "opening": {
+          "type": "object",
+          "required": ["protagonist_intro", "situation_setup", "inciting_event", "first_hook"],
+          "properties": {
+            "protagonist_intro": { "type": "string" },
+            "situation_setup": { "type": "string" },
+            "inciting_event": { "type": "string" },
+            "first_hook": { "type": "string" }
+          }
+        },
+        "development": {
+          "type": "object",
+          "required": ["protagonist_action", "conflict_escalation", "relationship_changes", "satisfaction_crisis_pattern"],
+          "properties": {
+            "protagonist_action": { "type": "string" },
+            "conflict_escalation": { "type": "string" },
+            "relationship_changes": { "type": "string" },
+            "satisfaction_crisis_pattern": { "type": "string", "description": "How satisfactions and crises alternate in this phase." }
+          }
+        },
+        "midpoint_reversal": {
+          "type": "object",
+          "required": ["partial_truth_reveal", "major_setback", "antagonist_gains"],
+          "properties": {
+            "partial_truth_reveal": { "type": "string" },
+            "major_setback": { "type": "string" },
+            "antagonist_gains": { "type": "string" }
+          }
+        },
+        "climax": {
+          "type": "object",
+          "required": ["ultimate_conflict", "biggest_secret_revealed", "relationship_reconstruction"],
+          "properties": {
+            "ultimate_conflict": { "type": "string" },
+            "biggest_secret_revealed": { "type": "string" },
+            "relationship_reconstruction": { "type": "string" }
+          }
+        },
+        "ending": {
+          "type": "object",
+          "required": ["main_plot_resolution", "character_fates", "emotional_landing"],
+          "properties": {
+            "main_plot_resolution": { "type": "string" },
+            "character_fates": { "type": "string" },
+            "emotional_landing": { "type": "string" },
+            "season2_hook": { "type": "string", "description": "Optional. Leave empty string if not applicable." }
+          }
+        }
+      }
+    },
+
     "episode_outlines": {
       "type": "array",
       "minItems": 1,
-      "description": "Count must equal quick_reference.episode_count. Every episode must have its own entry.",
+      "description": "Count must equal quick_reference.episode_count. Every episode must have its own complete entry.",
       "items": {
         "type": "object",
-        "required": [
-          "episode_id",
-          "title",
-          "arc_phase",
-          "logline",
-          "core_event",
-          "turn",
-          "emotional_goal",
-          "relationship_shift",
-          "antagonist_pressure",
-          "satisfaction_beat",
-          "end_hook"
-        ],
+        "required": ["episode_id", "title", "arc_phase", "logline", "core_event", "turn", "emotional_goal", "relationship_shift", "antagonist_pressure", "satisfaction_beat", "end_hook"],
         "properties": {
-          "episode_id": {
-            "type": "string",
-            "description": "e.g. EP01. Must align with adaptation_plan."
-          },
+          "episode_id": { "type": "string" },
           "title": { "type": "string" },
           "arc_phase": {
             "type": "string",
-            "enum": ["launch", "rise", "storm", "finale"],
-            "description": "Must use enum only. Aligned with adaptation_plan.rhythm_curve."
+            "enum": ["launch", "rise", "storm", "finale"]
           },
-          "logline": {
-            "type": "string",
-            "description": "One sentence: episode positioning."
-          },
-          "core_event": {
-            "type": "string",
-            "description": "One sentence: the central narrative event this episode."
-          },
-          "turn": {
-            "type": "string",
-            "description": "One sentence: the key information, relationship, or power shift."
-          },
-          "emotional_goal": {
-            "type": "string",
-            "description": "One sentence: what the audience should feel by the episode's end."
-          },
-          "relationship_shift": {
-            "type": "string",
-            "description": "One sentence: what changes between key characters this episode."
-          },
-          "antagonist_pressure": {
-            "type": "string",
-            "description": "One sentence: the specific step the antagonist or institution takes."
-          },
+          "logline": { "type": "string" },
+          "core_event": { "type": "string" },
+          "turn": { "type": "string" },
+          "emotional_goal": { "type": "string" },
+          "relationship_shift": { "type": "string" },
+          "antagonist_pressure": { "type": "string" },
           "satisfaction_beat": {
             "type": "object",
             "required": ["tag", "description"],
             "properties": {
               "tag": {
                 "type": "string",
-                "enum": ["status_reversal", "face_slap", "underdog_rise", "emotional_eruption", "truth_drop"],
-                "description": "Must use enum from rules/06_爽点矩阵."
+                "enum": ["status_reversal", "face_slap", "underdog_rise", "emotional_eruption", "truth_drop"]
               },
-              "description": {
-                "type": "string",
-                "description": "One sentence: the concrete satisfaction payoff this episode."
-              }
+              "description": { "type": "string" }
             }
           },
           "end_hook": {
@@ -143,36 +234,30 @@
                 "type": "string",
                 "enum": ["identity_tease", "evidence_drop", "alliance_shift", "betrayal_reveal", "romance_peak", "cliffhanger", "reversal", "setup"]
               },
-              "hook_out": {
-                "type": "string",
-                "description": "One sentence: what the audience sees or hears at the episode's final beat."
-              }
+              "hook_out": { "type": "string" }
             }
           }
         }
       }
     },
+
     "season_hook_map": {
       "type": "array",
-      "description": "4-segment season-level hook arc, aligned with adaptation_plan.season_hook_map.",
       "minItems": 4,
       "maxItems": 4,
       "items": {
         "type": "object",
         "required": ["phase", "ratio_range", "hook_direction"],
         "properties": {
-          "phase": {
-            "type": "string",
-            "enum": ["launch", "rise", "storm", "finale"]
-          },
-          "ratio_range": { "type": "string", "description": "e.g. 0%-20%" },
-          "hook_direction": { "type": "string", "description": "One sentence: audience suspense question for this phase." }
+          "phase": { "type": "string", "enum": ["launch", "rise", "storm", "finale"] },
+          "ratio_range": { "type": "string" },
+          "hook_direction": { "type": "string" }
         }
       }
     },
+
     "episode_hook_map": {
       "type": "array",
-      "description": "One entry per episode. Must align with adaptation_plan.episode_hook_map.",
       "minItems": 1,
       "items": {
         "type": "object",
@@ -187,29 +272,74 @@
         }
       }
     },
+
     "paywall_map": {
       "type": "array",
-      "description": "Paywall beats aligned with adaptation_plan.paywall_map.",
       "minItems": 1,
       "items": {
         "type": "object",
         "required": ["episode_id", "position_ratio", "phase", "type", "beat", "viewer_task"],
         "properties": {
           "episode_id": { "type": "string" },
-          "position_ratio": { "type": "string", "description": "e.g. 0.20" },
-          "phase": {
-            "type": "string",
-            "enum": ["first_lock", "mid_lock", "storm_lock", "finale_lock"]
-          },
-          "type": { "type": "string", "description": "One of the 5 paywall types from rules/04_商业化卡点策略." },
-          "beat": { "type": "string", "description": "One sentence: what happens at the paywall beat." },
-          "viewer_task": { "type": "string", "description": "One sentence: the unresolved question driving the viewer to continue." }
+          "position_ratio": { "type": "string" },
+          "phase": { "type": "string", "enum": ["first_lock", "mid_lock", "storm_lock", "finale_lock"] },
+          "type": { "type": "string" },
+          "beat": { "type": "string" },
+          "viewer_task": { "type": "string" }
         }
       }
     },
+
+    "signature_scenes": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 8,
+      "description": "3-8 must-nail scenes. Signal production priority for storyboard and AI generation.",
+      "items": {
+        "type": "object",
+        "required": ["scene_id", "episode_id", "scene_type", "description", "why_unmissable", "production_weight"],
+        "properties": {
+          "scene_id": { "type": "string", "description": "e.g. SIG-01" },
+          "episode_id": { "type": "string" },
+          "scene_type": {
+            "type": "string",
+            "enum": ["public_reversal", "identity_reveal", "romance_peak", "confrontation", "betrayal", "sacrifice", "truth_drop"]
+          },
+          "description": { "type": "string", "description": "2-3 sentences written to make someone want to watch." },
+          "why_unmissable": { "type": "string", "description": "One sentence: why this scene is critical to the whole season." },
+          "production_weight": {
+            "type": "string",
+            "enum": ["highest", "high", "medium"]
+          }
+        }
+      }
+    },
+
+    "viral_clip_candidates": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 6,
+      "description": "3-6 moments naturally suited for short-form clip distribution.",
+      "items": {
+        "type": "object",
+        "required": ["clip_id", "episode_id", "clip_type", "description", "hook_in_3s"],
+        "properties": {
+          "clip_id": { "type": "string", "description": "e.g. CLIP-01" },
+          "episode_id": { "type": "string" },
+          "clip_type": {
+            "type": "string",
+            "enum": ["status_reversal", "face_slap", "romance_moment", "plot_twist", "emotional_eruption", "confrontation"]
+          },
+          "description": { "type": "string", "description": "1-2 sentences: what makes this clip shareable." },
+          "hook_in_3s": { "type": "string", "description": "One sentence: what stops the scroll in the first 3 seconds." }
+        }
+      }
+    },
+
     "outline_markdown": {
       "type": "string",
-      "description": "Full outline Markdown covering all 6 sections in order. Used for Word export. Must not omit any episode."
+      "description": "Full outline Markdown covering all 14 sections in order. Used for Word export. Must not omit any section or episode."
     }
+
   }
 }
