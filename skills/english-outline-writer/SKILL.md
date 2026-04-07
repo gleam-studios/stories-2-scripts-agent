@@ -185,7 +185,7 @@ When the source is long or context is tight:
 4. **Batch C**: Write **sections 10–14** (Hook maps, Paywall, Signature Scenes, Viral Clips) **after** all episode rows exist.
 5. **Align pass** (separate call): Input = merged `outline_pack` draft + `adaptation_plan`. Fix contradictions, hook/paywall alignment, fill missing episodes, ensure `episode_id` continuity. Do not rewrite frozen sections without documented conflict.
 
-Update `work/<project_slug>/run_manifest.json` after each batch (`outline_batches_done`).
+Update `work/<project_slug>/run_manifest.json` after each batch (`outline_batches`).
 
 ---
 

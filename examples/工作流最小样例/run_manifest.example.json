@@ -7,7 +7,7 @@
     "setting_bible"
   ],
   "chunk_ids_done": ["CH01-CH05", "CH06-CH10"],
-  "outline_batches_done": ["sections_1-8", "ep01-10", "ep11-20"],
+  "outline_batches": ["sections_1-8", "ep01-10", "ep11-20"],
   "last_episode_screenplay": "EP15",
   "last_storyboard_scene": "S15.02",
   "notes": "Resume with english-screenplay-writer EP16."
