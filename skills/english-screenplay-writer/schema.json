@@ -10,6 +10,7 @@
     "quick_reference": { "type": "object" },
     "character_snapshot": {
       "type": "array",
+      "minItems": 1,
       "items": {
         "type": "object",
         "required": ["character_id", "name", "function"],
@@ -20,17 +21,44 @@
         }
       }
     },
-    "screenplay_markdown": { "type": "string" },
+    "screenplay_markdown": {
+      "type": "string",
+      "description": "Full screenplay text covering every episode. No episode may be replaced with a summary or placeholder."
+    },
     "scene_crosswalk": {
       "type": "array",
+      "minItems": 1,
+      "description": "One entry per scene. scene_id must match the SCENE heading in screenplay_markdown exactly.",
       "items": {
         "type": "object",
-        "required": ["episode_id", "scene_id", "slugline", "purpose", "character_ids", "location_id"],
+        "required": [
+          "episode_id",
+          "scene_id",
+          "slugline",
+          "purpose",
+          "hook_type",
+          "emotional_function",
+          "character_ids",
+          "location_id"
+        ],
         "properties": {
           "episode_id": { "type": "string" },
           "scene_id": { "type": "string" },
           "slugline": { "type": "string" },
-          "purpose": { "type": "string" },
+          "purpose": {
+            "type": "string",
+            "description": "What this scene accomplishes in the story."
+          },
+          "hook_type": {
+            "type": "string",
+            "enum": ["cliffhanger", "reversal", "emotional_peak", "setup", "none"],
+            "description": "Episode-ending scenes must use cliffhanger / reversal / emotional_peak / setup. Mid-episode scenes use 'none'."
+          },
+          "emotional_function": {
+            "type": "string",
+            "enum": ["establish", "escalate", "release", "reset"],
+            "description": "The emotional arc function of this scene in the episode."
+          },
           "character_ids": {
             "type": "array",
             "items": { "type": "string" }

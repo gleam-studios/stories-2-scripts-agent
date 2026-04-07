@@ -10,6 +10,7 @@
     "quick_reference": { "type": "object" },
     "scene_index": {
       "type": "array",
+      "minItems": 1,
       "items": {
         "type": "object",
         "required": ["episode_id", "scene_id", "slugline", "purpose"],
@@ -23,6 +24,8 @@
     },
     "shot_rows": {
       "type": "array",
+      "minItems": 4,
+      "description": "Total shot_rows must be >= total scene count × 4. Each scene must have at minimum 4 shot rows (dialogue) or more per scene type rules.",
       "items": {
         "type": "object",
         "required": [
@@ -41,17 +44,30 @@
           "look_ids",
           "sfx_music",
           "transition",
-          "ai_note"
+          "ai_note",
+          "estimated_duration_sec"
         ],
         "properties": {
-          "shot_id": { "type": "string" },
+          "shot_id": {
+            "type": "string",
+            "description": "Format: 01.01.S01 (episode.scene.Sshot_number)"
+          },
           "episode_id": { "type": "string" },
           "scene_id": { "type": "string" },
           "slugline": { "type": "string" },
-          "shot_size": { "type": "string" },
+          "shot_size": {
+            "type": "string",
+            "description": "e.g. WIDE, MEDIUM, MCU, CLOSE, INSERT, TWO-SHOT, OVER-SHOULDER"
+          },
           "camera_angle_or_move": { "type": "string" },
-          "visual_action": { "type": "string" },
-          "dialogue_anchor": { "type": "string" },
+          "visual_action": {
+            "type": "string",
+            "description": "Describe the visible physical action only, not plot summary."
+          },
+          "dialogue_anchor": {
+            "type": "string",
+            "description": "Key line or 'None' if no dialogue in this shot."
+          },
           "emotion": { "type": "string" },
           "character_ids": {
             "type": "array",
@@ -68,7 +84,14 @@
           },
           "sfx_music": { "type": "string" },
           "transition": { "type": "string" },
-          "ai_note": { "type": "string" }
+          "ai_note": {
+            "type": "string",
+            "description": "Specific guidance for AI image or video generation. Must not be empty."
+          },
+          "estimated_duration_sec": {
+            "type": "string",
+            "description": "Estimated shot duration, e.g. '3-5s'. Per-episode total must sum to 60-120s."
+          }
         }
       }
     },
