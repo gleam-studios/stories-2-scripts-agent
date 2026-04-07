@@ -1,0 +1,77 @@
+{
+  "type": "object",
+  "required": [
+    "quick_reference",
+    "scene_index",
+    "shot_rows",
+    "storyboard_markdown"
+  ],
+  "properties": {
+    "quick_reference": { "type": "object" },
+    "scene_index": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["episode_id", "scene_id", "slugline", "purpose"],
+        "properties": {
+          "episode_id": { "type": "string" },
+          "scene_id": { "type": "string" },
+          "slugline": { "type": "string" },
+          "purpose": { "type": "string" }
+        }
+      }
+    },
+    "shot_rows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "shot_id",
+          "episode_id",
+          "scene_id",
+          "slugline",
+          "shot_size",
+          "camera_angle_or_move",
+          "visual_action",
+          "dialogue_anchor",
+          "emotion",
+          "character_ids",
+          "location_id",
+          "prop_ids",
+          "look_ids",
+          "sfx_music",
+          "transition",
+          "ai_note"
+        ],
+        "properties": {
+          "shot_id": { "type": "string" },
+          "episode_id": { "type": "string" },
+          "scene_id": { "type": "string" },
+          "slugline": { "type": "string" },
+          "shot_size": { "type": "string" },
+          "camera_angle_or_move": { "type": "string" },
+          "visual_action": { "type": "string" },
+          "dialogue_anchor": { "type": "string" },
+          "emotion": { "type": "string" },
+          "character_ids": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "location_id": { "type": "string" },
+          "prop_ids": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "look_ids": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "sfx_music": { "type": "string" },
+          "transition": { "type": "string" },
+          "ai_note": { "type": "string" }
+        }
+      }
+    },
+    "storyboard_markdown": { "type": "string" }
+  }
+}

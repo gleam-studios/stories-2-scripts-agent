@@ -1,0 +1,52 @@
+{
+  "type": "object",
+  "required": [
+    "quick_reference",
+    "adaptation_positioning",
+    "season_outline",
+    "episode_outlines",
+    "hook_map",
+    "paywall_map",
+    "outline_markdown"
+  ],
+  "properties": {
+    "quick_reference": { "type": "object" },
+    "adaptation_positioning": { "type": "string" },
+    "season_outline": {
+      "type": "object",
+      "required": ["story_premise", "main_conflict", "arc_segments", "major_twists", "final_payoff"],
+      "properties": {
+        "story_premise": { "type": "string" },
+        "main_conflict": { "type": "string" },
+        "arc_segments": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "major_twists": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "final_payoff": { "type": "string" }
+      }
+    },
+    "episode_outlines": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["episode_id", "title", "arc_phase", "logline", "core_event", "turn", "end_hook"],
+        "properties": {
+          "episode_id": { "type": "string" },
+          "title": { "type": "string" },
+          "arc_phase": { "type": "string" },
+          "logline": { "type": "string" },
+          "core_event": { "type": "string" },
+          "turn": { "type": "string" },
+          "end_hook": { "type": "string" }
+        }
+      }
+    },
+    "hook_map": { "type": "array", "items": { "type": "string" } },
+    "paywall_map": { "type": "array", "items": { "type": "string" } },
+    "outline_markdown": { "type": "string" }
+  }
+}

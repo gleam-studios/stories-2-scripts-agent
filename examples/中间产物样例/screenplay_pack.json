@@ -1,0 +1,43 @@
+{
+  "quick_reference": {
+    "project_title": "Midnight Heiress",
+    "logline": "A dead heiress returns under a false name to reclaim her empire in public.",
+    "target_market": "NA-English",
+    "genre": "Hidden Identity / Revenge Romance",
+    "episode_count": 40,
+    "episode_duration": "1-2 min",
+    "mood_tags": ["sharp", "glossy", "humiliating"],
+    "protagonist_snapshot": "Nora weaponizes composure."
+  },
+  "character_snapshot": [
+    {
+      "character_id": "CHAR-01",
+      "name": "Nora Hale / Eva Stone",
+      "function": "revenge engine"
+    },
+    {
+      "character_id": "CHAR-02",
+      "name": "Adrian Vale",
+      "function": "ally-threat romance axis"
+    }
+  ],
+  "screenplay_markdown": "# 02_英文剧本\n\n## Quick Reference\n- Project Title: Midnight Heiress\n\n## EPISODE 01\n\n### SCENE 01.01\nINT. HALE CHARITY GALA - NIGHT\n\nCrystal light washes over the ballroom as Nora steps in wearing anonymity like armor.\n\nCELIA\nYou must be lost.\n\nNORA\nNot at all. I came exactly where I was invited.\n",
+  "scene_crosswalk": [
+    {
+      "episode_id": "EP01",
+      "scene_id": "01.01",
+      "slugline": "INT. HALE CHARITY GALA - NIGHT",
+      "purpose": "Establish Nora's return and Celia's first strike.",
+      "character_ids": ["CHAR-01", "CHAR-03", "CHAR-02"],
+      "location_id": "LOC-01"
+    },
+    {
+      "episode_id": "EP01",
+      "scene_id": "01.02",
+      "slugline": "INT. GALA SIDE CORRIDOR - NIGHT",
+      "purpose": "Reveal the scar clue and Adrian's intervention.",
+      "character_ids": ["CHAR-01", "CHAR-03", "CHAR-02"],
+      "location_id": "LOC-01"
+    }
+  ]
+}

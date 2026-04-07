@@ -1,0 +1,310 @@
+{
+  "quick_reference": {
+    "project_title": "ice cold",
+    "logline": "When a donor family's star freshman and the brother of the boy he once helped destroy fake a relationship to contain a campus scandal, they uncover an abuse archive that can either save a sister or burn the whole hockey empire down.",
+    "target_market": "NA-English",
+    "genre": "Queer Campus Scandal Romance / Enemies to Lovers / Fake Dating",
+    "episode_count": 24,
+    "episode_duration": "1-2 min",
+    "mood_tags": [
+      "bruise-blue winter",
+      "cold prestige",
+      "public scandal",
+      "church power",
+      "dangerous tenderness"
+    ],
+    "protagonist_snapshot": "Ezra turns truth into a weapon; Cade turns survival into a choice."
+  },
+  "world_background": "St. Brendan College is an elite Catholic hockey campus where donor money, school branding, and family image turn private harm into public silence. The adaptation treats rumor, hearings, donor events, and rink politics as the visible machinery of control.",
+  "timeline": [
+    {
+      "year_or_phase": "Three years ago",
+      "event": "Noah Quinn is assaulted inside a purity-policed hockey culture and the school buries the incident."
+    },
+    {
+      "year_or_phase": "Two years ago",
+      "event": "Cade Mercer becomes the perfect son on paper in order to shield June from the family system."
+    },
+    {
+      "year_or_phase": "One year ago",
+      "event": "Ezra Quinn begins quietly collecting traces of the old athletics cover-up."
+    },
+    {
+      "year_or_phase": "Present day",
+      "event": "A donor-run collision and a stolen flash drive collapse romance, scandal, and evidence into one story engine."
+    }
+  ],
+  "character_profiles": [
+    {
+      "character_id": "CHAR-01",
+      "name": "Ezra Quinn",
+      "public_identity": "campus audio-journalist and lit-mag editor",
+      "hidden_identity": "Noah Quinn's brother and active investigator",
+      "core_desire": "Expose the system without surrendering control",
+      "core_fear": "Being emotionally owned by the person he lets closest",
+      "voice_style": "dry, exact, unhurried",
+      "visual_design": "black coats, silver headphones, editorial severity",
+      "wardrobe_system": "LOOK-01 / LOOK-06",
+      "signature_props": [
+        "PROP-01",
+        "PROP-04"
+      ],
+      "relationship_notes": "Begins from verbal superiority; gets destabilized by Cade's honesty under pressure."
+    },
+    {
+      "character_id": "CHAR-02",
+      "name": "Cade Mercer",
+      "public_identity": "donor-family freshman hockey phenom",
+      "hidden_identity": "closeted abuse survivor protecting his sister",
+      "core_desire": "Keep June safe and become a self-directed person",
+      "core_fear": "That wanting love will cost someone else safety",
+      "voice_style": "clipped, guarded, unexpectedly tender",
+      "visual_design": "clean athletic prestige with visible bruise logic",
+      "wardrobe_system": "LOOK-02 / LOOK-03",
+      "signature_props": [
+        "PROP-02",
+        "PROP-05",
+        "PROP-06"
+      ],
+      "relationship_notes": "Pressure vessel whose silence reads as betrayal until the coercion is exposed."
+    },
+    {
+      "character_id": "CHAR-03",
+      "name": "Pastor Daniel Mercer",
+      "public_identity": "church leader and donor patriarch",
+      "hidden_identity": "violent controller protecting image with religion",
+      "core_desire": "Preserve family and school narrative control",
+      "core_fear": "Private abuse becoming public fact",
+      "voice_style": "calm command with surgical cruelty",
+      "visual_design": "blackcoat power, expensive normalcy, moral menace",
+      "wardrobe_system": "LOOK-05",
+      "signature_props": [
+        "PROP-02",
+        "PROP-06"
+      ],
+      "relationship_notes": "He must feel most dangerous when he appears reasonable."
+    },
+    {
+      "character_id": "CHAR-04",
+      "name": "June Mercer",
+      "public_identity": "pastor's daughter and school-facing good girl",
+      "hidden_identity": "evidence courier and escape strategist",
+      "core_desire": "Get out alive with her brother",
+      "core_fear": "Being returned, disbelieved, or isolated",
+      "voice_style": "fast, bright, cracking under panic",
+      "visual_design": "oversized hoodie layers and bruised innocence",
+      "wardrobe_system": "LOOK-04",
+      "signature_props": [
+        "PROP-01",
+        "PROP-05"
+      ],
+      "relationship_notes": "Carries urgency, not passivity."
+    },
+    {
+      "character_id": "CHAR-05",
+      "name": "Milo Hart",
+      "public_identity": "team captain",
+      "hidden_identity": "locker-room conscience pivot",
+      "core_desire": "Protect players without protecting the lie",
+      "core_fear": "Speaking too late",
+      "voice_style": "low, grounded, concise",
+      "visual_design": "captain utility wear and rink-worn textures",
+      "wardrobe_system": "LOOK-07",
+      "signature_props": [],
+      "relationship_notes": "Validates Cade inside the hockey world."
+    },
+    {
+      "character_id": "CHAR-06",
+      "name": "Tessa Vale",
+      "public_identity": "campus producer and fixer",
+      "hidden_identity": "Ezra's strategic spine",
+      "core_desire": "Keep Ezra alive long enough to win",
+      "core_fear": "That ego beats timing",
+      "voice_style": "fast, funny, surgical",
+      "visual_design": "bright accent accessories in cold campus palettes",
+      "wardrobe_system": "winter campus color-pop",
+      "signature_props": [],
+      "relationship_notes": "Translates panic into action."
+    },
+    {
+      "character_id": "CHAR-07",
+      "name": "Noah Quinn",
+      "public_identity": "former player and buried witness",
+      "hidden_identity": "the original cost of silence",
+      "core_desire": "Prevent repetition",
+      "core_fear": "Returning for nothing",
+      "voice_style": "steady, spare, older than his age",
+      "visual_design": "muted civilian winter with permanent stillness",
+      "wardrobe_system": "off-campus winter civilian",
+      "signature_props": [
+        "PROP-03"
+      ],
+      "relationship_notes": "Adds moral gravity and final proof."
+    }
+  ],
+  "location_profiles": [
+    {
+      "location_id": "LOC-01",
+      "name": "Riverside Donor Runway / Footbridge",
+      "dramatic_function": "collision site, confession bridge, runner intimacy zone",
+      "visual_keywords": [
+        "wet pavement",
+        "river wind",
+        "sodium lights",
+        "steel rail"
+      ],
+      "asset_notes": "Must support both public rumor and private vulnerability."
+    },
+    {
+      "location_id": "LOC-02",
+      "name": "Crowbar Coffee & Book Bar",
+      "dramatic_function": "fake-date showcase and softest recurring refuge",
+      "visual_keywords": [
+        "amber light",
+        "books",
+        "dark wood",
+        "fogged windows"
+      ],
+      "asset_notes": "Warmest set, but still sharp rather than cozy-sweet."
+    },
+    {
+      "location_id": "LOC-03",
+      "name": "St. Brendan Rink / Tunnel / Arena Bowl",
+      "dramatic_function": "masculinity pressure engine and final payoff arena",
+      "visual_keywords": [
+        "blue-white glare",
+        "rubber mats",
+        "scoreboard light",
+        "taped sticks"
+      ],
+      "asset_notes": "One hero build should cover tunnel, locker adjacency, and bowl views."
+    },
+    {
+      "location_id": "LOC-04",
+      "name": "Podcast Booth / Editing Room",
+      "dramatic_function": "truth lab and confession chamber",
+      "visual_keywords": [
+        "glass",
+        "waveforms",
+        "red record light",
+        "cables"
+      ],
+      "asset_notes": "Ezra's power room."
+    },
+    {
+      "location_id": "LOC-05",
+      "name": "Mercer House / Church Office",
+      "dramatic_function": "origin of fear and rescue site",
+      "visual_keywords": [
+        "polished wood",
+        "religious iconography",
+        "locked doors",
+        "cold overheads"
+      ],
+      "asset_notes": "Home and church should bleed into the same power texture."
+    },
+    {
+      "location_id": "LOC-06",
+      "name": "Athletics Hearing Room / Donor Event Hall",
+      "dramatic_function": "public judgment venue and reversal stage",
+      "visual_keywords": [
+        "glass panels",
+        "school seals",
+        "microphones",
+        "long tables"
+      ],
+      "asset_notes": "Expensive and emotionally hostile."
+    },
+    {
+      "location_id": "LOC-07",
+      "name": "Off-Campus Inn Safehouse / Hospital Utility Interior",
+      "dramatic_function": "temporary refuge and stripped-down recovery zone",
+      "visual_keywords": [
+        "quilt textures",
+        "yellow practicals",
+        "plain walls",
+        "clinical light"
+      ],
+      "asset_notes": "Use as the season's low-budget honesty zone."
+    }
+  ],
+  "prop_profiles": [
+    {
+      "prop_id": "PROP-01",
+      "name": "Discipline Archive Flash Drive",
+      "story_function": "primary evidence trigger",
+      "visual_description": "matte black drive with a cracked red label"
+    },
+    {
+      "prop_id": "PROP-02",
+      "name": "Mercer Signet Ring",
+      "story_function": "visible family ownership symbol",
+      "visual_description": "dark silver crest ring"
+    },
+    {
+      "prop_id": "PROP-03",
+      "name": "Noah Helmet-Cam Card",
+      "story_function": "final proof payload",
+      "visual_description": "scratched memory card inside a taped envelope"
+    },
+    {
+      "prop_id": "PROP-04",
+      "name": "Ezra's Black Notebook",
+      "story_function": "thought map and author identity marker",
+      "visual_description": "soft black notebook swollen with tabs and loose paper"
+    },
+    {
+      "prop_id": "PROP-05",
+      "name": "June's Burner Phone",
+      "story_function": "panic relay and covert coordination tool",
+      "visual_description": "cheap prepaid phone in a pink zip pouch"
+    },
+    {
+      "prop_id": "PROP-06",
+      "name": "Scholarship Contract Folder",
+      "story_function": "paper form of institutional leverage",
+      "visual_description": "navy embossed school folder"
+    }
+  ],
+  "visual_system": "Public spaces should look funded, polished, and unsafe. Ezra's frames favor black, graphite, silver, and controlled stillness. Cade's frames favor navy, steel, bruised skin, and restraint under pressure. The Mercer power world reads black, oxblood, polished wood, and church authority. Safehouse moments warm up through imperfect practical light rather than sentimentality.",
+  "continuity_rules": [
+    "Cade's bruises must progress logically after each violence beat.",
+    "Ezra should visibly carry PROP-04 or recording gear when in work mode.",
+    "PROP-01 and PROP-03 must remain visually distinct.",
+    "Daniel must never look disordered in public.",
+    "June's fear should register physically before verbally.",
+    "Public fake-dating beats must block differently from private honest beats.",
+    "The rink must remain the coldest-feeling recurring environment."
+  ],
+  "ai_asset_matrix": [
+    {
+      "asset_type": "character_look",
+      "asset_id": "LOOK-01",
+      "prompt_seed": "sharp male campus journalist in black winter layers, silver headphones, cold editorial beauty",
+      "must_have": "restraint, intelligence, dark palette",
+      "avoid": "soft pastel romance styling"
+    },
+    {
+      "asset_type": "character_look",
+      "asset_id": "LOOK-02",
+      "prompt_seed": "elite freshman hockey forward in navy compression layers, bruised knuckles, controlled tension",
+      "must_have": "athletic elegance, visible restraint",
+      "avoid": "generic bulky jock cliché"
+    },
+    {
+      "asset_type": "character_look",
+      "asset_id": "LOOK-05",
+      "prompt_seed": "wealthy church patriarch in black overcoat, calm menace, polished donor authority",
+      "must_have": "normalcy that feels frightening",
+      "avoid": "cartoon villain excess"
+    },
+    {
+      "asset_type": "location",
+      "asset_id": "LOC-03",
+      "prompt_seed": "premium college hockey arena tunnel and bowl, blue-white glare, cold prestige",
+      "must_have": "scoreboard visibility, tunnel pressure, pro texture",
+      "avoid": "nostalgic warm sports movie feeling"
+    }
+  ],
+  "setting_bible_markdown": "# 04_英文设定集\\n\\nFull setting bible maintained in companion markdown file `04_英文设定集.md`."
+}

@@ -1,0 +1,253 @@
+{
+  "genre_assessment": "Primary genre: queer campus sports romance. Secondary stack: enemies-to-lovers, trauma-healing love story, scholarship pressure, abusive-family escape, and found-family redemption.",
+  "tone": "Cold, witty, bruised, intimate, anxious, and gradually thawing into hard-won tenderness.",
+  "worldbuilding_seeds": [
+    "New England college campuses connected by hockey culture, dorm intimacy, and winter running routines",
+    "A masculinity-heavy sports world where image, toughness, and rumor control social survival",
+    "Religious-family pressure and small-town surveillance operating against queer self-definition",
+    "Found family existing in contrast to biological family violence"
+  ],
+  "timeline_seeds": [
+    "High school: Landon targets Wren's brother under pressure from his father and internalized homophobia",
+    "Pre-college: Landon comes out, nearly gets sent to conversion therapy, and becomes emotionally shut down",
+    "Freshman fall: Wren and Landon begin colliding on runs, at coffee shops, and across rival campuses",
+    "Mid-season: attraction, jealousy, and emotional dependence grow alongside hockey pressure",
+    "Late season: love confession misfires, breakup lands, and Landon's family violence detonates the endgame",
+    "Epilogue: Landon plays hockey on his own terms and remains openly with Wren"
+  ],
+  "location_candidates": [
+    {
+      "location_id": "LOC-SRC-01",
+      "name": "Morning Running Path",
+      "dramatic_function": "meet-cute collision lane and recurring intimacy arena",
+      "visual_seed": "cold dawn light, cracked pavement, earbuds, breath in the air"
+    },
+    {
+      "location_id": "LOC-SRC-02",
+      "name": "Campus Coffee Shop",
+      "dramatic_function": "banter hub, jealousy stage, and accidental confessional space",
+      "visual_seed": "warm window light against gray campus weather"
+    },
+    {
+      "location_id": "LOC-SRC-03",
+      "name": "Brown Dorm Room",
+      "dramatic_function": "private vulnerability zone for Wren and later the couple",
+      "visual_seed": "books, manuscript pages, narrow beds, student clutter"
+    },
+    {
+      "location_id": "LOC-SRC-04",
+      "name": "Providence Hockey Rink and Locker Room",
+      "dramatic_function": "public pressure arena and masculine performance space",
+      "visual_seed": "fluorescent locker room, scraped ice, gear bags, bruised faces"
+    },
+    {
+      "location_id": "LOC-SRC-05",
+      "name": "Landon's Family House",
+      "dramatic_function": "abuse origin point and late-stage confrontation arena",
+      "visual_seed": "tight hallways, religious authority, emotional suffocation"
+    },
+    {
+      "location_id": "LOC-SRC-06",
+      "name": "Hanson Family Home",
+      "dramatic_function": "contrast home base showing what care looks like",
+      "visual_seed": "warm kitchen, noise, siblings, acceptance"
+    }
+  ],
+  "prop_candidates": [
+    {
+      "prop_id": "PROP-SRC-01",
+      "name": "Earbuds",
+      "story_function": "Wren's emotional armor and meet-cute detail",
+      "visual_seed": "white cords, one bud pulled out for conflict"
+    },
+    {
+      "prop_id": "PROP-SRC-02",
+      "name": "Hockey Gear Bag",
+      "story_function": "Landon's burden, routine, and public identity marker",
+      "visual_seed": "dark duffel, wet laces, taped stick"
+    },
+    {
+      "prop_id": "PROP-SRC-03",
+      "name": "Wren's Letter / Manuscript Pages",
+      "story_function": "evidence of emotional truth Wren struggles to say aloud",
+      "visual_seed": "annotated pages, folded note, cramped handwriting"
+    },
+    {
+      "prop_id": "PROP-SRC-04",
+      "name": "Phones and Text Chains",
+      "story_function": "long-distance emotional tether and crisis relay device",
+      "visual_seed": "late-night screen glow, unread texts, urgent calls"
+    },
+    {
+      "prop_id": "PROP-SRC-05",
+      "name": "Blanket from Wren's Parents",
+      "story_function": "soft symbol of safe belonging",
+      "visual_seed": "domestic warmth inside a cold dorm world"
+    }
+  ],
+  "visual_theme_seeds": [
+    "ice versus thaw",
+    "winter dawn intimacy",
+    "bruise tones against warm interiors",
+    "fluorescent masculinity versus soft private light",
+    "books and hockey gear in the same emotional frame"
+  ],
+  "character_cards": [
+    {
+      "character_id": "CHAR-SRC-01",
+      "name": "Wren Ridley",
+      "role": "POV protagonist / romantic lead",
+      "public_identity": "Sharp, observant Brown student and aspiring writer with a dry mouth",
+      "hidden_identity": "Emotionally avoidant loner who is much softer than he pretends",
+      "core_desire": "To be chosen honestly without surrendering control",
+      "leverage": "social intelligence, language, calmness under pressure, family support"
+    },
+    {
+      "character_id": "CHAR-SRC-02",
+      "name": "Landon Reilly",
+      "role": "POV protagonist / romantic lead",
+      "public_identity": "Talented but cold Providence hockey player with anger issues",
+      "hidden_identity": "Traumatized queer son still living inside his father's voice",
+      "core_desire": "To be safe, wanted, and free to want what he wants",
+      "leverage": "physicality, raw sincerity, athletic value, willingness to protect his sister"
+    },
+    {
+      "character_id": "CHAR-SRC-03",
+      "name": "James",
+      "role": "Roommate catalyst",
+      "public_identity": "Wren's unserious roommate and former hookup",
+      "hidden_identity": "Unexpectedly perceptive witness to Wren's emotional unraveling",
+      "core_desire": "Pleasure and uncomplicated connection",
+      "leverage": "proximity to Wren and social opportunism"
+    },
+    {
+      "character_id": "CHAR-SRC-04",
+      "name": "Stella",
+      "role": "Best-friend support",
+      "public_identity": "Wren's blunt, loyal friend",
+      "hidden_identity": "A stability anchor who sees more than Wren likes",
+      "core_desire": "To keep Wren from sabotaging himself",
+      "leverage": "emotional honesty and constant presence"
+    },
+    {
+      "character_id": "CHAR-SRC-05",
+      "name": "Micah Hanson",
+      "role": "Safe-home bridge",
+      "public_identity": "Landon's longtime friend with a healthy family around him",
+      "hidden_identity": "The person who knows exactly how damaged Landon is",
+      "core_desire": "To keep Landon alive, stable, and connected",
+      "leverage": "trust, access, and his family home"
+    },
+    {
+      "character_id": "CHAR-SRC-06",
+      "name": "Olivia Reilly",
+      "role": "Family-stakes trigger",
+      "public_identity": "Landon's younger sister still trapped at home",
+      "hidden_identity": "A second victim whose danger escalates the climax",
+      "core_desire": "To escape the family house intact",
+      "leverage": "knowledge of the father's abuse and ability to force action"
+    },
+    {
+      "character_id": "CHAR-SRC-07",
+      "name": "Peter Reilly",
+      "role": "Primary antagonist",
+      "public_identity": "Strict Christian father obsessed with discipline and image",
+      "hidden_identity": "Abuser who weaponizes religion, hockey ambition, and control",
+      "core_desire": "To force Landon back into the version of son he can own",
+      "leverage": "family terror, shame conditioning, and physical violence"
+    }
+  ],
+  "relationship_map": [
+    {
+      "from_character_id": "CHAR-SRC-01",
+      "to_character_id": "CHAR-SRC-02",
+      "dynamic": "enemy memory becomes flirtation, then care, then love complicated by fear"
+    },
+    {
+      "from_character_id": "CHAR-SRC-02",
+      "to_character_id": "CHAR-SRC-01",
+      "dynamic": "suspicion and fascination turn into dependence and eventual emotional exposure"
+    },
+    {
+      "from_character_id": "CHAR-SRC-01",
+      "to_character_id": "CHAR-SRC-03",
+      "dynamic": "casual sexual history that later becomes jealousy fuel"
+    },
+    {
+      "from_character_id": "CHAR-SRC-01",
+      "to_character_id": "CHAR-SRC-04",
+      "dynamic": "protective friendship with zero patience for self-deception"
+    },
+    {
+      "from_character_id": "CHAR-SRC-02",
+      "to_character_id": "CHAR-SRC-05",
+      "dynamic": "trauma-informed friendship and safe-home tether"
+    },
+    {
+      "from_character_id": "CHAR-SRC-02",
+      "to_character_id": "CHAR-SRC-06",
+      "dynamic": "older-brother protection shaped by shared abuse"
+    },
+    {
+      "from_character_id": "CHAR-SRC-07",
+      "to_character_id": "CHAR-SRC-02",
+      "dynamic": "authoritarian abuse, shame, and ownership masquerading as parenting"
+    },
+    {
+      "from_character_id": "CHAR-SRC-07",
+      "to_character_id": "CHAR-SRC-06",
+      "dynamic": "control and intimidation that later force the escape plot"
+    }
+  ],
+  "conflict_map": [
+    {
+      "label": "old violence debt",
+      "description": "Wren knows Landon once targeted his brother in a homophobic incident, making the romance morally charged from the start.",
+      "stage": "launch"
+    },
+    {
+      "label": "self-hatred versus desire",
+      "description": "Landon wants Wren while hearing his father's disgust in his head every time intimacy becomes real.",
+      "stage": "rise"
+    },
+    {
+      "label": "casual versus serious love mismatch",
+      "description": "Wren can perform cool intelligence and sexual confidence, but freezes when emotional permanence is demanded.",
+      "stage": "storm"
+    },
+    {
+      "label": "sports-world exposure risk",
+      "description": "Hockey culture, gossip, and teammates weaponize masculinity and sexuality as pressure tools.",
+      "stage": "rise"
+    },
+    {
+      "label": "family abuse emergency",
+      "description": "The father shifts from psychological control to physical violence, forcing the romance into rescue mode.",
+      "stage": "payoff"
+    }
+  ],
+  "selling_points": [
+    "icy enemies-to-lovers dynamic with real emotional bite",
+    "college hockey masculinity contrasted with private softness",
+    "dual POV intimacy and banter",
+    "family abuse survival thread that raises the third-act stakes",
+    "found family warmth as payoff against biological-family cruelty",
+    "queer romance centered on thaw, not tragedy"
+  ],
+  "similarity_risks": [
+    "Direct reuse of the morning run collision as the adaptation opening",
+    "Direct reuse of drunken sleepover and hangover intimacy beats",
+    "Direct reuse of the father beating Landon and Wren immediately rescuing him in the same shape",
+    "Direct reuse of the delayed 'I love you' confession plus lost letter beat",
+    "Direct reuse of Brown versus Providence college geography and hockey structure"
+  ],
+  "source_value_assessment": "High adaptation value. The source has a strong emotional engine, a clean central couple, a built-in external antagonist, and a premium cold-to-warm visual language. The weakness is that the original progression is novelistic and routine-based, so it needs a more aggressively public, cliffhanger-driven plot engine for short-drama conversion.",
+  "supporting_evidence": [
+    "Chapter 1 establishes the hostile run-in, Wren's defensive wit, and the brother-history obstacle.",
+    "Chapter 2 anchors Landon's repression, Micah as safe contact, and the abusive-family context.",
+    "Chapters 10-23 prove the chemistry engine works through banter, proximity, jealousy, and softening.",
+    "Chapter 49 supplies the love-confession fracture and shows Wren's emotional blockage clearly.",
+    "Chapters 51-53 escalate the father into a fully externalized antagonist and turn Olivia into a rescue trigger.",
+    "The epilogue confirms the emotionally satisfying direction: open relationship, healthier hockey life, and a thawed self-image."
+  ]
+}

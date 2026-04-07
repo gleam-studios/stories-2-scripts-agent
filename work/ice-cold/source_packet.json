@@ -1,0 +1,92 @@
+{
+  "source_id": "ice-cold-wattpad-export",
+  "source_title": "Ice Cold",
+  "source_summary": "A dual-POV college hockey romance in which sharp-tongued Brown student Wren Ridley and emotionally guarded Providence hockey player Landon Reilly move from hostility to intimacy while Landon confronts homophobia, family abuse, and the fear of being loved openly.",
+  "project_slug": "ice-cold",
+  "project_title": "ice cold",
+  "target_market": "NA-English",
+  "episode_count": 24,
+  "episode_duration": "1-2 min",
+  "genre_tags": [
+    "MM Romance",
+    "College Sports Romance",
+    "Enemies to Lovers",
+    "Trauma Healing",
+    "Queer Coming-Out",
+    "Family Abuse Survival"
+  ],
+  "source_integrity": "full Wattpad export extracted from DOCX and commercially analyzable",
+  "source_chapters": [
+    {
+      "chapter_number": 1,
+      "title": "01",
+      "summary": "Wren collides with Landon during a morning run, recognizes him as the boy who once targeted Wren's brother, and immediately treats him like trouble."
+    },
+    {
+      "chapter_number": 2,
+      "title": "02",
+      "summary": "Landon arrives at Providence, reconnects with Micah, and is framed as emotionally shut down, isolated, and still under the shadow of an abusive father."
+    },
+    {
+      "chapter_number": 5,
+      "title": "05",
+      "summary": "After a drunken night, Landon wakes in Wren's orbit again and resists the growing pull between them while denying his own attraction."
+    },
+    {
+      "chapter_number": 10,
+      "title": "10",
+      "summary": "Morning-after banter, running, and forced proximity sharpen the physical chemistry and establish Wren as the one person who can rattle Landon out of his defensive shell."
+    },
+    {
+      "chapter_number": 15,
+      "title": "15",
+      "summary": "Landon's internal conflict peaks as he avoids Wren, fears his father's voice in his head, and struggles with public closeness to another man."
+    },
+    {
+      "chapter_number": 18,
+      "title": "18",
+      "summary": "Wren's family home and broader sibling network expand the emotional world, contrasting Landon's violent home life with a model of warmth and acceptance."
+    },
+    {
+      "chapter_number": 23,
+      "title": "23",
+      "summary": "The romance fully crosses the line from tension to undeniable emotional attachment, while hockey, friends, and jealousy continue to stir public pressure."
+    },
+    {
+      "chapter_number": 31,
+      "title": "31",
+      "summary": "The relationship deepens through routines, care, and vulnerability, but Landon's trauma keeps feeding fear, shame, and self-sabotage."
+    },
+    {
+      "chapter_number": 40,
+      "title": "40",
+      "summary": "The emotional stakes shift from attraction to commitment as the couple tries to define what they are under pressure from Landon's past."
+    },
+    {
+      "chapter_number": 49,
+      "title": "49",
+      "summary": "After a breakup caused by Wren freezing at Landon's declaration of love, both leads unravel separately; Wren realizes he does love Landon but is emotionally blocked."
+    },
+    {
+      "chapter_number": 52,
+      "title": "52",
+      "summary": "Landon is lured home, beaten by his father, disappears injured, and is eventually found through a frantic search that turns the family abuse thread into the dominant crisis."
+    },
+    {
+      "chapter_number": 53,
+      "title": "53",
+      "summary": "Wren becomes Landon's caregiver and protector, Landon's sister Olivia is moved toward safety, and the father confrontation escalates into a full emotional and physical break from the family system."
+    },
+    {
+      "chapter_number": 54,
+      "title": "Epilogue",
+      "summary": "One year later, Landon is healthier, still playing hockey on his own terms, and living inside an openly loving relationship with Wren."
+    }
+  ],
+  "production_constraints": {
+    "max_main_cast": 7,
+    "max_primary_locations": 7,
+    "target_visual_level": "cold premium campus drama",
+    "notes": "Keep the adaptation actor-light and location-light. Favor repeatable campus, rink, media-room, boardroom, and family-house assets. Preserve queer romance and emotional thaw, but rebuild the plot engine into a short-drama scandal structure rather than a chapter-faithful campus romance."
+  }
+}

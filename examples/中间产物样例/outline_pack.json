@@ -1,0 +1,55 @@
+{
+  "quick_reference": {
+    "project_title": "Midnight Heiress",
+    "logline": "A dead heiress returns under a false name to reclaim her empire in public.",
+    "target_market": "NA-English",
+    "genre": "Hidden Identity / Revenge Romance",
+    "episode_count": 40,
+    "episode_duration": "1-2 min",
+    "mood_tags": ["sharp", "glossy", "addictive"],
+    "protagonist_snapshot": "Nora uses public rooms like a battlefield."
+  },
+  "adaptation_positioning": "This is a female-skewing public revenge romance built around witness, status reversal, and a dangerous strategic ally.",
+  "season_outline": {
+    "story_premise": "The real heiress returns under an alias to destroy the lie holding her cousin on the throne.",
+    "main_conflict": "Nora must win legitimacy in public before she can reveal herself safely.",
+    "arc_segments": [
+      "Launch: false-name return and first reversal",
+      "Rise: alliance, public wins, addictive evidence drops"
+    ],
+    "major_twists": [
+      "Adrian knows Eva is lying earlier than he admits",
+      "The forgery ring reaches the board"
+    ],
+    "final_payoff": "Nora reclaims her name without surrendering power."
+  },
+  "episode_outlines": [
+    {
+      "episode_id": "EP01",
+      "title": "Back From the Grave",
+      "arc_phase": "launch",
+      "logline": "Nora returns to the Hale gala as Eva Stone.",
+      "core_event": "Celia publicly humiliates Eva without knowing who she is.",
+      "turn": "Adrian notices Nora knows family-only information.",
+      "end_hook": "A camera catches Nora's scar."
+    },
+    {
+      "episode_id": "EP02",
+      "title": "The Auction Trap",
+      "arc_phase": "launch",
+      "logline": "Nora turns a charity auction into an exposure stage.",
+      "core_event": "The family seal and forged ledger collide in public.",
+      "turn": "A donor questions Celia's legitimacy out loud.",
+      "end_hook": "The board is forced to ask who Eva really is."
+    }
+  ],
+  "hook_map": [
+    "EP01: identity tease",
+    "EP02: legitimacy suspicion"
+  ],
+  "paywall_map": [
+    "EP08: witness confirmation",
+    "EP18: alliance betrayal reveal"
+  ],
+  "outline_markdown": "# 01_英文大纲\n\n## Quick Reference\n- Project Title: Midnight Heiress\n\n## Episode Outline\n### EP01 - Back From the Grave\n- Core Event: Nora returns to the gala as Eva Stone.\n"
+}

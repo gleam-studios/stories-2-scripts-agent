@@ -1,0 +1,122 @@
+{
+  "type": "object",
+  "required": [
+    "genre_assessment",
+    "tone",
+    "worldbuilding_seeds",
+    "timeline_seeds",
+    "location_candidates",
+    "prop_candidates",
+    "visual_theme_seeds",
+    "character_cards",
+    "relationship_map",
+    "conflict_map",
+    "selling_points",
+    "similarity_risks",
+    "source_value_assessment",
+    "supporting_evidence"
+  ],
+  "properties": {
+    "genre_assessment": { "type": "string" },
+    "tone": { "type": "string" },
+    "worldbuilding_seeds": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "timeline_seeds": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "location_candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["location_id", "name", "dramatic_function", "visual_seed"],
+        "properties": {
+          "location_id": { "type": "string" },
+          "name": { "type": "string" },
+          "dramatic_function": { "type": "string" },
+          "visual_seed": { "type": "string" }
+        }
+      }
+    },
+    "prop_candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["prop_id", "name", "story_function", "visual_seed"],
+        "properties": {
+          "prop_id": { "type": "string" },
+          "name": { "type": "string" },
+          "story_function": { "type": "string" },
+          "visual_seed": { "type": "string" }
+        }
+      }
+    },
+    "visual_theme_seeds": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "character_cards": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "character_id",
+          "name",
+          "role",
+          "public_identity",
+          "hidden_identity",
+          "core_desire",
+          "leverage"
+        ],
+        "properties": {
+          "character_id": { "type": "string" },
+          "name": { "type": "string" },
+          "role": { "type": "string" },
+          "public_identity": { "type": "string" },
+          "hidden_identity": { "type": "string" },
+          "core_desire": { "type": "string" },
+          "leverage": { "type": "string" }
+        }
+      }
+    },
+    "relationship_map": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["from_character_id", "to_character_id", "dynamic"],
+        "properties": {
+          "from_character_id": { "type": "string" },
+          "to_character_id": { "type": "string" },
+          "dynamic": { "type": "string" }
+        }
+      }
+    },
+    "conflict_map": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["label", "description", "stage"],
+        "properties": {
+          "label": { "type": "string" },
+          "description": { "type": "string" },
+          "stage": { "type": "string" }
+        }
+      }
+    },
+    "selling_points": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "similarity_risks": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "source_value_assessment": { "type": "string" },
+    "supporting_evidence": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}

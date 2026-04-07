@@ -1,0 +1,115 @@
+{
+  "type": "object",
+  "required": [
+    "quick_reference",
+    "world_background",
+    "timeline",
+    "character_profiles",
+    "location_profiles",
+    "prop_profiles",
+    "visual_system",
+    "continuity_rules",
+    "ai_asset_matrix",
+    "setting_bible_markdown"
+  ],
+  "properties": {
+    "quick_reference": { "type": "object" },
+    "world_background": { "type": "string" },
+    "timeline": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["year_or_phase", "event"],
+        "properties": {
+          "year_or_phase": { "type": "string" },
+          "event": { "type": "string" }
+        }
+      }
+    },
+    "character_profiles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "character_id",
+          "name",
+          "public_identity",
+          "hidden_identity",
+          "core_desire",
+          "core_fear",
+          "voice_style",
+          "visual_design",
+          "wardrobe_system",
+          "signature_props",
+          "relationship_notes"
+        ],
+        "properties": {
+          "character_id": { "type": "string" },
+          "name": { "type": "string" },
+          "public_identity": { "type": "string" },
+          "hidden_identity": { "type": "string" },
+          "core_desire": { "type": "string" },
+          "core_fear": { "type": "string" },
+          "voice_style": { "type": "string" },
+          "visual_design": { "type": "string" },
+          "wardrobe_system": { "type": "string" },
+          "signature_props": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "relationship_notes": { "type": "string" }
+        }
+      }
+    },
+    "location_profiles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["location_id", "name", "dramatic_function", "visual_keywords", "asset_notes"],
+        "properties": {
+          "location_id": { "type": "string" },
+          "name": { "type": "string" },
+          "dramatic_function": { "type": "string" },
+          "visual_keywords": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "asset_notes": { "type": "string" }
+        }
+      }
+    },
+    "prop_profiles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["prop_id", "name", "story_function", "visual_description"],
+        "properties": {
+          "prop_id": { "type": "string" },
+          "name": { "type": "string" },
+          "story_function": { "type": "string" },
+          "visual_description": { "type": "string" }
+        }
+      }
+    },
+    "visual_system": { "type": "string" },
+    "continuity_rules": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "ai_asset_matrix": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["asset_type", "asset_id", "prompt_seed", "must_have", "avoid"],
+        "properties": {
+          "asset_type": { "type": "string" },
+          "asset_id": { "type": "string" },
+          "prompt_seed": { "type": "string" },
+          "must_have": { "type": "string" },
+          "avoid": { "type": "string" }
+        }
+      }
+    },
+    "setting_bible_markdown": { "type": "string" }
+  }
+}

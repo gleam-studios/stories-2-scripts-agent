@@ -1,0 +1,286 @@
+{
+  "quick_reference": {
+    "project_title": "ice cold",
+    "logline": "When a donor family's star freshman and the brother of the boy he once helped destroy fake a relationship to contain a campus scandal, they uncover an abuse archive that can either save a sister or burn the whole hockey empire down.",
+    "target_market": "NA-English",
+    "genre": "Queer Campus Scandal Romance / Enemies to Lovers / Fake Dating",
+    "episode_count": 24,
+    "episode_duration": "1-2 min",
+    "mood_tags": [
+      "bruise-blue winter",
+      "cold prestige",
+      "public scandal",
+      "dangerous tenderness"
+    ],
+    "protagonist_snapshot": "Ezra weaponizes truth. Cade weaponizes endurance until endurance stops being enough."
+  },
+  "adaptation_positioning": "A fake-dating campus scandal romance that uses public hearings, donor optics, and buried abuse evidence to convert a quiet emotional source into a short-drama cliffhanger engine.",
+  "season_outline": {
+    "story_premise": "Ezra and Cade fake a relationship to contain a viral rumor and protect June, only to uncover evidence connecting Cade's family, the hockey program, and Noah Quinn's buried assault.",
+    "main_conflict": "Cade must decide when to stop surviving and start choosing, while Ezra must decide whether exposure without trust is just another kind of violence.",
+    "arc_segments": [
+      "Launch: collision, fake couple, first archive clues",
+      "Rise: chemistry and evidence deepen together",
+      "Storm: hearings, coercion, betrayal, and family danger",
+      "Payoff: rescue, public proof, institutional collapse, emotional thaw"
+    ],
+    "major_twists": [
+      "June has been moving evidence before the leads understand the full scale.",
+      "Noah returns as a witness, not as a neat forgiveness machine.",
+      "Cade's apparent hearing-room betrayal is driven by a threat against June.",
+      "The final proof sits on Noah's old helmet-cam card, not the missing flash drive."
+    ],
+    "final_payoff": "Daniel, Brennan, and Holt lose narrative control, June gets a path out, and Cade and Ezra become public by choice rather than coercion."
+  },
+  "episode_outlines": [
+    {
+      "episode_id": "EP01",
+      "title": "The Collision",
+      "arc_phase": "launch",
+      "logline": "A donor-run collision and a dropped flash drive pull Ezra, Cade, and June into the same crisis.",
+      "core_event": "Ezra opens the drive and finds the discipline archive.",
+      "turn": "The evidence is bigger than campus gossip.",
+      "end_hook": "Ezra sees the archive label on-screen."
+    },
+    {
+      "episode_id": "EP02",
+      "title": "Keep Your Story Straight",
+      "arc_phase": "launch",
+      "logline": "June begs for silence while the school escalates the collision into a hearing problem.",
+      "core_event": "Holt summons Ezra and Cade.",
+      "turn": "Ezra recognizes Cade now needs a better public lie.",
+      "end_hook": "Ezra decides leverage is possible."
+    },
+    {
+      "episode_id": "EP03",
+      "title": "Say We Lied",
+      "arc_phase": "launch",
+      "logline": "Ezra offers a fake-dating cover in exchange for truth.",
+      "core_event": "Cade accepts the deal.",
+      "turn": "The romance rumor becomes intentional strategy.",
+      "end_hook": "Cade confirms the relationship in public."
+    },
+    {
+      "episode_id": "EP04",
+      "title": "Public Enough",
+      "arc_phase": "launch",
+      "logline": "Their first fake date works too well while June disappears.",
+      "core_event": "Brock escalates the rumor and June goes missing.",
+      "turn": "Ezra finds her in the chapel loft.",
+      "end_hook": "June warns him not to trust athletics."
+    },
+    {
+      "episode_id": "EP05",
+      "title": "The Wrong Family",
+      "arc_phase": "launch",
+      "logline": "June reveals backup evidence and Daniel Mercer connects Ezra to Noah Quinn.",
+      "core_event": "The old assault and present scandal merge.",
+      "turn": "Daniel recognizes the Quinn surname.",
+      "end_hook": "He names Noah out loud."
+    },
+    {
+      "episode_id": "EP06",
+      "title": "Audio Proof",
+      "arc_phase": "rise",
+      "logline": "Ezra makes Cade hear the buried audio from Noah's case.",
+      "core_event": "Brennan's silence order becomes evidence.",
+      "turn": "Cade understands the school is actively part of the lie.",
+      "end_hook": "Brennan threatens Cade's scholarship."
+    },
+    {
+      "episode_id": "EP07",
+      "title": "Practice Blood",
+      "arc_phase": "rise",
+      "logline": "Locker-room pressure and anonymous blackmail hit at once.",
+      "core_event": "Brock targets Cade and Ezra receives a warning.",
+      "turn": "The threat reaches Noah too.",
+      "end_hook": "Ezra chooses to dig harder."
+    },
+    {
+      "episode_id": "EP08",
+      "title": "Donor Lights",
+      "arc_phase": "rise",
+      "logline": "Cade is ordered to deny the rumor at a gala and instead claims Ezra publicly.",
+      "core_event": "The fake couple becomes a visible couple.",
+      "turn": "Cade rejects the script written for him.",
+      "end_hook": "He takes Ezra's hand on stage."
+    },
+    {
+      "episode_id": "EP09",
+      "title": "Almost",
+      "arc_phase": "rise",
+      "logline": "Private care and public residue push the relationship toward a first real break in the act.",
+      "core_event": "Ezra tends Cade's injury at dawn.",
+      "turn": "June captures the almost-kiss.",
+      "end_hook": "The moment becomes evidence."
+    },
+    {
+      "episode_id": "EP10",
+      "title": "Off The Record",
+      "arc_phase": "rise",
+      "logline": "The first real kiss lands just before Noah returns.",
+      "core_event": "Ezra and Cade finally stop pretending.",
+      "turn": "Noah arrives on campus.",
+      "end_hook": "History walks back into the story."
+    },
+    {
+      "episode_id": "EP11",
+      "title": "The Witness Returns",
+      "arc_phase": "rise",
+      "logline": "Noah tests Cade while the drive vanishes.",
+      "core_event": "Noah refuses easy forgiveness.",
+      "turn": "The archive disappears before he can review it.",
+      "end_hook": "Someone has already stolen their proof."
+    },
+    {
+      "episode_id": "EP12",
+      "title": "Conduct Review",
+      "arc_phase": "storm",
+      "logline": "A leaked kiss becomes the school's excuse to suspend Cade.",
+      "core_event": "Holt reframes intimacy as institutional liability.",
+      "turn": "Tessa traces the leak toward Mercer channels.",
+      "end_hook": "The family and the school are openly linked."
+    },
+    {
+      "episode_id": "EP13",
+      "title": "Backup Copy",
+      "arc_phase": "storm",
+      "logline": "June escapes injured and reveals the conversion-camp threat.",
+      "core_event": "The safehouse becomes necessary.",
+      "turn": "Cade admits Daniel had prepared to erase him.",
+      "end_hook": "The family threat jumps from emotional to operational."
+    },
+    {
+      "episode_id": "EP14",
+      "title": "Safehouse Rules",
+      "arc_phase": "storm",
+      "logline": "Privacy forces honesty before legal pressure finds them.",
+      "core_event": "Cade opens up about how obedience was built into him.",
+      "turn": "Daniel files kidnapping accusations.",
+      "end_hook": "Even the refuge has become unstable."
+    },
+    {
+      "episode_id": "EP15",
+      "title": "Take The Deal",
+      "arc_phase": "storm",
+      "logline": "Brennan offers Cade future in exchange for betrayal while Ezra prepares the first public drop.",
+      "core_event": "Both leads start making decisions without each other.",
+      "turn": "The hearing arrives before trust is repaired.",
+      "end_hook": "Cade walks into the hearing compromised."
+    },
+    {
+      "episode_id": "EP16",
+      "title": "Say Nothing",
+      "arc_phase": "storm",
+      "logline": "Cade's silence makes Ezra think the betrayal is real until the coercion text is exposed.",
+      "core_event": "Holt uses Cade's silence against Ezra.",
+      "turn": "Ezra sees the text about June.",
+      "end_hook": "The betrayal flips into hostage logic."
+    },
+    {
+      "episode_id": "EP17",
+      "title": "Trade Window",
+      "arc_phase": "storm",
+      "logline": "The leads try one coordinated move to get June and the proof clear.",
+      "core_event": "Brock corners June near the rink.",
+      "turn": "Cade takes the blame to get her out.",
+      "end_hook": "The school now has cover to destroy him."
+    },
+    {
+      "episode_id": "EP18",
+      "title": "Live Mic",
+      "arc_phase": "storm",
+      "logline": "The trap catches Daniel threatening June on record.",
+      "core_event": "June baits Daniel into speaking plainly.",
+      "turn": "Ezra finally captures clean audio.",
+      "end_hook": "The best proof so far is in his headphones."
+    },
+    {
+      "episode_id": "EP19",
+      "title": "Too Early For Love",
+      "arc_phase": "storm",
+      "logline": "The system suppresses proof again and Cade chooses the worst possible time to say he loves Ezra.",
+      "core_event": "Holt blocks publication.",
+      "turn": "Cade confesses love on the bridge.",
+      "end_hook": "Ezra cannot answer."
+    },
+    {
+      "episode_id": "EP20",
+      "title": "Freeze",
+      "arc_phase": "storm",
+      "logline": "Ezra publishes without consent, and Daniel drags Cade back into family control.",
+      "core_event": "Trust fractures at the same time the truth leaks.",
+      "turn": "Cade is pulled home.",
+      "end_hook": "June's line goes dark."
+    },
+    {
+      "episode_id": "EP21",
+      "title": "Church Steps",
+      "arc_phase": "payoff",
+      "logline": "Ezra and Noah arrive at the church property to find Cade bloodied on the steps.",
+      "core_event": "Ezra hits Daniel in public.",
+      "turn": "The violence is finally visible to cameras.",
+      "end_hook": "They have proof of harm, but not yet control of the narrative."
+    },
+    {
+      "episode_id": "EP22",
+      "title": "Altered Footage",
+      "arc_phase": "payoff",
+      "logline": "June's legal path opens as Holt releases an edited version of the story.",
+      "core_event": "The system makes a last attempt to redefine Cade.",
+      "turn": "Noah reveals the hidden helmet-cam card.",
+      "end_hook": "A final proof source still exists."
+    },
+    {
+      "episode_id": "EP23",
+      "title": "Black Tape",
+      "arc_phase": "payoff",
+      "logline": "The team protests and the arena screens turn into a weapon.",
+      "core_event": "Noah's old footage goes public during the semifinal.",
+      "turn": "The whole building sees the buried assault.",
+      "end_hook": "Truth detonates before the finale."
+    },
+    {
+      "episode_id": "EP24",
+      "title": "Thaw",
+      "arc_phase": "payoff",
+      "logline": "Daniel, Brennan, and Holt lose control while Cade and Ezra finally stop hiding.",
+      "core_event": "Public takedown and public kiss land together.",
+      "turn": "The final emotional answer comes in quiet after the noise.",
+      "end_hook": "Final episode resolves rather than re-hooks."
+    }
+  ],
+  "hook_map": [
+    "EP01: evidence reveal",
+    "EP02: hearing threat",
+    "EP03: fake-couple confirmation",
+    "EP04: missing-girl danger",
+    "EP05: Quinn identity collision",
+    "EP06: buried audio proof",
+    "EP07: blackmail escalation",
+    "EP08: public hand-hold reversal",
+    "EP09: almost-kiss capture",
+    "EP10: kiss plus witness return",
+    "EP11: stolen drive",
+    "EP12: suspension hook",
+    "EP13: bruised-sister reveal",
+    "EP14: kidnapping accusation",
+    "EP15: scholarship bargain",
+    "EP16: coercion-text reversal",
+    "EP17: rink ambush",
+    "EP18: live-mic threat",
+    "EP19: mistimed confession",
+    "EP20: trust fracture",
+    "EP21: bloody rescue",
+    "EP22: altered-footage reversal",
+    "EP23: arena proof detonation",
+    "EP24: payoff"
+  ],
+  "paywall_map": [
+    "EP05: Daniel recognizes Ezra as Noah Quinn's brother.",
+    "EP10: Ezra and Cade kiss for real, then Noah returns.",
+    "EP16: Cade's apparent betrayal flips into coercion once the text is seen.",
+    "EP23: The arena scoreboard starts playing the buried truth."
+  ],
+  "outline_markdown": "# 01_英文大纲\\n\\nFull outline maintained in companion markdown file `01_英文大纲.md`."
+}

@@ -1,0 +1,34 @@
+{
+  "source_id": "midnight-heiress-sample",
+  "source_title": "The Heiress Returns at Midnight",
+  "source_summary": "A presumed-dead heiress returns under a false identity to destroy the cousin who stole her family empire.",
+  "project_slug": "midnight-heiress",
+  "project_title": "Midnight Heiress",
+  "target_market": "NA-English",
+  "episode_count": 40,
+  "episode_duration": "1-2 min",
+  "genre_tags": [
+    "Hidden Identity",
+    "Revenge Romance",
+    "Boardroom Intrigue"
+  ],
+  "source_integrity": "partial but commercially usable",
+  "source_chapters": [
+    {
+      "chapter_number": 1,
+      "title": "The Return",
+      "summary": "Nora returns to the city under the alias Eva Stone and appears at the family gala."
+    },
+    {
+      "chapter_number": 2,
+      "title": "The Auction Trap",
+      "summary": "Nora exposes a forged signature during a charity auction and attracts investor Adrian Vale."
+    }
+  ],
+  "production_constraints": {
+    "max_main_cast": 6,
+    "max_primary_locations": 8,
+    "target_visual_level": "glossy premium",
+    "notes": "Favor elegant interiors and limited hero assets that can be reused across episodes."
+  }
+}

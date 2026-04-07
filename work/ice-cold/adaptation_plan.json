@@ -1,0 +1,339 @@
+{
+  "target_market": "NA-English",
+  "episode_count": 24,
+  "episode_duration": "1-2 min",
+  "primary_tropes": [
+    "Enemies to Lovers",
+    "Fake Dating",
+    "Sports Scandal Romance",
+    "Secret Evidence",
+    "Abusive Family Escape"
+  ],
+  "opening_template": "Start with a public collision at a donor-backed midnight campus run, then reveal the two leads are tied to an old homophobic attack and a flash drive labeled with the school's buried abuse archive.",
+  "hook_distribution": {
+    "launch": "public rumor, false-couple setup, and evidence teases",
+    "rise": "chemistry spikes, buried abuse clues, and family pressure escalations",
+    "storm": "betrayal, public hearings, and physical danger to Cade and June",
+    "payoff": "live exposure, institutional collapse, public choice, and emotional thaw"
+  },
+  "season_hook_map": [
+    "0%-20%: why is the donor-family golden boy protecting the exact evidence that could destroy his life",
+    "20%-45%: is the fake relationship turning real before the truth is safe",
+    "45%-80%: who buried the old assault archive and what will Cade sacrifice to keep June alive",
+    "80%-100%: can the truth go public before the system rewrites the story again"
+  ],
+  "episode_hook_map": [
+    {
+      "episode_id": "EP01",
+      "hook_type": "information hook",
+      "hook_out": "Ezra opens June's dropped flash drive and sees a folder labeled DISCIPLINE ARCHIVE."
+    },
+    {
+      "episode_id": "EP02",
+      "hook_type": "crisis hook",
+      "hook_out": "A board hearing summons both Ezra and Cade over the viral collision rumor."
+    },
+    {
+      "episode_id": "EP03",
+      "hook_type": "reversal hook",
+      "hook_out": "Cade agrees to fake-date Ezra in front of a student camera."
+    },
+    {
+      "episode_id": "EP04",
+      "hook_type": "crisis hook",
+      "hook_out": "June vanishes right after warning Ezra not to trust anyone inside athletics."
+    },
+    {
+      "episode_id": "EP05",
+      "hook_type": "identity hook",
+      "hook_out": "Pastor Mercer recognizes the Quinn surname and realizes Ezra is Noah Quinn's brother."
+    },
+    {
+      "episode_id": "EP06",
+      "hook_type": "information hook",
+      "hook_out": "An audio file proves Coach Brennan ordered players to stay silent after the old assault."
+    },
+    {
+      "episode_id": "EP07",
+      "hook_type": "threat hook",
+      "hook_out": "Ezra gets a text warning him to drop Cade before Noah's sealed file is released."
+    },
+    {
+      "episode_id": "EP08",
+      "hook_type": "emotional hook",
+      "hook_out": "Instead of denying the rumor on stage, Cade takes Ezra's hand under the donor lights."
+    },
+    {
+      "episode_id": "EP09",
+      "hook_type": "romantic hook",
+      "hook_out": "June's camera catches the almost-kiss neither lead can explain away anymore."
+    },
+    {
+      "episode_id": "EP10",
+      "hook_type": "information hook",
+      "hook_out": "Noah returns to campus right after Ezra and Cade finally kiss for real."
+    },
+    {
+      "episode_id": "EP11",
+      "hook_type": "theft hook",
+      "hook_out": "The flash drive disappears before Noah can review it."
+    },
+    {
+      "episode_id": "EP12",
+      "hook_type": "crisis hook",
+      "hook_out": "Cade is suspended when their private kiss leaks online."
+    },
+    {
+      "episode_id": "EP13",
+      "hook_type": "danger hook",
+      "hook_out": "June shows up bruised and says her father found the backup drive."
+    },
+    {
+      "episode_id": "EP14",
+      "hook_type": "legal hook",
+      "hook_out": "Pastor Mercer accuses Ezra of kidnapping Cade."
+    },
+    {
+      "episode_id": "EP15",
+      "hook_type": "betrayal hook",
+      "hook_out": "Coach Brennan offers Cade his future back if he lets Ezra take the fall."
+    },
+    {
+      "episode_id": "EP16",
+      "hook_type": "double hook",
+      "hook_out": "Cade stays silent at the hearing and Ezra sees the text that explains why: They have my sister."
+    },
+    {
+      "episode_id": "EP17",
+      "hook_type": "crisis hook",
+      "hook_out": "Brock corners June at the rink before the handoff is complete."
+    },
+    {
+      "episode_id": "EP18",
+      "hook_type": "information hook",
+      "hook_out": "A live mic captures Pastor Mercer threatening June by name."
+    },
+    {
+      "episode_id": "EP19",
+      "hook_type": "emotional hook",
+      "hook_out": "Cade tells Ezra he loves him before the truth is safe enough to hold."
+    },
+    {
+      "episode_id": "EP20",
+      "hook_type": "break hook",
+      "hook_out": "Ezra publishes without Cade's consent, and Pastor Mercer's people drag Cade home."
+    },
+    {
+      "episode_id": "EP21",
+      "hook_type": "crisis hook",
+      "hook_out": "Ezra reaches the Mercer house and finds Cade bloodied on the church steps."
+    },
+    {
+      "episode_id": "EP22",
+      "hook_type": "reversal hook",
+      "hook_out": "The athletic director releases altered footage that makes Cade look like the aggressor."
+    },
+    {
+      "episode_id": "EP23",
+      "hook_type": "information hook",
+      "hook_out": "The arena scoreboard glitches as Noah's hidden helmet-cam file starts to play."
+    },
+    {
+      "episode_id": "EP24",
+      "hook_type": "payoff",
+      "hook_out": "Final episode resolves through public truth, public choice, and a public kiss."
+    }
+  ],
+  "paywall_map": [
+    {
+      "episode_id": "EP05",
+      "position_ratio": "0.21",
+      "phase": "first lock",
+      "type": "identity collision",
+      "beat": "The Mercer father realizes the boy near his son is the victim family's surviving witness."
+    },
+    {
+      "episode_id": "EP10",
+      "position_ratio": "0.42",
+      "phase": "second lock",
+      "type": "romance plus witness",
+      "beat": "Ezra and Cade kiss for real, then Noah returns before they can define what it means."
+    },
+    {
+      "episode_id": "EP16",
+      "position_ratio": "0.67",
+      "phase": "third lock",
+      "type": "betrayal under coercion",
+      "beat": "Cade appears to betray Ezra at the hearing, but the hidden text reveals June is being held over him."
+    },
+    {
+      "episode_id": "EP23",
+      "position_ratio": "0.96",
+      "phase": "final lock",
+      "type": "truth detonation",
+      "beat": "The arena screen begins playing the master proof just before the championship faceoff."
+    }
+  ],
+  "rhythm_curve": {
+    "launch_phase": "viral collision, fake relationship, and first archive reveals compress the setup into public action instead of routine campus encounters",
+    "rise_phase": "chemistry and evidence develop in parallel while the father, coach, and rumor machine squeeze tighter",
+    "storm_phase": "hearings, forced silence, June's danger, and Cade's apparent betrayal create rapid alternating pain and payoff beats",
+    "payoff_phase": "hospital, custody, public testimony, arena reveal, and emotional confession land in quick succession"
+  },
+  "satisfaction_mix": {
+    "status_reversal": "Each public pressure event ends with Cade reclaiming agency from the school, the father, or the rumor machine.",
+    "romantic_tension": "Fake dating, near misses, secret care, and one mistimed confession keep emotional appetite high.",
+    "truth_drop": "The archive is released in fragments, forcing viewers to chase the next missing file, missing witness, or altered clip.",
+    "family_escape_payoff": "June's safety becomes the emotional proof that love here creates a future, not just chemistry."
+  },
+  "villain_ladder": [
+    {
+      "layer": "social enforcer",
+      "face": "Brock Danner, the locker-room loudmouth and rumor weaponizer",
+      "pressure": "public humiliation, violence bait, and leaked clips"
+    },
+    {
+      "layer": "institutional enforcer",
+      "face": "Coach Brennan",
+      "pressure": "ice time, scholarship leverage, and loyalty blackmail"
+    },
+    {
+      "layer": "visible patriarch",
+      "face": "Pastor Daniel Mercer",
+      "pressure": "family terror, church image, and direct abuse"
+    },
+    {
+      "layer": "system shield",
+      "face": "Athletic Director Miriam Holt",
+      "pressure": "evidence suppression, legal spin, and official narrative control"
+    }
+  ],
+  "cultural_swap_rules": [
+    {
+      "source": "casual run-ins across two campuses",
+      "target": "public donor event, athletics hearings, and media-space collisions",
+      "reason": "Short-drama structure needs a more external and public conflict engine."
+    },
+    {
+      "source": "slow-burn campus routine",
+      "target": "fake-dating scandal plus buried-abuse investigation",
+      "reason": "Creates stronger hooks and stronger cliffhangers without losing the romance core."
+    },
+    {
+      "source": "private emotional healing",
+      "target": "private healing plus public testimony and institutional takedown",
+      "reason": "Overseas short-drama audiences convert better on visible reversals and system-level pressure."
+    },
+    {
+      "source": "family house confrontation only at the end",
+      "target": "family, church, school, and donor spaces braided throughout",
+      "reason": "Keeps external stakes active across the whole season."
+    }
+  ],
+  "role_function_map": [
+    {
+      "character_id": "CHAR-01",
+      "outline_function": "narrative engine and emotional lens",
+      "screenplay_function": "sharp-tongued driver of deals, reveals, and reversals",
+      "storyboard_function": "stillness, gaze, and recording-device anchor",
+      "setting_bible_function": "defines the cold editorial visual language"
+    },
+    {
+      "character_id": "CHAR-02",
+      "outline_function": "pressure vessel and romance detonator",
+      "screenplay_function": "body-in-danger lead whose choices move every public beat",
+      "storyboard_function": "bruise, ice, and restraint anchor",
+      "setting_bible_function": "defines the sports prestige and damage visual language"
+    },
+    {
+      "character_id": "CHAR-03",
+      "outline_function": "big bad patriarch",
+      "screenplay_function": "direct abuse, control, and moral hypocrisy pressure source",
+      "storyboard_function": "towering intrusion and shadow anchor",
+      "setting_bible_function": "defines the church-donor power aesthetic"
+    },
+    {
+      "character_id": "CHAR-04",
+      "outline_function": "family-stakes trigger and archive courier",
+      "screenplay_function": "delivers danger, innocence, and urgency",
+      "storyboard_function": "motion and panic accent in cold frames",
+      "setting_bible_function": "adds youth and vulnerability contrast"
+    },
+    {
+      "character_id": "CHAR-05",
+      "outline_function": "team ally and conscience pivot",
+      "screenplay_function": "legitimizes Cade inside the hockey world",
+      "storyboard_function": "locker-room counterweight",
+      "setting_bible_function": "grounds the reform-team texture"
+    },
+    {
+      "character_id": "CHAR-06",
+      "outline_function": "friend strategist",
+      "screenplay_function": "cuts exposition with practical action and emotional truth",
+      "storyboard_function": "pace accelerator in interiors",
+      "setting_bible_function": "adds color and intelligence to the campus support system"
+    }
+  ],
+  "forbidden_traps": [
+    "chapter-by-chapter campus romance replication",
+    "generic sports-movie underdog beats",
+    "sermon-heavy speeches about morality",
+    "long internal monologues replacing visible action",
+    "ending with private closure only and no public reversal"
+  ],
+  "adaptation_summary": "Rebuild the source into a premium queer campus scandal romance. Keep the cold-to-thaw emotional engine, abusive father pressure, hockey masculinity, and found-family payoff, but move the plot into a fake-dating cover, buried athletics abuse archive, live-hearing conflict, and public takedown structure designed for 24 addictive short episodes.",
+  "season_arc": [
+    {
+      "segment": "launch",
+      "goal": "Create the false-couple engine and establish the buried archive as the real prize",
+      "start_ratio": "0.00",
+      "end_ratio": "0.21",
+      "episode_span": "EP01-EP05"
+    },
+    {
+      "segment": "rise",
+      "goal": "Let chemistry and evidence deepen together while external pressure hardens",
+      "start_ratio": "0.21",
+      "end_ratio": "0.46",
+      "episode_span": "EP06-EP11"
+    },
+    {
+      "segment": "storm",
+      "goal": "Explode trust through hearings, coercion, leaks, and family danger",
+      "start_ratio": "0.46",
+      "end_ratio": "0.83",
+      "episode_span": "EP12-EP20"
+    },
+    {
+      "segment": "payoff",
+      "goal": "Deliver hospital survival, public proof, institutional collapse, and romantic answer",
+      "start_ratio": "0.83",
+      "end_ratio": "1.00",
+      "episode_span": "EP21-EP24"
+    }
+  ],
+  "scene_language_rules": [
+    "Keep scenes built on accusation, negotiation, protection, or confession. No idle campus chatter.",
+    "Every scene must shift leverage, release a clue, or intensify intimacy.",
+    "Make public scenes sharper and shorter than private scenes.",
+    "Let Cade speak in clipped defense and Ezra in precise provocation until both soften.",
+    "Use hockey, church, and media spaces as visual pressure machines rather than background decoration."
+  ],
+  "similarity_avoidance": [
+    "Rename every major character and rebuild the supporting cast around a donor-board scandal structure.",
+    "Replace Brown versus Providence daily-life rhythms with a single Catholic hockey campus, media rooms, hearings, and donor events.",
+    "Turn the emotional core into a fake-dating plus buried-archive engine rather than a mostly routine slow burn.",
+    "Move the climax from a direct replay of the original house rescue into a public church-step capture, custody battle, and arena proof event.",
+    "Write wholly original dialogue and rearrange confession, betrayal, and reconciliation timing."
+  ],
+  "similarity_score": {
+    "character_and_relationship": 6,
+    "setting": 4,
+    "main_plot_chain": 7,
+    "key_scenes": 4,
+    "dialogue": 2,
+    "ending": 3,
+    "total": 26,
+    "assessment": "The adaptation preserves only the core emotional engine: an icy queer sports romance thawing under family abuse pressure. Names, setting container, plot chain, conflict spaces, reveal order, and climax mechanics are substantially rebuilt below the 30-point threshold."
+  }
+}

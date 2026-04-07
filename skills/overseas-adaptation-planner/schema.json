@@ -1,0 +1,147 @@
+{
+  "type": "object",
+  "required": [
+    "target_market",
+    "episode_count",
+    "episode_duration",
+    "primary_tropes",
+    "opening_template",
+    "hook_distribution",
+    "season_hook_map",
+    "episode_hook_map",
+    "paywall_map",
+    "rhythm_curve",
+    "satisfaction_mix",
+    "villain_ladder",
+    "cultural_swap_rules",
+    "role_function_map",
+    "forbidden_traps",
+    "adaptation_summary",
+    "season_arc",
+    "scene_language_rules",
+    "similarity_avoidance",
+    "similarity_score"
+  ],
+  "properties": {
+    "target_market": { "type": "string" },
+    "episode_count": { "type": "integer" },
+    "episode_duration": { "type": "string" },
+    "primary_tropes": { "type": "array", "items": { "type": "string" } },
+    "opening_template": { "type": "string" },
+    "hook_distribution": { "type": "object" },
+    "season_hook_map": { "type": "array", "items": { "type": "string" } },
+    "episode_hook_map": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["episode_id", "hook_type", "hook_out"],
+        "properties": {
+          "episode_id": { "type": "string" },
+          "hook_type": { "type": "string" },
+          "hook_out": { "type": "string" }
+        }
+      }
+    },
+    "paywall_map": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["episode_id", "position_ratio", "phase", "type", "beat"],
+        "properties": {
+          "episode_id": { "type": "string" },
+          "position_ratio": { "type": "string" },
+          "phase": { "type": "string" },
+          "type": { "type": "string" },
+          "beat": { "type": "string" }
+        }
+      }
+    },
+    "rhythm_curve": { "type": "object" },
+    "satisfaction_mix": { "type": "object" },
+    "villain_ladder": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["layer", "face", "pressure"],
+        "properties": {
+          "layer": { "type": "string" },
+          "face": { "type": "string" },
+          "pressure": { "type": "string" }
+        }
+      }
+    },
+    "cultural_swap_rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source", "target", "reason"],
+        "properties": {
+          "source": { "type": "string" },
+          "target": { "type": "string" },
+          "reason": { "type": "string" }
+        }
+      }
+    },
+    "role_function_map": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "character_id",
+          "outline_function",
+          "screenplay_function",
+          "storyboard_function",
+          "setting_bible_function"
+        ],
+        "properties": {
+          "character_id": { "type": "string" },
+          "outline_function": { "type": "string" },
+          "screenplay_function": { "type": "string" },
+          "storyboard_function": { "type": "string" },
+          "setting_bible_function": { "type": "string" }
+        }
+      }
+    },
+    "forbidden_traps": { "type": "array", "items": { "type": "string" } },
+    "adaptation_summary": { "type": "string" },
+    "season_arc": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["segment", "goal", "start_ratio", "end_ratio", "episode_span"],
+        "properties": {
+          "segment": { "type": "string" },
+          "goal": { "type": "string" },
+          "start_ratio": { "type": "string" },
+          "end_ratio": { "type": "string" },
+          "episode_span": { "type": "string" }
+        }
+      }
+    },
+    "scene_language_rules": { "type": "array", "items": { "type": "string" } },
+    "similarity_avoidance": { "type": "array", "items": { "type": "string" } },
+    "similarity_score": {
+      "type": "object",
+      "required": [
+        "character_and_relationship",
+        "setting",
+        "main_plot_chain",
+        "key_scenes",
+        "dialogue",
+        "ending",
+        "total",
+        "assessment"
+      ],
+      "properties": {
+        "character_and_relationship": { "type": "integer" },
+        "setting": { "type": "integer" },
+        "main_plot_chain": { "type": "integer" },
+        "key_scenes": { "type": "integer" },
+        "dialogue": { "type": "integer" },
+        "ending": { "type": "integer" },
+        "total": { "type": "integer" },
+        "assessment": { "type": "string" }
+      }
+    }
+  }
+}

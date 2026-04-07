@@ -1,0 +1,127 @@
+{
+  "genre_assessment": "Primary genre: Hidden Identity Revenge Romance. Secondary stack: power-couple intrigue, public humiliation payoff, corporate legitimacy war.",
+  "tone": "Sharp, glamorous, humiliating, addictive, romantic under pressure.",
+  "worldbuilding_seeds": [
+    "Old-money family empire with a decaying legitimacy core",
+    "Elite public spaces where humiliation is always witnessed",
+    "A boardroom system that values evidence, perception and money over sentiment"
+  ],
+  "timeline_seeds": [
+    "Five years ago: the real heiress disappears after a staged accident",
+    "Two years ago: Celia consolidates social legitimacy as acting heiress",
+    "Present day: Nora returns under an alias as a public-facing revenge strategist"
+  ],
+  "location_candidates": [
+    {
+      "location_id": "LOC-01",
+      "name": "Hale Charity Gala Ballroom",
+      "dramatic_function": "public humiliation arena and return stage",
+      "visual_seed": "crystal light, black marble, old-money coldness"
+    },
+    {
+      "location_id": "LOC-02",
+      "name": "Auction Floor",
+      "dramatic_function": "public evidence reveal arena",
+      "visual_seed": "velvet display, donor tables, spotlight pressure"
+    }
+  ],
+  "prop_candidates": [
+    {
+      "prop_id": "PROP-01",
+      "name": "Amelia Hale Seal",
+      "story_function": "proof of true lineage and evidence trigger",
+      "visual_seed": "aged metal, engraved crest, velvet case"
+    },
+    {
+      "prop_id": "PROP-02",
+      "name": "Forged Donor Ledger",
+      "story_function": "public exposure device",
+      "visual_seed": "cream paper, wet signature, gold-edged pages"
+    }
+  ],
+  "visual_theme_seeds": [
+    "black crystal gold",
+    "stillness as power",
+    "public spectacle as weapon"
+  ],
+  "character_cards": [
+    {
+      "character_id": "CHAR-01",
+      "name": "Nora Hale / Eva Stone",
+      "role": "Protagonist",
+      "public_identity": "Auction consultant freshly back from London",
+      "hidden_identity": "The real Hale heiress presumed dead",
+      "core_desire": "Reclaim the company and destroy the lie in public",
+      "leverage": "lineage knowledge, hidden evidence, control under pressure"
+    },
+    {
+      "character_id": "CHAR-02",
+      "name": "Adrian Vale",
+      "role": "Male lead / strategic ally",
+      "public_identity": "Disciplined investor with ruthless timing",
+      "hidden_identity": "He is tracing the fraud network behind the Hale board",
+      "core_desire": "Own the truth before anyone else weaponizes it",
+      "leverage": "capital, legal reach, media gravity"
+    },
+    {
+      "character_id": "CHAR-03",
+      "name": "Celia Hale",
+      "role": "Visible antagonist",
+      "public_identity": "Beloved acting heiress and social darling",
+      "hidden_identity": "Usurper whose status rests on forged legitimacy",
+      "core_desire": "Lock permanent control over the Hale empire",
+      "leverage": "public image, family loyalty theater, insiders"
+    }
+  ],
+  "relationship_map": [
+    {
+      "from_character_id": "CHAR-01",
+      "to_character_id": "CHAR-03",
+      "dynamic": "blood rivalry, stolen identity, public war"
+    },
+    {
+      "from_character_id": "CHAR-01",
+      "to_character_id": "CHAR-02",
+      "dynamic": "strategic alliance with dangerous attraction"
+    },
+    {
+      "from_character_id": "CHAR-03",
+      "to_character_id": "CHAR-02",
+      "dynamic": "attempted manipulation blocked by distrust"
+    }
+  ],
+  "conflict_map": [
+    {
+      "label": "inheritance war",
+      "description": "The real heiress returns in secret to reclaim the empire from the false successor.",
+      "stage": "launch"
+    },
+    {
+      "label": "public legitimacy battle",
+      "description": "Every major confrontation happens in rooms full of witnesses.",
+      "stage": "rise"
+    },
+    {
+      "label": "alliance under suspicion",
+      "description": "Nora and Adrian need each other while hiding separate agendas.",
+      "stage": "storm"
+    }
+  ],
+  "selling_points": [
+    "dead heiress returns under a false name",
+    "public revenge at elite social events",
+    "power-couple tension under mutual suspicion",
+    "boardroom legitimacy war instead of household melodrama"
+  ],
+  "similarity_risks": [
+    "Direct reuse of the family-gala return scene",
+    "Direct reuse of the forged-signature auction reveal",
+    "Direct reuse of the original private betrayal dialogue beat"
+  ],
+  "source_value_assessment": "High adaptation value. The source contains a clear identity engine, public humiliation potential, and a romance-capable power ally.",
+  "supporting_evidence": [
+    "Chapter 1 establishes the false-death return engine",
+    "Chapter 2 contains a public evidence drop structure",
+    "The romanceable ally enters early enough for short-drama pacing"
+  ]
+}

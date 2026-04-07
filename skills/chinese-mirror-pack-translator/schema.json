@@ -1,0 +1,53 @@
+{
+  "type": "object",
+  "required": [
+    "outline_markdown",
+    "screenplay_markdown",
+    "storyboard_markdown",
+    "setting_bible_markdown",
+    "alignment_notes",
+    "file_crosswalk"
+  ],
+  "properties": {
+    "outline_markdown": { "type": "string" },
+    "screenplay_markdown": { "type": "string" },
+    "storyboard_markdown": { "type": "string" },
+    "setting_bible_markdown": { "type": "string" },
+    "alignment_notes": {
+      "type": "object",
+      "required": [
+        "translation_strategy",
+        "character_name_map",
+        "terminology_notes",
+        "mirror_checks"
+      ],
+      "properties": {
+        "translation_strategy": { "type": "string" },
+        "character_name_map": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "terminology_notes": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "mirror_checks": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "file_crosswalk": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["doc_type", "english_source", "chinese_output"],
+        "properties": {
+          "doc_type": { "type": "string" },
+          "english_source": { "type": "string" },
+          "chinese_output": { "type": "string" }
+        }
+      }
+    }
+  }
+}

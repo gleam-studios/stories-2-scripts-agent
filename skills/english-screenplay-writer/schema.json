@@ -1,0 +1,43 @@
+{
+  "type": "object",
+  "required": [
+    "quick_reference",
+    "character_snapshot",
+    "screenplay_markdown",
+    "scene_crosswalk"
+  ],
+  "properties": {
+    "quick_reference": { "type": "object" },
+    "character_snapshot": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["character_id", "name", "function"],
+        "properties": {
+          "character_id": { "type": "string" },
+          "name": { "type": "string" },
+          "function": { "type": "string" }
+        }
+      }
+    },
+    "screenplay_markdown": { "type": "string" },
+    "scene_crosswalk": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["episode_id", "scene_id", "slugline", "purpose", "character_ids", "location_id"],
+        "properties": {
+          "episode_id": { "type": "string" },
+          "scene_id": { "type": "string" },
+          "slugline": { "type": "string" },
+          "purpose": { "type": "string" },
+          "character_ids": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "location_id": { "type": "string" }
+        }
+      }
+    }
+  }
+}

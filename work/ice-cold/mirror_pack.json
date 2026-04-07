@@ -1,0 +1,61 @@
+{
+  "outline_markdown": "# 05_中文大纲\\n\\nFull Chinese outline maintained in companion markdown file `05_中文大纲.md`.",
+  "screenplay_markdown": "# 06_中文剧本\\n\\nFull Chinese screenplay maintained in companion markdown file `06_中文剧本.md`.",
+  "storyboard_markdown": "# 07_中文分镜表\\n\\nFull Chinese storyboard maintained in companion markdown file `07_中文分镜表.md`.",
+  "setting_bible_markdown": "# 08_中文设定集\\n\\nFull Chinese setting bible maintained in companion markdown file `08_中文设定集.md`.",
+  "alignment_notes": {
+    "translation_strategy": "Chinese mirrors the final English pack structurally while preserving all IDs, episode/scene/shot logic, asset mapping, and cliffhanger order. Language is localized for internal production readability rather than literal line-for-line translation.",
+    "character_name_map": [
+      "CHAR-01 Ezra Quinn -> 埃兹拉·奎因",
+      "CHAR-02 Cade Mercer -> 凯德·默瑟",
+      "CHAR-03 Pastor Daniel Mercer -> 丹尼尔·默瑟牧师",
+      "CHAR-04 June Mercer -> 琼·默瑟",
+      "CHAR-05 Milo Hart -> 迈洛·哈特",
+      "CHAR-06 Tessa Vale -> 泰莎·维尔",
+      "CHAR-07 Noah Quinn -> 诺亚·奎因",
+      "CHAR-08 Coach Brennan -> 布伦南教练",
+      "CHAR-09 Miriam Holt -> 米里娅姆·霍尔特",
+      "CHAR-10 Brock Danner -> 布洛克·丹纳"
+    ],
+    "terminology_notes": [
+      "setting bible -> 设定集",
+      "storyboard -> 分镜表",
+      "hearing room -> 听证室",
+      "safehouse -> 安全屋",
+      "burner phone -> burner phone / 预付费手机",
+      "donor gala -> 捐赠晚宴"
+    ],
+    "mirror_checks": [
+      "All episode IDs preserved",
+      "All scene IDs preserved",
+      "All shot IDs preserved",
+      "All character IDs preserved",
+      "All location IDs preserved",
+      "All prop IDs preserved",
+      "All look IDs preserved",
+      "English 1-4 remained the master source for Chinese 5-8"
+    ]
+  },
+  "file_crosswalk": [
+    {
+      "doc_type": "outline",
+      "english_source": "01_ice cold_英文大纲.docx",
+      "chinese_output": "05_ice cold_中文大纲.docx"
+    },
+    {
+      "doc_type": "screenplay",
+      "english_source": "02_ice cold_英文剧本.docx",
+      "chinese_output": "06_ice cold_中文剧本.docx"
+    },
+    {
+      "doc_type": "storyboard",
+      "english_source": "03_ice cold_英文分镜表.docx",
+      "chinese_output": "07_ice cold_中文分镜表.docx"
+    },
+    {
+      "doc_type": "setting_bible",
+      "english_source": "04_ice cold_英文设定集.docx",
+      "chinese_output": "08_ice cold_中文设定集.docx"
+    }
+  ]
+}

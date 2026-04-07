@@ -1,0 +1,71 @@
+{
+  "quick_reference": {
+    "project_title": "Midnight Heiress",
+    "logline": "A dead heiress returns under a false name to reclaim her empire in public.",
+    "target_market": "NA-English",
+    "genre": "Hidden Identity / Revenge Romance",
+    "episode_count": 40,
+    "episode_duration": "1-2 min",
+    "mood_tags": ["glossy", "cold luxury", "public humiliation"],
+    "protagonist_snapshot": "Nora weaponizes stillness, evidence, and spectacle."
+  },
+  "world_background": "The Hale family empire sits at the intersection of social prestige, donor politics, and corporate control. Public rooms matter because witness equals power.",
+  "timeline": [
+    {
+      "year_or_phase": "Five years ago",
+      "event": "Nora disappears after a staged accident tied to inheritance fraud."
+    },
+    {
+      "year_or_phase": "Present day",
+      "event": "Nora returns as Eva Stone to launch a public legitimacy war."
+    }
+  ],
+  "character_profiles": [
+    {
+      "character_id": "CHAR-01",
+      "name": "Nora Hale / Eva Stone",
+      "public_identity": "Auction consultant",
+      "hidden_identity": "True Hale heiress",
+      "core_desire": "Take back her name and company",
+      "core_fear": "Being exposed before the evidence chain is complete",
+      "voice_style": "short, cool, precise",
+      "visual_design": "dark formalwear, severe silhouette, minimal jewelry",
+      "wardrobe_system": "LOOK-01 / black satin power looks",
+      "signature_props": ["PROP-01"],
+      "relationship_notes": "She dominates Celia in public and destabilizes Adrian through control."
+    }
+  ],
+  "location_profiles": [
+    {
+      "location_id": "LOC-01",
+      "name": "Hale Charity Gala Ballroom",
+      "dramatic_function": "public status arena",
+      "visual_keywords": ["crystal", "marble", "gold light", "cold wealth"],
+      "asset_notes": "Must feel elite, expensive, and emotionally hostile."
+    }
+  ],
+  "prop_profiles": [
+    {
+      "prop_id": "PROP-01",
+      "name": "Amelia Hale Seal",
+      "story_function": "proof of lineage and evidence trigger",
+      "visual_description": "engraved family crest with aged metal patina"
+    }
+  ],
+  "visual_system": "The series language is cold luxury: black, crystal, gold, and precise silhouettes. Public spaces should feel weaponized by geometry and witness.",
+  "continuity_rules": [
+    "Nora's scar is always on the same wrist.",
+    "Celia must always read brighter and more performative than Nora.",
+    "The family seal must visually match every mention of Hale lineage."
+  ],
+  "ai_asset_matrix": [
+    {
+      "asset_type": "character_look",
+      "asset_id": "LOOK-01",
+      "prompt_seed": "female revenge heiress in black satin, cold luxury, high restraint",
+      "must_have": "sharp silhouette, minimal jewelry, composure",
+      "avoid": "soft pastel romance styling"
+    }
+  ],
+  "setting_bible_markdown": "# 04_<剧名>_英文设定集\n\n## Quick Reference\n- Project Title: Midnight Heiress\n- Logline: A dead heiress returns under a false name to reclaim her empire in public.\n\n## World Background\nPublic witness is power in the Hale world.\n\n## Character Profiles\n### CHAR-01 Nora Hale / Eva Stone\nCold luxury, severe silhouette, controlled speech.\n"
+}
