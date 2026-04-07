@@ -23,8 +23,31 @@ The screenplay must be written so that the storyboard can grow naturally from it
 
 1. `Quick Reference`
 2. Character snapshot
-3. Screenplay markdown (full, all episodes, all scenes)
-4. Scene crosswalk
+3. `episode_briefs` (one object per episode — mirrors `[EPISODE BRIEF]` in markdown)
+4. Screenplay markdown (full, all episodes, all scenes)
+5. Scene crosswalk
+
+---
+
+## Episode brief (mandatory before every episode's first scene)
+
+Immediately after each `## EPISODE XX` heading and **before** the first `### SCENE`, include a labeled block:
+
+```
+[EPISODE BRIEF]
+Episode Plot: [2-4 sentences — what happens this episode, what advances]
+Opening Hook: [one sentence — what retains the audience at episode open]
+Cold Open Focus: [one sentence — what must be on screen in the first seconds; aligns with first scene]
+Closing Hook: [one sentence — what is left unresolved for the next episode; must match final scene [SCENE ENDING]]
+Core Satisfaction: [one sentence — primary satisfaction payoff; align with outline satisfaction_beat]
+Target Emotion: [one sentence — audience emotion by episode end]
+```
+
+Rules:
+- `episode_briefs` in JSON must have one entry per episode; count must equal `episode_count`.
+- `Opening Hook` / `Cold Open Focus` must be **paid off** in the first scene's `[OPENING STATE]` and early `[MAIN BODY]`.
+- `Closing Hook` must be **consistent** with the last scene's `[SCENE ENDING]` (same beat; wording may vary).
+- `Episode Plot` must summarize **all scenes** in the episode, not only the first.
 
 ---
 
@@ -196,6 +219,9 @@ If a block cannot answer all three, rewrite it.
 ## Pre-output self-audit (mandatory)
 
 ```
+□ Every episode has [EPISODE BRIEF] with all 6 labeled lines before the first scene
+□ episode_briefs array length equals episode_count
+□ Opening Hook / Cold Open Focus paid off in first scene; Closing Hook matches final [SCENE ENDING]
 □ All episodes have complete screenplay text (not summaries)
 □ Every episode has at least 2 scenes
 □ Every scene has all 4 components: header / [OPENING STATE] / [MAIN BODY] / [SCENE ENDING]

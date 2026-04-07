@@ -3,6 +3,7 @@
   "required": [
     "quick_reference",
     "character_snapshot",
+    "episode_briefs",
     "screenplay_markdown",
     "scene_crosswalk"
   ],
@@ -37,9 +38,54 @@
       }
     },
 
+    "episode_briefs": {
+      "type": "array",
+      "minItems": 1,
+      "description": "One entry per episode. Count must equal quick_reference.episode_count. Mirrors [EPISODE BRIEF] blocks in screenplay_markdown. Must align with outline episode_outlines for the same episode_id.",
+      "items": {
+        "type": "object",
+        "required": [
+          "episode_id",
+          "plot_summary",
+          "opening_hook",
+          "cold_open_focus",
+          "closing_hook",
+          "core_satisfaction_beat",
+          "target_emotion"
+        ],
+        "properties": {
+          "episode_id": { "type": "string", "description": "e.g. EP01" },
+          "plot_summary": {
+            "type": "string",
+            "description": "2-4 sentences: what happens this episode and what advances."
+          },
+          "opening_hook": {
+            "type": "string",
+            "description": "One sentence: what retains the audience at episode open (conflict, information, visual tension)."
+          },
+          "cold_open_focus": {
+            "type": "string",
+            "description": "One sentence: what must appear on screen in the first seconds to hold retention; aligns with first scene opening."
+          },
+          "closing_hook": {
+            "type": "string",
+            "description": "One sentence: unresolved question or crisis left for the next episode; must match final scene [SCENE ENDING]."
+          },
+          "core_satisfaction_beat": {
+            "type": "string",
+            "description": "One sentence: primary satisfaction payoff type + landing; align with outline satisfaction_beat for this episode."
+          },
+          "target_emotion": {
+            "type": "string",
+            "description": "One sentence: target audience emotion by episode end."
+          }
+        }
+      }
+    },
+
     "screenplay_markdown": {
       "type": "string",
-      "description": "Full screenplay text covering every episode. Every scene must have: scene header (6 fields) + [OPENING STATE] + [MAIN BODY] in action blocks + [SCENE ENDING]. No episode may be replaced with a summary or placeholder."
+      "description": "Full screenplay text covering every episode. After each ## EPISODE XX, include [EPISODE BRIEF] with six labeled lines (Episode Plot, Opening Hook, Cold Open Focus, Closing Hook, Core Satisfaction, Target Emotion) before the first ### SCENE. Every scene: scene header (6 fields) + [OPENING STATE] + [MAIN BODY] in action blocks + [SCENE ENDING]. No episode may be replaced with a summary or placeholder."
     },
 
     "scene_crosswalk": {

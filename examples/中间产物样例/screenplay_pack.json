@@ -28,7 +28,28 @@
     }
   ],
 
-  "screenplay_markdown": "# 02_英文剧本\n\n## EPISODE 01\n\n### SCENE 01.01\nTime: Night\nLocation: INT. HALE CHARITY GALA\nCharacters: NORA HALE / EVA STONE, CELIA HALE, ADRIAN VALE\nCore Event: Celia publicly attempts to socially eject Eva at the entrance; Eva deflects and takes the high ground\nScene Result: Celia is left without a clean move; Adrian clocks that Eva knows something she shouldn't\n\n[OPENING STATE]\nThe ballroom is in full donor-gala motion. Crystal overhead. Warm gold light with an edge beneath the polish.\n\nNora steps through the entrance alone. A champagne glass lifted from the nearest tray. She holds it without drinking.\n\n[MAIN BODY]\nCelia clocks Eva from across the room. She crosses toward her with the ease of a woman who owns it.\n\nShe stops directly in Eva's path.\n\nCELIA\nYou must be lost.\n\nNora turns. Unhurried. Holds the look one beat too long.\n\nNORA\nNot at all. I came exactly where I was invited.\n\nCelia steps closer, lowering her voice.\n\nCELIA\nI don't know who sent you through those doors. But this is a private event.\n\nNora glances at the room — the donors, the photographers, the cameras — then back at Celia.\n\nNORA\nThen you should have locked them better.\n\nA beat. Celia has nothing left to say.\n\nAdrian stands at the edge of the frame, watching. He hasn't moved on.\n\n[SCENE ENDING]\nA hotel photographer's camera sweeps across the entrance group — and catches Nora's wrist. The scar. Just for a moment.\n",
+  "episode_briefs": [
+    {
+      "episode_id": "EP01",
+      "plot_summary": "Nora enters the gala as Eva Stone. Celia strikes first in public; Nora deflects. The fight moves to a private corridor; Adrian interrupts — all three know the war has started.",
+      "opening_hook": "A stranger walks into a room that buried her — and the woman on the throne doesn't know it yet.",
+      "cold_open_focus": "Ballroom in motion, crystal light, Nora alone at the entrance with a champagne glass she does not drink.",
+      "closing_hook": "Adrian asks a question only someone inside the family war would dare answer; Nora answers without flinching; he still doesn't look away.",
+      "core_satisfaction_beat": "Status reversal — Celia's public dismissal fails clean; Nora takes the social high ground in one line.",
+      "target_emotion": "Controlled exhilaration — the audience knows Nora is dangerous before anyone in the room does."
+    },
+    {
+      "episode_id": "EP02",
+      "plot_summary": "Nora tracks Miriam Cross, the retired archivist. First meeting is cautious and coded. Miriam opens her portfolio without handing anything over — and names something only an insider would recognize.",
+      "opening_hook": "The one witness everyone needs is the one person who chose silence for years.",
+      "cold_open_focus": "Institutional waiting room, muffled board session behind a closed door, Miriam alone with a leather portfolio on her lap.",
+      "closing_hook": "Miriam says Nora has her mother's way of standing; Nora does not deny it; the folder stays open between them.",
+      "core_satisfaction_beat": "Truth drop tease — information is offered as presence, not as a gift yet.",
+      "target_emotion": "Tight hope under fear — the key is in the room but not yet turned."
+    }
+  ],
+
+  "screenplay_markdown": "# 02_英文剧本\n\n## EPISODE 01\n\n[EPISODE BRIEF]\nEpisode Plot: ...\nOpening Hook: ...\nCold Open Focus: ...\nClosing Hook: ...\nCore Satisfaction: ...\nTarget Emotion: ...\n\n### SCENE 01.01\nTime: Night\nLocation: INT. HALE CHARITY GALA\nCharacters: NORA HALE / EVA STONE, CELIA HALE, ADRIAN VALE\nCore Event: Celia publicly attempts to socially eject Eva at the entrance; Eva deflects and takes the high ground\nScene Result: Celia is left without a clean move; Adrian clocks that Eva knows something she shouldn't\n\n[OPENING STATE]\nThe ballroom is in full donor-gala motion. Crystal overhead. Warm gold light with an edge beneath the polish.\n\nNora steps through the entrance alone. A champagne glass lifted from the nearest tray. She holds it without drinking.\n\n[MAIN BODY]\nCelia clocks Eva from across the room. She crosses toward her with the ease of a woman who owns it.\n\nShe stops directly in Eva's path.\n\nCELIA\nYou must be lost.\n\nNora turns. Unhurried. Holds the look one beat too long.\n\nNORA\nNot at all. I came exactly where I was invited.\n\nCelia steps closer, lowering her voice.\n\nCELIA\nI don't know who sent you through those doors. But this is a private event.\n\nNora glances at the room — the donors, the photographers, the cameras — then back at Celia.\n\nNORA\nThen you should have locked them better.\n\nA beat. Celia has nothing left to say.\n\nAdrian stands at the edge of the frame, watching. He hasn't moved on.\n\n[SCENE ENDING]\nA hotel photographer's camera sweeps across the entrance group — and catches Nora's wrist. The scar. Just for a moment.\n",
 
   "scene_crosswalk": [
     {
