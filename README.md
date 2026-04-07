@@ -44,7 +44,7 @@
   - 运行时规则源
 - `examples/`
   - 中间产物样例与 8 份最终交付样例
-  - `examples/工作流最小样例/` — `chapter_index.example.json`、`run_manifest.example.json`（长文本分段续跑）
+  - `examples/工作流最小样例/` — `chapter_index.example.json` / `chapter_index.example.yaml`、`run_manifest.example.json`（长文本分段续跑）
 - `scripts/`
   - `split_source_by_chapters.py` — 按章索引切出 `source_chunks/`（无网络）
 - `work/`
