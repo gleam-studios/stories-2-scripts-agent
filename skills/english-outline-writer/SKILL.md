@@ -175,6 +175,20 @@ Must align with `adaptation_plan.paywall_map`.
 
 ---
 
+## Long-text execution (`rules/16`)
+
+When the source is long or context is tight:
+
+1. Build a **Continuity Sheet** from `english_setting_bible` (1–2 screens max): core `character_id` rules, key prop/location continuity, hard world constraints — **not** the full `setting_bible.json`.
+2. **Batch A**: Write sections **1–8** only (Quick Reference through Overall Story Structure), aligned with `adaptation_plan` and the Continuity Sheet.
+3. **Batch B…**: Write **section 9 — Episode Outline** only, **≤10 episodes per call** (EP01–EP10, then EP11–EP20, …) until count = `adaptation_plan.episode_count`.
+4. **Batch C**: Write **sections 10–14** (Hook maps, Paywall, Signature Scenes, Viral Clips) **after** all episode rows exist.
+5. **Align pass** (separate call): Input = merged `outline_pack` draft + `adaptation_plan`. Fix contradictions, hook/paywall alignment, fill missing episodes, ensure `episode_id` continuity. Do not rewrite frozen sections without documented conflict.
+
+Update `work/<project_slug>/run_manifest.json` after each batch (`outline_batches_done`).
+
+---
+
 ## Alignment with `adaptation_plan`
 
 Before writing, read `adaptation_plan` fully:
@@ -220,6 +234,7 @@ Before writing, read `adaptation_plan` fully:
 
 ## References
 
+- `rules/16_长文本分段执行规范.md`
 - `rules/11_大纲规范.md`
 - `rules/04_商业化卡点策略.md`
 - `rules/05_节奏曲线.md`

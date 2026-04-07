@@ -20,6 +20,17 @@ Every other document (outline, screenplay, storyboard) must be consistent with t
 
 ---
 
+## Long-text execution (`rules/16`)
+
+If context or output limits risk truncation:
+
+1. **Batch** generation of heavy arrays: `character_profiles`, `look_profiles`, `location_profiles`, `prop_profiles`, `ai_asset_matrix` — each batch appends to working JSON.
+2. **Merge pass** (separate call): input = partial JSON objects only; output = one valid `setting_bible.json` per `schema.json`. Merge **only** deduplicates IDs, aligns `character_id` / `look_id` / `location_id` / `prop_id`, and fills required fields — **do not** drop `rules/14` mandatory counts.
+3. `quick_reference`, `world_background`, `visual_system`, `narrative_forbidden_zones` may be written in one pass after characters/locations exist, or with Batch A.
+4. Update `run_manifest.json` when batches complete.
+
+---
+
 ## Required Structure — 12 Chapters (Fixed Order)
 
 ### §1 Quick Reference
@@ -238,6 +249,7 @@ Minimum 3 entries, recommended 5-8.
 
 ## References
 
+- `rules/16_长文本分段执行规范.md`
 - `rules/14_设定集规范.md`
 - `examples/中间产物样例/setting_bible.json`
 - `examples/最终交付样例/04_英文设定集.md`

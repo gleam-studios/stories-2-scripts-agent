@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "story_bible_partial",
+  "description": "Output of one chunk pass before merge into story_bible.json",
+  "type": "object",
+  "required": [
+    "chunk_id",
+    "chapter_range",
+    "characters_seen",
+    "plot_beats",
+    "open_threads"
+  ],
+  "properties": {
+    "chunk_id": { "type": "string", "pattern": "^CH\\d{2}-CH\\d{2}$|^[A-Za-z0-9._-]+$" },
+    "chapter_range": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "characters_seen": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name_or_label", "role_hint"],
+        "properties": {
+          "name_or_label": { "type": "string" },
+          "role_hint": { "type": "string" },
+          "character_id": { "type": "string" }
+        }
+      }
+    },
+    "plot_beats": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "open_threads": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "worldbuilding_seeds": { "type": "array", "items": { "type": "string" } },
+    "timeline_seeds": { "type": "array", "items": { "type": "string" } },
+    "location_candidates": { "type": "array" },
+    "prop_candidates": { "type": "array" },
+    "visual_theme_seeds": { "type": "array", "items": { "type": "string" } },
+    "similarity_risks": { "type": "array", "items": { "type": "string" } },
+    "supporting_evidence": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": true
+}

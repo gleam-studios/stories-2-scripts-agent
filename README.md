@@ -44,6 +44,9 @@
   - 运行时规则源
 - `examples/`
   - 中间产物样例与 8 份最终交付样例
+  - `examples/工作流最小样例/` — `chapter_index.example.json`、`run_manifest.example.json`（长文本分段续跑）
+- `scripts/`
+  - `split_source_by_chapters.py` — 按章索引切出 `source_chunks/`（无网络）
 - `work/`
   - 单篇项目的工作目录
 - `short-drama原始参考/`
@@ -65,6 +68,7 @@
 ## 当前口径
 
 1. `rules/` 是唯一运行时规则源。
+1b. 长原文（约 ≥50 万字符或单次装不下「原文+规则」）须遵守 `rules/16_长文本分段执行规范.md`（chunk/merge、分批大纲、按集剧本与分镜、`run_manifest.json` 续跑）。
 2. 大纲、剧本、分镜表、设定集严格拆分。
 3. 每份最终文件都带 `Quick Reference` 开头块。
 4. 分镜表固定为镜头逐行表，不再使用旧的“拍摄脚本”总称作为交付物名称。
@@ -87,21 +91,23 @@
 
 ### 规则从哪里来、约束什么
 
-- **`rules/`** 是运行时**唯一**规则源：约束各 stage 的输出边界、8 个 Word 的格式与密度、海外改编逻辑、双语镜像规则。
-- **`role/`** 规定如何启动、如何收尾、快捷指令（如 `/start`）、单篇流程与导出路径；不写具体剧本内容。
-- **`skills/`** 对应 7 个 stage 的正式 skill；执行时按 skill 读入，并服从对应 `rules/` 条目（索引见 `rules/00_规则库索引.md`）。
+- `**rules/`** 是运行时**唯一**规则源：约束各 stage 的输出边界、8 个 Word 的格式与密度、海外改编逻辑、双语镜像规则。
+- `**role/`** 规定如何启动、如何收尾、快捷指令（如 `/start`）、单篇流程与导出路径；不写具体剧本内容。
+- `**skills/**` 对应 7 个 stage 的正式 skill；执行时按 skill 读入，并服从对应 `rules/` 条目（索引见 `rules/00_规则库索引.md`）。
 
 ### 标准执行顺序（7 个 stage）
 
-| 顺序 | Stage | 主要产出（工作区常见文件名） |
-|------|--------|------------------------------|
-| 1 | `source-analysis` | `story_bible` |
-| 2 | `overseas-adaptation-planner` | `adaptation_plan` |
-| 3 | `english-setting-bible-builder` | 英文设定集（及中间 JSON） |
-| 4 | `english-outline-writer` | 英文大纲 |
-| 5 | `english-screenplay-writer` | 英文剧本 |
-| 6 | `english-storyboard-table-builder` | 英文分镜表 |
-| 7 | `chinese-mirror-pack-translator` | 中文大纲 / 剧本 / 分镜表 / 设定集 |
+
+| 顺序  | Stage                              | 主要产出（工作区常见文件名）        |
+| --- | ---------------------------------- | --------------------- |
+| 1   | `source-analysis`                  | `story_bible`         |
+| 2   | `overseas-adaptation-planner`      | `adaptation_plan`     |
+| 3   | `english-setting-bible-builder`    | 英文设定集（及中间 JSON）       |
+| 4   | `english-outline-writer`           | 英文大纲                  |
+| 5   | `english-screenplay-writer`        | 英文剧本                  |
+| 6   | `english-storyboard-table-builder` | 英文分镜表                 |
+| 7   | `chinese-mirror-pack-translator`   | 中文大纲 / 剧本 / 分镜表 / 设定集 |
+
 
 启动后会在 `work/<project_slug>/` 落盘；收尾时核对英文 1–4 与中文 5–8 完整、编号与命名一致，并可按 `role/启动与导出规范.md` 导出到桌面 `~/Desktop/短剧导出/<project_slug>/`。
 
@@ -358,3 +364,4 @@ asset_id / asset_type / prompt_seed / must_have[] / must_avoid[] / resolution_hi
 
 ## §12 Narrative Forbidden Zones（≥3 条）
 ```
+

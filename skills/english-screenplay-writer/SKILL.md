@@ -189,6 +189,16 @@ Do not increase scene count to fill time — write each scene's action blocks to
 
 ---
 
+## Long-text execution (`rules/16`)
+
+1. **Default: one model call per episode** (append to the same `screenplay_pack.json`). **Maximum 3 episodes per call** unless total output is verified small enough not to truncate.
+2. Each call includes: that episode's rows from `outline_pack` + **Continuity Sheet** (from `setting_bible`, 1–2 screens) + IDs for LOC/PROP/LOOK used this episode — **not** the full `setting_bible.json`.
+3. **Source text**: attach **only** excerpts from `chapter_index.yaml` / `source_chunks/` relevant to this episode — never the full novel in one call.
+4. **Stitch pass** (after all episodes): verify global `scene_id` uniqueness, monotonic `scene_crosswalk` order, handoff between episodes EPn final scene and EPn+1 opening — fix only bridging issues without rewriting completed interiors.
+5. Update `run_manifest.json` (`last_episode_screenplay`).
+
+---
+
 ## Prohibitions
 
 1. Omitting `[EPISODE BRIEF]` or any of its 6 fields
@@ -230,4 +240,14 @@ Do not increase scene count to fill time — write each scene's action blocks to
 □ Parentheticals do not exceed 3 per scene
 □ scene_crosswalk in screenplay_pack.json lists every scene with all 7 header fields
 □ episode_briefs in screenplay_pack.json cover all episodes
+□ Long-text: stitch pass done; scene_id unique; no duplicate scene_id across episodes
 ```
+
+---
+
+## References
+
+- `rules/16_长文本分段执行规范.md`
+- `rules/12_剧本规范.md`
+- `rules/08_英文对白写作规则.md`
+- `examples/中间产物样例/screenplay_pack.json`

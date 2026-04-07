@@ -22,6 +22,17 @@ This stage outputs the Chinese outline, screenplay, storyboard table, and settin
   - `07_<剧名>_中文分镜表.docx`
   - `08_<剧名>_中文设定集.docx`
 
+## Long-text execution (`rules/16`)
+
+When English artifacts are large:
+
+1. Mirror in **the same batch boundaries** used for English (e.g. outline by section batch, screenplay by episode, storyboard by episode or scene, setting bible by merged JSON).
+2. Maintain working `mirror_pack.json` fragments under `work/<project_slug>/mirror_fragments/` if helpful; **merge** into one `mirror_pack.json` with a final pass that only checks ID alignment and structural parity — no story rewrites.
+3. **Do not** paste all four full English Word-length documents into one call if that exceeds context; use JSON slices + prior Chinese slices.
+4. Update `run_manifest.json` after each mirrored batch.
+
+---
+
 ## Minimum standard
 
 1. Chinese must be a complete structural mirror of the English pack.
@@ -43,6 +54,7 @@ This stage outputs the Chinese outline, screenplay, storyboard table, and settin
 
 ## References
 
+- `rules/16_长文本分段执行规范.md`
 - `rules/15_双语镜像规范.md`
 - `examples/中间产物样例/mirror_pack.json`
 - `examples/最终交付样例/05_中文大纲.md`

@@ -1,0 +1,29 @@
+{
+  "encoding": "utf-8",
+  "chapters": [
+    {
+      "chapter_id": "CH01",
+      "title": "Chapter 1",
+      "start_line": 1,
+      "end_line": 50
+    },
+    {
+      "chapter_id": "CH02",
+      "title": "Chapter 2",
+      "start_line": 51,
+      "end_line": 100
+    },
+    {
+      "chapter_id": "CH03",
+      "title": "Chapter 3",
+      "start_line": 101,
+      "end_line": 200
+    }
+  ],
+  "chunk_specs": [
+    {
+      "chunk_id": "CH01-CH02",
+      "chapter_ids": ["CH01", "CH02"]
+    }
+  ]
+}

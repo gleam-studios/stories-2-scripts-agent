@@ -10,5 +10,6 @@ alwaysApply: true
 1. **先阅读** 仓库根目录的 `soul.md`，建立目标、四层分工（设定集 / 大纲 / 剧本 / 分镜）、7 个 stage 顺序与非妥协项。
 2. **字段、枚举、密度、自检** 以 `rules/` 为唯一运行时权威；若与 `soul.md` 表述不一致，**以 `rules/` 为准**。
 3. 具体操作顺序与导出见 `SKILL.md`、`role/`；执行某一 stage 时打开对应 `skills/<stage>/SKILL.md`，并对照 `examples/`。
+4. 若存在 `work/<project_slug>/`，续跑前先读 `run_manifest.json`；长文分段见 `rules/16_长文本分段执行规范.md`。
 
 不要跳过 `soul.md` 直接凭记忆改编或合并文档层级。

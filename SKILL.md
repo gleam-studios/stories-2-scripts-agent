@@ -92,7 +92,7 @@
 4. 读取 `role/单篇执行流程.md`
 5. 读取 `role/启动与导出规范.md`
 6. 明确任务是设计、打磨，还是跑真实网文
-7. 若是跑真实网文，创建 `work/<project_slug>/`
+7. 若是跑真实网文，创建或进入 `work/<project_slug>/`；若目录已存在，**先读** `run_manifest.json` 与 `soul.md` 再续跑
 8. 按需读取 `rules/`
 9. 按需读取 `skills/`
 10. 对照 `examples/`
@@ -114,32 +114,26 @@
 ## 六、7 个 stage 的责任边界
 
 1. `source-analysis`
-   - 只做理解与素材抽取
-   - 输出 `story_bible`
-
+  - 只做理解与素材抽取
+  - 输出 `story_bible`
 2. `overseas-adaptation-planner`
-   - 只做改编规划
-   - 输出 `adaptation_plan`
-
+  - 只做改编规划
+  - 输出 `adaptation_plan`
 3. `english-setting-bible-builder`
-   - 只做英文设定集
-   - 输出 `english_setting_bible`
-
+  - 只做英文设定集
+  - 输出 `english_setting_bible`
 4. `english-outline-writer`
-   - 只做英文大纲
-   - 输出 `english_outline_pack`
-
+  - 只做英文大纲
+  - 输出 `english_outline_pack`
 5. `english-screenplay-writer`
-   - 只做英文剧本
-   - 输出 `english_screenplay_pack`
-
+  - 只做英文剧本
+  - 输出 `english_screenplay_pack`
 6. `english-storyboard-table-builder`
-   - 只做英文分镜表
-   - 输出 `english_storyboard_pack`
-
+  - 只做英文分镜表
+  - 输出 `english_storyboard_pack`
 7. `chinese-mirror-pack-translator`
-   - 只做中文镜像 4 件套
-   - 输出 `chinese_mirror_pack`
+  - 只做中文镜像 4 件套
+  - 输出 `chinese_mirror_pack`
 
 ## 七、固定判断
 
@@ -169,6 +163,15 @@
 8. `mirror_pack.json`
 9. `export/`
 
+**长文本（推荐常备）：** `chapter_index.yaml`（章起止行号或字符范围或锚点）、`source_chunks/`（可选）、`run_manifest.json`（断点与批次进度）。详见 `rules/16_长文本分段执行规范.md`。
+
+## 八点五、长文本默认策略（防 token 缩水）
+
+1. **权威规则：** `rules/16_长文本分段执行规范.md`（对外仍为 7 stage，分段为子步骤）。
+2. **禁止** 单次调用将**全书原文**与全套长规则一并塞进模型（除非已验证当前模型上下文与输出余量足够）。
+3. **子步骤摘要：** `source-analysis` → 按章包 **chunk pass** + **merge pass**；`english-outline-writer` → **batch** + **align**；`english-screenplay-writer` → **按集**（每调用最多 3 集）+ **stitch**；`english-storyboard-table-builder` → **按集或按场** + 密度不足时 **second pass**；`chinese-mirror-pack-translator` → 与英文 **相同批次边界** 合并；`english-setting-bible-builder` → 大体量时可 **分批 JSON 再 merge**。
+4. 每完成一子步骤更新 `run_manifest.json`，便于 Cursor 长对话滚丢后续跑。
+
 ## 九、禁止项
 
 1. 禁止逐章照搬原文。
@@ -177,6 +180,7 @@
 4. 禁止缺少 `project_title` 时正式导出。
 5. 禁止在 `agent/` 内继续扩前端或 API。
 6. 禁止把 `.json/.md` 工作稿当成最终交付。
+7. 禁止在常规集数下 **单次调用生成全剧分镜表**（见 `rules/16`）；禁止为省 token 省略 `rules` 规定的最低密度与字段。
 
 ## 十、完成前最后核对
 
@@ -186,3 +190,4 @@
 4. 大纲、剧本、分镜表、设定集是否边界清楚
 5. 8 个文件是否都带 `Quick Reference`
 6. 是否已导出到桌面目录
+

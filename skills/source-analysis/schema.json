@@ -117,6 +117,29 @@
     "supporting_evidence": {
       "type": "array",
       "items": { "type": "string" }
+    },
+    "source_coverage": {
+      "type": "object",
+      "description": "Required when story_bible was produced via chunk+merge (long texts).",
+      "required": ["chapters_covered", "chunk_ids_merged", "merge_version"],
+      "properties": {
+        "chapters_covered": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "chunk_ids_merged": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "merge_version": { "type": "string" },
+        "coverage_gaps": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "additionalProperties": false
     }
   }
 }

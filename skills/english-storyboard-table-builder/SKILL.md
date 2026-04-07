@@ -244,6 +244,19 @@ Do not write abstract emotional labels in `ai_note` — describe what the camera
 | `outline_pack.signature_scenes` | Each must appear as a full scene — no compression |
 | `outline_pack.paywall_map` | Paywall beats must appear as a `hook` shot or standalone `reversal` shot |
 | `setting_bible.characters` | character_ids |
+| `setting_bible.locations` | location_id |
+| `setting_bible.props` | prop_ids |
+| `setting_bible.looks` | look_ids |
+
+---
+
+## Long-text execution (`rules/16`)
+
+1. **Per episode** by default: generate all shot rows for that episode (or **per scene** if one episode is too large for output).
+2. Each call: screenplay excerpt for target episode/scene + matching outline slice + **compact ID table** from `setting_bible` (character/location/prop/look IDs relevant to that unit) — **not** the full setting bible prose.
+3. **Density second pass**: if any scene fails `target_shot_count = ceil(action_block_count × 1.5) + 2` or `rules/13` scene minimums, run a **follow-up call for that scene only** that **adds** missing shot rows — do not rewrite the screenplay.
+4. **Forbidden**: generating the **full-season** storyboard in a single call unless episode count is tiny and self-audit passes.
+5. Update `run_manifest.json` (`last_storyboard_scene` or equivalent).
 
 **`scene_ending_type` → `hook` shot `transition` mapping:**
 
@@ -253,9 +266,6 @@ Do not write abstract emotional labels in `ai_note` — describe what the camera
 | `reversal` | `HARD_CUT` | Information lands, cut before reaction resolves |
 | `emotional_peak` | `HOLD` then `SMASH_CUT` | Hold on the peak expression, then cut on silence |
 | `setup` | `CUT` or `DISSOLVE` | Stakes-raising beat; can dissolve if a time skip follows |
-| `setting_bible.locations` | location_id |
-| `setting_bible.props` | prop_ids |
-| `setting_bible.looks` | look_ids |
 
 ---
 
@@ -299,4 +309,14 @@ Do not write abstract emotional labels in `ai_note` — describe what the camera
 □ All scene_ids from screenplay_pack.scene_crosswalk are covered — no missing scenes
 □ Signature scenes from outline are fully expanded, not compressed
 □ Paywall beats from outline appear as hook or reversal shots
+□ Long-text: no whole-season single call; second pass applied where density failed
 ```
+
+---
+
+## References
+
+- `rules/16_长文本分段执行规范.md`
+- `rules/13_分镜表规范.md`
+- `rules/05_节奏曲线.md`
+- `examples/中间产物样例/storyboard_pack.json`

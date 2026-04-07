@@ -8,7 +8,7 @@ This stage defines the commercial and narrative plan for all downstream document
 
 ## Input
 
-- `story_bible`
+- `story_bible` (merged; if `supporting_evidence` is thin, **only** re-read the relevant `source_chunks` / chapter excerpts — **not** the full novel, per `rules/16`)
 
 ## Output
 
@@ -52,6 +52,7 @@ This stage defines the commercial and narrative plan for all downstream document
 
 ## References
 
+- `rules/16_长文本分段执行规范.md`
 - `rules/01_海外题材与文化映射.md`
 - `rules/02_开场规则.md`
 - `rules/03_钩子设计.md`
