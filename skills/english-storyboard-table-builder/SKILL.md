@@ -238,12 +238,21 @@ Do not write abstract emotional labels in `ai_note` — describe what the camera
 |-------------|-------------------|
 | `screenplay_pack.scene_crosswalk[n].core_event` | Scene Core Event in scene header |
 | `screenplay_pack.scene_crosswalk[n].scene_result` | Scene End State in scene header |
-| `screenplay_pack.scene_crosswalk[n].scene_ending_type` | `hook` shot `transition` type (cliffhanger → `SMASH_CUT`) |
+| `screenplay_pack.scene_crosswalk[n].scene_ending_type` | `hook` shot `transition` type — see mapping below |
 | `screenplay_pack.scene_crosswalk[n].action_block_count` | Target shot count formula |
 | `screenplay_pack.episode_briefs[n].closing_hook` | Episode Closing Hook in episode header |
 | `outline_pack.signature_scenes` | Each must appear as a full scene — no compression |
 | `outline_pack.paywall_map` | Paywall beats must appear as a `hook` shot or standalone `reversal` shot |
 | `setting_bible.characters` | character_ids |
+
+**`scene_ending_type` → `hook` shot `transition` mapping:**
+
+| `scene_ending_type` | Recommended `transition` | Rationale |
+|---------------------|--------------------------|-----------|
+| `cliffhanger` | `SMASH_CUT` | Action frozen mid-danger; hard collision into next scene |
+| `reversal` | `HARD_CUT` | Information lands, cut before reaction resolves |
+| `emotional_peak` | `HOLD` then `SMASH_CUT` | Hold on the peak expression, then cut on silence |
+| `setup` | `CUT` or `DISSOLVE` | Stakes-raising beat; can dissolve if a time skip follows |
 | `setting_bible.locations` | location_id |
 | `setting_bible.props` | prop_ids |
 | `setting_bible.looks` | look_ids |
