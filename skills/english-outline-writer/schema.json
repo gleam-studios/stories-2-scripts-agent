@@ -5,13 +5,35 @@
     "adaptation_positioning",
     "season_outline",
     "episode_outlines",
-    "hook_map",
+    "season_hook_map",
+    "episode_hook_map",
     "paywall_map",
     "outline_markdown"
   ],
   "properties": {
-    "quick_reference": { "type": "object" },
-    "adaptation_positioning": { "type": "string" },
+    "quick_reference": {
+      "type": "object",
+      "required": ["project_title", "logline", "target_market", "genre", "episode_count", "episode_duration", "mood_tags", "protagonist_snapshot"],
+      "properties": {
+        "project_title": { "type": "string" },
+        "logline": { "type": "string" },
+        "target_market": { "type": "string" },
+        "genre": { "type": "string" },
+        "episode_count": { "type": "integer" },
+        "episode_duration": { "type": "string" },
+        "mood_tags": { "type": "array", "items": { "type": "string" } },
+        "protagonist_snapshot": { "type": "string" }
+      }
+    },
+    "adaptation_positioning": {
+      "type": "object",
+      "required": ["core_hook", "audience_positioning", "similarity_avoidance_direction"],
+      "properties": {
+        "core_hook": { "type": "string" },
+        "audience_positioning": { "type": "string" },
+        "similarity_avoidance_direction": { "type": "string" }
+      }
+    },
     "season_outline": {
       "type": "object",
       "required": ["story_premise", "main_conflict", "arc_segments", "major_twists", "final_payoff"],
@@ -20,10 +42,25 @@
         "main_conflict": { "type": "string" },
         "arc_segments": {
           "type": "array",
-          "items": { "type": "string" }
+          "minItems": 4,
+          "maxItems": 4,
+          "description": "Exactly 4 entries: launch, rise, storm, finale.",
+          "items": {
+            "type": "object",
+            "required": ["phase", "goal", "episode_span"],
+            "properties": {
+              "phase": {
+                "type": "string",
+                "enum": ["launch", "rise", "storm", "finale"]
+              },
+              "goal": { "type": "string" },
+              "episode_span": { "type": "string", "description": "e.g. EP01-EP08" }
+            }
+          }
         },
         "major_twists": {
           "type": "array",
+          "minItems": 2,
           "items": { "type": "string" }
         },
         "final_payoff": { "type": "string" }
@@ -31,22 +68,148 @@
     },
     "episode_outlines": {
       "type": "array",
+      "minItems": 1,
+      "description": "Count must equal quick_reference.episode_count. Every episode must have its own entry.",
       "items": {
         "type": "object",
-        "required": ["episode_id", "title", "arc_phase", "logline", "core_event", "turn", "end_hook"],
+        "required": [
+          "episode_id",
+          "title",
+          "arc_phase",
+          "logline",
+          "core_event",
+          "turn",
+          "emotional_goal",
+          "relationship_shift",
+          "antagonist_pressure",
+          "satisfaction_beat",
+          "end_hook"
+        ],
         "properties": {
-          "episode_id": { "type": "string" },
+          "episode_id": {
+            "type": "string",
+            "description": "e.g. EP01. Must align with adaptation_plan."
+          },
           "title": { "type": "string" },
-          "arc_phase": { "type": "string" },
-          "logline": { "type": "string" },
-          "core_event": { "type": "string" },
-          "turn": { "type": "string" },
-          "end_hook": { "type": "string" }
+          "arc_phase": {
+            "type": "string",
+            "enum": ["launch", "rise", "storm", "finale"],
+            "description": "Must use enum only. Aligned with adaptation_plan.rhythm_curve."
+          },
+          "logline": {
+            "type": "string",
+            "description": "One sentence: episode positioning."
+          },
+          "core_event": {
+            "type": "string",
+            "description": "One sentence: the central narrative event this episode."
+          },
+          "turn": {
+            "type": "string",
+            "description": "One sentence: the key information, relationship, or power shift."
+          },
+          "emotional_goal": {
+            "type": "string",
+            "description": "One sentence: what the audience should feel by the episode's end."
+          },
+          "relationship_shift": {
+            "type": "string",
+            "description": "One sentence: what changes between key characters this episode."
+          },
+          "antagonist_pressure": {
+            "type": "string",
+            "description": "One sentence: the specific step the antagonist or institution takes."
+          },
+          "satisfaction_beat": {
+            "type": "object",
+            "required": ["tag", "description"],
+            "properties": {
+              "tag": {
+                "type": "string",
+                "enum": ["status_reversal", "face_slap", "underdog_rise", "emotional_eruption", "truth_drop"],
+                "description": "Must use enum from rules/06_爽点矩阵."
+              },
+              "description": {
+                "type": "string",
+                "description": "One sentence: the concrete satisfaction payoff this episode."
+              }
+            }
+          },
+          "end_hook": {
+            "type": "object",
+            "required": ["hook_type", "hook_out"],
+            "properties": {
+              "hook_type": {
+                "type": "string",
+                "enum": ["identity_tease", "evidence_drop", "alliance_shift", "betrayal_reveal", "romance_peak", "cliffhanger", "reversal", "setup"]
+              },
+              "hook_out": {
+                "type": "string",
+                "description": "One sentence: what the audience sees or hears at the episode's final beat."
+              }
+            }
+          }
         }
       }
     },
-    "hook_map": { "type": "array", "items": { "type": "string" } },
-    "paywall_map": { "type": "array", "items": { "type": "string" } },
-    "outline_markdown": { "type": "string" }
+    "season_hook_map": {
+      "type": "array",
+      "description": "4-segment season-level hook arc, aligned with adaptation_plan.season_hook_map.",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "required": ["phase", "ratio_range", "hook_direction"],
+        "properties": {
+          "phase": {
+            "type": "string",
+            "enum": ["launch", "rise", "storm", "finale"]
+          },
+          "ratio_range": { "type": "string", "description": "e.g. 0%-20%" },
+          "hook_direction": { "type": "string", "description": "One sentence: audience suspense question for this phase." }
+        }
+      }
+    },
+    "episode_hook_map": {
+      "type": "array",
+      "description": "One entry per episode. Must align with adaptation_plan.episode_hook_map.",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["episode_id", "hook_type", "hook_out"],
+        "properties": {
+          "episode_id": { "type": "string" },
+          "hook_type": {
+            "type": "string",
+            "enum": ["identity_tease", "evidence_drop", "alliance_shift", "betrayal_reveal", "romance_peak", "cliffhanger", "reversal", "setup"]
+          },
+          "hook_out": { "type": "string" }
+        }
+      }
+    },
+    "paywall_map": {
+      "type": "array",
+      "description": "Paywall beats aligned with adaptation_plan.paywall_map.",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["episode_id", "position_ratio", "phase", "type", "beat", "viewer_task"],
+        "properties": {
+          "episode_id": { "type": "string" },
+          "position_ratio": { "type": "string", "description": "e.g. 0.20" },
+          "phase": {
+            "type": "string",
+            "enum": ["first_lock", "mid_lock", "storm_lock", "finale_lock"]
+          },
+          "type": { "type": "string", "description": "One of the 5 paywall types from rules/04_商业化卡点策略." },
+          "beat": { "type": "string", "description": "One sentence: what happens at the paywall beat." },
+          "viewer_task": { "type": "string", "description": "One sentence: the unresolved question driving the viewer to continue." }
+        }
+      }
+    },
+    "outline_markdown": {
+      "type": "string",
+      "description": "Full outline Markdown covering all 6 sections in order. Used for Word export. Must not omit any episode."
+    }
   }
 }

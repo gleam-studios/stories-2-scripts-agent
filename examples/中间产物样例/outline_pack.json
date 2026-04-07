@@ -6,50 +6,153 @@
     "genre": "Hidden Identity / Revenge Romance",
     "episode_count": 40,
     "episode_duration": "1-2 min",
-    "mood_tags": ["sharp", "glossy", "addictive"],
+    "mood_tags": ["sharp", "glossy", "addictive", "cold luxury"],
     "protagonist_snapshot": "Nora uses public rooms like a battlefield."
   },
-  "adaptation_positioning": "This is a female-skewing public revenge romance built around witness, status reversal, and a dangerous strategic ally.",
+  "adaptation_positioning": {
+    "core_hook": "The presumed-dead heiress walks into her family's gala under another name and starts dismantling their power in front of cameras.",
+    "audience_positioning": "Female-skewing overseas short-drama audience seeking status reversal, revenge payoff, and high-tension romance.",
+    "similarity_avoidance_direction": "Shift conflict into public elite venues, boardroom legitimacy warfare, and fast alliance pressure."
+  },
   "season_outline": {
     "story_premise": "The real heiress returns under an alias to destroy the lie holding her cousin on the throne.",
-    "main_conflict": "Nora must win legitimacy in public before she can reveal herself safely.",
+    "main_conflict": "Nora must win legitimacy in public before the board can erase her again.",
     "arc_segments": [
-      "Launch: false-name return and first reversal",
-      "Rise: alliance, public wins, addictive evidence drops"
+      {
+        "phase": "launch",
+        "goal": "False-name return, first public reversal, and male lead enters the war.",
+        "episode_span": "EP01-EP08"
+      },
+      {
+        "phase": "rise",
+        "goal": "Alliance deepens, public wins stack, evidence becomes addictive.",
+        "episode_span": "EP09-EP20"
+      },
+      {
+        "phase": "storm",
+        "goal": "Betrayal, false defeat, and villain pressure closes in from all sides.",
+        "episode_span": "EP21-EP32"
+      },
+      {
+        "phase": "finale",
+        "goal": "Public truth revealed, board collapses, Nora reclaims power without surrender.",
+        "episode_span": "EP33-EP40"
+      }
     ],
     "major_twists": [
-      "Adrian knows Eva is lying earlier than he admits",
-      "The forgery ring reaches the board"
+      "Adrian knows Eva is lying earlier than he admits — and chose to protect her anyway.",
+      "The forgery ring reaches the board, implicating a director Nora initially trusted.",
+      "Nora's legal identity was erased through a document Nora's own father signed under duress."
     ],
-    "final_payoff": "Nora reclaims her name without surrendering power."
+    "final_payoff": "Nora reclaims her name in public, with Adrian beside her by choice — not contract."
   },
   "episode_outlines": [
     {
       "episode_id": "EP01",
       "title": "Back From the Grave",
       "arc_phase": "launch",
-      "logline": "Nora returns to the Hale gala as Eva Stone.",
+      "logline": "Nora returns to the Hale charity gala as Eva Stone and survives Celia's first public strike.",
       "core_event": "Celia publicly humiliates Eva without knowing who she is.",
-      "turn": "Adrian notices Nora knows family-only information.",
-      "end_hook": "A camera catches Nora's scar."
+      "turn": "Adrian notices Eva knows family-only information no outsider should have.",
+      "emotional_goal": "Audience feels the pleasure of watching a predator underestimate the wrong person.",
+      "relationship_shift": "Nora and Adrian move from strangers to mutual threat — he is watching her now.",
+      "antagonist_pressure": "Celia deploys social exclusion to remove Eva from the gala's power circle.",
+      "satisfaction_beat": {
+        "tag": "status_reversal",
+        "description": "Nora deflects Celia's public dismissal with a single line that leaves Celia with no clean move."
+      },
+      "end_hook": {
+        "hook_type": "identity_tease",
+        "hook_out": "A camera catches the scar on Nora's wrist — the mark only the real heiress had."
+      }
     },
     {
       "episode_id": "EP02",
       "title": "The Auction Trap",
       "arc_phase": "launch",
-      "logline": "Nora turns a charity auction into an exposure stage.",
-      "core_event": "The family seal and forged ledger collide in public.",
-      "turn": "A donor questions Celia's legitimacy out loud.",
-      "end_hook": "The board is forced to ask who Eva really is."
+      "logline": "Nora weaponizes a charity auction to expose one layer of forged legitimacy.",
+      "core_event": "The family seal and a forged ledger entry collide in public view.",
+      "turn": "A longtime donor questions Celia's legitimacy out loud — the first crack in the wall.",
+      "emotional_goal": "Audience feels that Nora is already three steps ahead of everyone in the room.",
+      "relationship_shift": "Adrian moves from observer to cautious participant — he asks Nora a direct question.",
+      "antagonist_pressure": "Celia deploys a loyalist director to undercut Eva's credibility with the donors.",
+      "satisfaction_beat": {
+        "tag": "face_slap",
+        "description": "The forged seal is flagged publicly, forcing Celia to apologize to the room while Eva watches."
+      },
+      "end_hook": {
+        "hook_type": "evidence_drop",
+        "hook_out": "The board is forced to ask who Eva really is — and someone in the room already knows."
+      }
     }
   ],
-  "hook_map": [
-    "EP01: identity tease",
-    "EP02: legitimacy suspicion"
+  "season_hook_map": [
+    {
+      "phase": "launch",
+      "ratio_range": "0%-20%",
+      "hook_direction": "Who is Eva Stone really — and does Adrian already know?"
+    },
+    {
+      "phase": "rise",
+      "ratio_range": "20%-50%",
+      "hook_direction": "Why is Adrian investing in Nora's war — and what does he want from it?"
+    },
+    {
+      "phase": "storm",
+      "ratio_range": "50%-80%",
+      "hook_direction": "Who helped erase Nora's legal identity — and can the truth survive the institution?"
+    },
+    {
+      "phase": "finale",
+      "ratio_range": "80%-100%",
+      "hook_direction": "Who is left standing when the truth finally goes fully public?"
+    }
+  ],
+  "episode_hook_map": [
+    {
+      "episode_id": "EP01",
+      "hook_type": "identity_tease",
+      "hook_out": "A camera catches the scar on Nora's wrist — the mark only the real heiress had."
+    },
+    {
+      "episode_id": "EP02",
+      "hook_type": "evidence_drop",
+      "hook_out": "The board is forced to ask who Eva really is — and someone in the room already knows."
+    }
   ],
   "paywall_map": [
-    "EP08: witness confirmation",
-    "EP18: alliance betrayal reveal"
+    {
+      "episode_id": "EP08",
+      "position_ratio": "0.20",
+      "phase": "first_lock",
+      "type": "identity confirmation",
+      "beat": "A witness confirms Nora knew a family protocol no outsider could ever know.",
+      "viewer_task": "Is Eva actually Nora — and will Adrian use that knowledge to help or destroy her?"
+    },
+    {
+      "episode_id": "EP18",
+      "position_ratio": "0.45",
+      "phase": "mid_lock",
+      "type": "romance + betrayal",
+      "beat": "Adrian signs the alliance deal, then discovers Nora withheld a critical piece of the evidence chain.",
+      "viewer_task": "Will Adrian walk away — or is he in too deep to leave?"
+    },
+    {
+      "episode_id": "EP28",
+      "position_ratio": "0.70",
+      "phase": "storm_lock",
+      "type": "反派阶段性得逞",
+      "beat": "The board strips Eva of all public standing using the forged identity Celia planted six months earlier.",
+      "viewer_task": "Has Nora lost everything — or is this the moment she finally burns the whole house down?"
+    },
+    {
+      "episode_id": "EP36",
+      "position_ratio": "0.90",
+      "phase": "finale_lock",
+      "type": "真相即将大白",
+      "beat": "The erased document surfaces live on broadcast — signed by Nora's father under duress.",
+      "viewer_task": "Will the truth survive the institution's last attempt to bury it?"
+    }
   ],
-  "outline_markdown": "# 01_英文大纲\n\n## Quick Reference\n- Project Title: Midnight Heiress\n\n## Episode Outline\n### EP01 - Back From the Grave\n- Core Event: Nora returns to the gala as Eva Stone.\n"
+  "outline_markdown": "# 01_英文大纲\n\n## Quick Reference\n- Project Title: Midnight Heiress\n- Episode Count: 40\n\n## Adaptation Positioning\n...(see full sample in 01_英文大纲.md)\n\n## Episode Outline\n### EP01 - Back From the Grave\n- arc_phase: launch\n- Core Event: Celia publicly humiliates Eva without knowing who she is.\n- Turn: Adrian notices Eva knows family-only information.\n- Emotional Goal: Audience feels the pleasure of watching a predator underestimate the wrong person.\n- Relationship Shift: Nora and Adrian move from strangers to mutual threat.\n- Antagonist Pressure: Celia deploys social exclusion to remove Eva from the power circle.\n- Satisfaction Beat: [status_reversal] Nora deflects Celia's dismissal with a single line.\n- End Hook: [identity_tease] A camera catches the scar only the real heiress had.\n"
 }
