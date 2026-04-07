@@ -130,7 +130,7 @@
 
 - **定位**：大纲与分镜之间的**中间层**——把集级结构落实为可拍的「场」，**不写**景别、机位、运镜（那些归分镜表）。
 - **整体层级**：`EPISODE` → 可选 `COLD OPEN` → 若干 `SCENE`；每场固定四段：**场次头信息** → `[OPENING STATE]` → `[MAIN BODY]` → `[SCENE ENDING]`。
-- **集头 `[EPISODE BRIEF]`**（每场之前）：6 项必填——`Episode Plot`、`Opening Hook`、`Cold Open Focus`、`Closing Hook`、`Core Satisfaction`、`Target Emotion`；须与首场开场、末场结尾钩子对齐。
+- **集头 `[EPISODE BRIEF]`**（每集第一场之前，全集只写一次）：6 项必填——`Episode Plot`、`Opening Hook`、`Cold Open Focus`、`Closing Hook`、`Core Satisfaction`、`Target Emotion`；须与首场开场、末场结尾钩子对齐。
 - **场次头（7 字段）**：`Time`、`Location`、`Characters`、`Core Event`、`Scene Result`、`Outline Ref`（对齐大纲某字段，且全集须覆盖本集 `core_event` 与 `turn`）。
 - **`[MAIN BODY]`**：按**动作块**分段；标准**英文剧本对白格式**（全大写角色名、`(O.S.)` / `(V.O.)` / `(CONT'D)` 等）；可视化动作行可拍、道具位置明确。
 - **附录级**：需有与正文场次一致的 **scene crosswalk**（含 time、core_event、scene_result、outline_ref 等），供分镜索引对齐。
