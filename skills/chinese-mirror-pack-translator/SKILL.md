@@ -12,6 +12,7 @@ This stage outputs the Chinese outline, screenplay, storyboard table, and settin
 - English screenplay
 - English storyboard table
 - English setting bible
+- `adaptation_plan` (reference — preserve adapted character names and locked narrative; **do not** restore source-novel names in Chinese, `rules/17_改编计划锁定与下游服从.md`)
 
 ## Output
 
@@ -36,6 +37,7 @@ When English artifacts are large:
 ## Minimum standard
 
 1. Chinese must be a complete structural mirror of the English pack.
+1b. Character names in Chinese narrative cells follow the English adapted names / `adaptation_plan.character_rename_map`; no reverting to original-webnovel naming.
 2. All `episode_id` / `scene_id` / `shot_id` / asset IDs remain aligned.
 3. Chinese must read naturally for internal teams, not like mechanical translation.
 4. **Storyboard table (`07`)** must mirror the English storyboard (`03`) **row-for-row** with the same **21-column** header and column order as `rules/13_分镜表规范.md` / `english-storyboard-table-builder/schema.json`.
@@ -54,6 +56,7 @@ When English artifacts are large:
 
 ## References
 
+- `rules/17_改编计划锁定与下游服从.md`
 - `rules/16_长文本分段执行规范.md`
 - `rules/15_双语镜像规范.md`
 - `examples/中间产物样例/mirror_pack.json`

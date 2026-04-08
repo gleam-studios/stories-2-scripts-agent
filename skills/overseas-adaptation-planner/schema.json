@@ -17,6 +17,13 @@
     "role_function_map",
     "forbidden_traps",
     "adaptation_summary",
+    "adapted_plot_direction",
+    "adapted_structure",
+    "adapted_background",
+    "adapted_character_system",
+    "adapted_relationships_and_turns",
+    "character_rename_map",
+    "all_principal_names_changed",
     "season_arc",
     "scene_language_rules",
     "similarity_avoidance",
@@ -104,6 +111,48 @@
     },
     "forbidden_traps": { "type": "array", "items": { "type": "string" } },
     "adaptation_summary": { "type": "string" },
+    "adapted_plot_direction": {
+      "type": "string",
+      "minLength": 1,
+      "description": "改编后剧情走向；须说明相对 narrative_digest.plot_direction 的差异策略（事件重组/换壳/节拍移动等）"
+    },
+    "adapted_structure": {
+      "type": "string",
+      "minLength": 1,
+      "description": "改编后叙事结构；相对 narrative_digest.story_structure"
+    },
+    "adapted_background": {
+      "type": "string",
+      "minLength": 1,
+      "description": "改编后世界与背景；相对原文背景与文化映射"
+    },
+    "adapted_character_system": {
+      "type": "string",
+      "minLength": 1,
+      "description": "改编后人物设定体系；须与 character_rename_map 一致，说明相对原文人物的功能保留与改造"
+    },
+    "adapted_relationships_and_turns": {
+      "type": "string",
+      "minLength": 1,
+      "description": "改编后人物关系与转变；相对 narrative_digest.relationships_and_turns"
+    },
+    "character_rename_map": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["source_character_id", "adapted_display_name"],
+        "properties": {
+          "source_character_id": { "type": "string" },
+          "adapted_display_name": { "type": "string" },
+          "notes": { "type": "string" }
+        }
+      }
+    },
+    "all_principal_names_changed": {
+      "type": "boolean",
+      "description": "须为 true：所有主要角色对外显示名相对原文已改名（见 rules/17）"
+    },
     "season_arc": {
       "type": "array",
       "items": {
@@ -139,7 +188,7 @@
         "key_scenes": { "type": "integer" },
         "dialogue": { "type": "integer" },
         "ending": { "type": "integer" },
-        "total": { "type": "integer" },
+        "total": { "type": "integer", "maximum": 30 },
         "assessment": { "type": "string" }
       }
     }

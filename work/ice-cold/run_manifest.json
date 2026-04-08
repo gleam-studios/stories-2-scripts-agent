@@ -1,0 +1,44 @@
+{
+  "project_slug": "ice-cold",
+  "project_title": "ice cold",
+  "source_id": "ice-cold-wattpad-export",
+  "target_market": "NA-English",
+  "episode_count": 24,
+  "episode_duration": "1-2 min",
+  "completed_stages": [
+    "source-analysis",
+    "source-narrative-digest",
+    "overseas-adaptation-planner",
+    "english-setting-bible-builder",
+    "english-outline-writer",
+    "english-screenplay-writer",
+    "english-storyboard-table-builder",
+    "chinese-mirror-pack-translator"
+  ],
+  "artifacts": {
+    "source_packet": "source_packet.json",
+    "story_bible": "story_bible.json",
+    "narrative_digest": "narrative_digest.json",
+    "adaptation_plan": "adaptation_plan.json",
+    "setting_bible": "setting_bible.json",
+    "outline_pack": "outline_pack.json",
+    "screenplay_pack": "screenplay_pack.json",
+    "storyboard_pack": "storyboard_pack.json",
+    "mirror_pack": "mirror_pack.json"
+  },
+  "export": {
+    "status": "completed",
+    "path": "export/",
+    "files": [
+      "01_ice cold_英文大纲.docx",
+      "02_ice cold_英文剧本.docx",
+      "03_ice cold_英文分镜表.docx",
+      "04_ice cold_英文设定集.docx",
+      "05_ice cold_中文大纲.docx",
+      "06_ice cold_中文剧本.docx",
+      "07_ice cold_中文分镜表.docx",
+      "08_ice cold_中文设定集.docx"
+    ]
+  },
+  "notes": "narrative_digest.json was backfilled retroactively (stage 1b was added to the pipeline after this project's initial run). All other stages were completed in original run order. No re-run required; downstream products are consistent."
+}

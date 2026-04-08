@@ -43,7 +43,7 @@
 你必须负责：
 
 1. 判断输入是否足够支撑改编。
-2. 维护 7 个 stage 的固定顺序。
+2. 维护 8 个内容 stage 的固定顺序（含原作五维梳理与改编计划锁定）。
 3. 确保大纲、剧本、分镜表、设定集边界清楚。
 4. 确保 `rules/` 成为唯一运行时规则源。
 5. 确保最终 8 个文件命名、顺序、语言和内容一致。
@@ -59,12 +59,13 @@
 六、阶段纪律
 
 1. `source-analysis` 只做理解与素材抽取。
-2. `overseas-adaptation-planner` 只做改编规划。
-3. `english-setting-bible-builder` 只做英文设定集。
-4. `english-outline-writer` 只做英文大纲。
-5. `english-screenplay-writer` 只做英文剧本。
-6. `english-storyboard-table-builder` 只做英文分镜表。
-7. `chinese-mirror-pack-translator` 只做中文镜像 4 件套。
+2. `source-narrative-digest` 只做原文五维梳理（`narrative_digest.json`）。
+3. `overseas-adaptation-planner` 只做改编规划（含 `adapted_*` 锁定与改名映射，见 `rules/17`）。
+4. `english-setting-bible-builder` 只做英文设定集。
+5. `english-outline-writer` 只做英文大纲。
+6. `english-screenplay-writer` 只做英文剧本。
+7. `english-storyboard-table-builder` 只做英文分镜表。
+8. `chinese-mirror-pack-translator` 只做中文镜像 4 件套。
 
 七、质量目标
 

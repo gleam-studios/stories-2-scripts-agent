@@ -25,12 +25,13 @@
 ## 固定 stage
 
 1. `source-analysis`
-2. `overseas-adaptation-planner`
-3. `english-setting-bible-builder`
-4. `english-outline-writer`
-5. `english-screenplay-writer`
-6. `english-storyboard-table-builder`
-7. `chinese-mirror-pack-translator`
+2. `source-narrative-digest`（`narrative_digest.json`，原文五维梳理）
+3. `overseas-adaptation-planner`（含改编锁定与改名映射，见 `rules/17`）
+4. `english-setting-bible-builder`
+5. `english-outline-writer`
+6. `english-screenplay-writer`
+7. `english-storyboard-table-builder`
+8. `chinese-mirror-pack-translator`
 
 ## 目录说明
 
@@ -39,7 +40,7 @@
 - `role/`
   - 角色定义、快捷指令、启动与导出规范、单篇执行流程
 - `skills/`
-  - 7 个 stage 的正式 skill
+  - 8 个内容 stage 的正式 skill（含 `source-narrative-digest`）
 - `rules/`
   - 运行时规则源
 - `examples/`
@@ -81,7 +82,7 @@
 
 总控 Agent 负责把**单篇英文网文**按固定顺序改编为**海外短剧生产包**，不是单纯翻译，也不是一次性生成一大段文本。主链固定为：
 
-理解原文 → 海外改编规划 → **英文**设定集 → **英文**大纲 → **英文**剧本 → **英文**分镜表 → **中文**镜像四件套 → **8 个 Word** 正式交付。
+理解原文 → **原文五维梳理** → 海外改编规划（锁定契约）→ **英文**设定集 → **英文**大纲 → **英文**剧本 → **英文**分镜表 → **中文**镜像四件套 → **8 个 Word** 正式交付。
 
 ### 主版本与双语原则
 
@@ -95,18 +96,19 @@
 - `**role/`** 规定如何启动、如何收尾、快捷指令（如 `/start`）、单篇流程与导出路径；不写具体剧本内容。
 - `**skills/**` 对应 7 个 stage 的正式 skill；执行时按 skill 读入，并服从对应 `rules/` 条目（索引见 `rules/00_规则库索引.md`）。
 
-### 标准执行顺序（7 个 stage）
+### 标准执行顺序（8 个内容 stage）
 
 
 | 顺序  | Stage                              | 主要产出（工作区常见文件名）        |
 | --- | ---------------------------------- | --------------------- |
 | 1   | `source-analysis`                  | `story_bible`         |
-| 2   | `overseas-adaptation-planner`      | `adaptation_plan`     |
-| 3   | `english-setting-bible-builder`    | 英文设定集（及中间 JSON）       |
-| 4   | `english-outline-writer`           | 英文大纲                  |
-| 5   | `english-screenplay-writer`        | 英文剧本                  |
-| 6   | `english-storyboard-table-builder` | 英文分镜表                 |
-| 7   | `chinese-mirror-pack-translator`   | 中文大纲 / 剧本 / 分镜表 / 设定集 |
+| 2   | `source-narrative-digest`          | `narrative_digest`    |
+| 3   | `overseas-adaptation-planner`      | `adaptation_plan`（含锁定五维 + 改名映射） |
+| 4   | `english-setting-bible-builder`    | 英文设定集（及中间 JSON）       |
+| 5   | `english-outline-writer`           | 英文大纲                  |
+| 6   | `english-screenplay-writer`        | 英文剧本                  |
+| 7   | `english-storyboard-table-builder` | 英文分镜表                 |
+| 8   | `chinese-mirror-pack-translator`   | 中文大纲 / 剧本 / 分镜表 / 设定集 |
 
 
 启动后会在 `work/<project_slug>/` 落盘；收尾时核对英文 1–4 与中文 5–8 完整、编号与命名一致，并可按 `role/启动与导出规范.md` 导出到桌面 `~/Desktop/短剧导出/<project_slug>/`。

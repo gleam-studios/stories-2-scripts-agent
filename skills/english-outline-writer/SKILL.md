@@ -10,7 +10,7 @@ No full scenes. No camera directions. No prose novella.
 
 ## Input
 
-- `adaptation_plan`
+- `adaptation_plan` — **highest narrative constraint**: the five `adapted_*` fields, `character_rename_map`, and `similarity_avoidance` are binding (`rules/17_改编计划锁定与下游服从.md`)
 - `english_setting_bible`
 
 ## Output
@@ -198,6 +198,7 @@ Before writing, read `adaptation_plan` fully:
 3. `Paywall Map` must match `adaptation_plan.paywall_map`.
 4. `satisfaction_beat` tags must correspond to `adaptation_plan.satisfaction_mix`.
 5. `Character Cards` `character_id` must match `adaptation_plan.role_function_map`.
+6. Main plot, structure, world, relationships, and character naming must implement the five `adapted_*` fields and `character_rename_map` — not the raw source story (`rules/17_改编计划锁定与下游服从.md`).
 
 ---
 
@@ -234,6 +235,7 @@ Before writing, read `adaptation_plan` fully:
 
 ## References
 
+- `rules/17_改编计划锁定与下游服从.md`
 - `rules/16_长文本分段执行规范.md`
 - `rules/11_大纲规范.md`
 - `rules/04_商业化卡点策略.md`

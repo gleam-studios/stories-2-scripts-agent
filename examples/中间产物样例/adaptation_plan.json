@@ -16,21 +16,21 @@
     "payoff": "truth revelation and public reclamation"
   },
   "season_hook_map": [
-    "0%-20%: who is Eva Stone really",
-    "20%-50%: why is Adrian investing in her war",
-    "50%-80%: who helped erase Nora's legal identity",
+    "0%-20%: who is Elena West really",
+    "20%-50%: why is Marcus Reed financing her war",
+    "50%-80%: who helped erase Elena's legal identity",
     "80%-100%: who can survive the truth when it goes public"
   ],
   "episode_hook_map": [
     {
       "episode_id": "EP01",
       "hook_type": "identity tease",
-      "hook_out": "A camera catches Nora's scar, the mark only the real heiress had."
+      "hook_out": "A camera catches Elena's scar, the mark only the real heiress had."
     },
     {
       "episode_id": "EP02",
       "hook_type": "public proof tease",
-      "hook_out": "A donor asks why Eva has Amelia Hale's family seal."
+      "hook_out": "A donor asks why Elena carries the West family seal."
     }
   ],
   "paywall_map": [
@@ -39,14 +39,14 @@
       "position_ratio": "0.20",
       "phase": "first lock",
       "type": "identity confirmation",
-      "beat": "A witness confirms Nora knew a family protocol no outsider could know."
+      "beat": "A witness confirms Elena knew a family protocol no outsider could know."
     },
     {
       "episode_id": "EP18",
       "position_ratio": "0.45",
       "phase": "mid lock",
       "type": "romance + betrayal",
-      "beat": "Adrian signs the alliance deal, then learns Nora hid part of the evidence chain."
+      "beat": "Marcus signs the alliance deal, then learns Elena hid part of the evidence chain."
     }
   ],
   "rhythm_curve": {
@@ -56,8 +56,8 @@
     "payoff_phase": "public truth, board collapse, power without surrender"
   },
   "satisfaction_mix": {
-    "status_reversal": "Every major public event ends with Nora taking status away from Celia's camp.",
-    "romantic_tension": "Nora and Adrian weaponize closeness before they earn trust.",
+    "status_reversal": "Every major public event ends with Elena taking status away from Serena's camp.",
+    "romantic_tension": "Elena and Marcus weaponize closeness before they earn trust.",
     "truth_drop": "Evidence arrives in fragments that force each episode to end on forward momentum."
   },
   "villain_ladder": [
@@ -68,7 +68,7 @@
     },
     {
       "layer": "visible usurper",
-      "face": "Celia Hale",
+      "face": "Serena Cole",
       "pressure": "forged legitimacy and media theater"
     },
     {
@@ -119,6 +119,29 @@
     "passive suffering without retaliation"
   ],
   "adaptation_summary": "Rebuild the source into a public-war revenge romance centered on legitimacy, spectacle, and a fast trust-threat romance axis.",
+  "adapted_plot_direction": "Keep the commercial engine (hidden heir, public legitimacy war) but re-sequence reveals: open on auction-floor proof rather than charity gala beat-for-beat; move first major identity clue to EP02 donor confrontation; replace staged-accident backstory with board-sanctioned disappearance to lower chain-similarity vs source.",
+  "adapted_structure": "Four-phase rhythm unchanged at macro level but information reveal order shifts: financial trail leads social wins; midpoint betrayal tied to sealed ledger not missing will trope; finale is regulatory filing + livestream not family dinner showdown.",
+  "adapted_background": "Old-money East Coast philanthropy and auction houses as primary public arenas; legal identity erasure via corporate records not village gossip; board governance and donor class as social weapon.",
+  "adapted_character_system": "Protagonist: Elena West (alias contract strategist) — same function as source heroine, new name and profession skin. Male lead: Marcus Reed — investor-truth seeker, colder public voice. Antagonist: Serena Cole — performative heiress, media-native villainy. All use adapted_display_name in downstream docs; stable CHAR-xx IDs unchanged.",
+  "adapted_relationships_and_turns": "Elena vs Serena remains public legitimacy rivalry but first clash is auction bid war not dress insult; Elena–Marcus alliance starts as hostile term sheet then intimacy-as-leverage; storm beat is partial evidence withhold on Elena side to mirror trust fracture without copying source dialogue situations.",
+  "character_rename_map": [
+    {
+      "source_character_id": "CHAR-01",
+      "adapted_display_name": "Elena West",
+      "notes": "Alias public-facing name for early eps; legal reclamation name can surface later per outline"
+    },
+    {
+      "source_character_id": "CHAR-02",
+      "adapted_display_name": "Marcus Reed",
+      "notes": "Investor counterpart to Adrian Vale"
+    },
+    {
+      "source_character_id": "CHAR-03",
+      "adapted_display_name": "Serena Cole",
+      "notes": "Visible usurper counterpart to Celia Hale"
+    }
+  ],
+  "all_principal_names_changed": true,
   "season_arc": [
     {
       "segment": "launch",

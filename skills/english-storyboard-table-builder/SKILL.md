@@ -14,6 +14,7 @@ The table must be usable for both human directors and AI image/video generation 
 
 - `screenplay_pack.json` (required — source of scene structure, action blocks, scene_crosswalk)
 - `outline_pack.json` (required — governs character identity, world rules, paywall beats, signature scenes)
+- `adaptation_plan.json` (required — `character_rename_map` and `adapted_*` lock; do not reintroduce source names or beats, `rules/17_改编计划锁定与下游服从.md`)
 - `setting_bible.json` (required — provides character_ids, location_ids, prop_ids, look_ids)
 - `rules/13_分镜表规范.md` (required — all structural and density rules)
 - `rules/08_英文对白写作规则.md` (required — dialogue_anchor field must conform)
@@ -316,6 +317,7 @@ Do not write abstract emotional labels in `ai_note` — describe what the camera
 
 ## References
 
+- `rules/17_改编计划锁定与下游服从.md`
 - `rules/16_长文本分段执行规范.md`
 - `rules/13_分镜表规范.md`
 - `rules/05_节奏曲线.md`

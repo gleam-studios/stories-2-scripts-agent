@@ -10,7 +10,7 @@
 
 把**单篇英文网文**稳定改编成**海外短剧生产包**：8 个 Word（英文 01–04 主版本 + 中文 05–08 镜像），可直接支撑编剧、分镜与 AI 生产流水线。
 
-本仓库**不做**前端、API、批量调度与程序壳；只做内容与规格。
+本仓库的核心是内容与规格。`prompts/` 目录提供面向 API / 前端的多角色 prompt 文件体系。
 
 ---
 
@@ -29,9 +29,32 @@
 
 ---
 
-## 固定流水线（7 stages）
+## 多角色架构（面向 API / 前端）
 
-`source-analysis` → `overseas-adaptation-planner` → `english-setting-bible-builder` → `english-outline-writer` → `english-screenplay-writer` → `english-storyboard-table-builder` → `chinese-mirror-pack-translator`
+8 stage 流水线在面向 API 时由**多 Agent 协作**执行，prompt 文件在 `prompts/` 目录下：
+
+| 角色 | 文件 | 职责 |
+| --- | --- | --- |
+| **总制作人** | `prompts/主Agent/总制作人.txt` | 纯调度，不生成内容；按顺序调度子角色并在每步后触发审核 |
+| 原文分析师 | `prompts/子Agent/原文分析师.txt` | Stage 1：`source-analysis` → `story_bible.json` |
+| 原作梳理师 | `prompts/子Agent/原作梳理师.txt` | Stage 1b：`source-narrative-digest` → `narrative_digest.json` |
+| 改编策划师 | `prompts/子Agent/改编策划师.txt` | Stage 2：`overseas-adaptation-planner` → `adaptation_plan.json` |
+| 设定集构建师 | `prompts/子Agent/设定集构建师.txt` | Stage 3：`english-setting-bible-builder` → `setting_bible.json` |
+| 大纲创作师 | `prompts/子Agent/大纲创作师.txt` | Stage 4：`english-outline-writer` → `outline_pack.json` |
+| 剧本创作师 | `prompts/子Agent/剧本创作师.txt` | Stage 5：`english-screenplay-writer` → `screenplay_pack.json` |
+| 分镜构建师 | `prompts/子Agent/分镜构建师.txt` | Stage 6：`english-storyboard-table-builder` → `storyboard_pack.json` |
+| 镜像翻译师 | `prompts/子Agent/镜像翻译师.txt` | Stage 7：`chinese-mirror-pack-translator` → `mirror_pack.json` |
+| **规格审核员** | `prompts/子Agent/规格审核员.txt` | 每个 stage 完成后审核产物质量，75 分通过，最多 2 轮修改 |
+
+**执行闭环**：子角色完成 → 规格审核员审核 → 询问用户意见 → 用户满意才进入下一 stage。
+
+在 Cursor 中手动驱动时仍可直接使用 `skills/` 目录；`prompts/` 是面向 API 层的执行格式，内容源自相同的 `rules/` + `skills/`。
+
+---
+
+## 固定流水线（8 stages）
+
+`source-analysis` → `source-narrative-digest` → `overseas-adaptation-planner` → `english-setting-bible-builder` → `english-outline-writer` → `english-screenplay-writer` → `english-storyboard-table-builder` → `chinese-mirror-pack-translator`
 
 **改内容：先改英文 01–04，再镜像中文。** 不得绕过英文另写一版故事。
 
@@ -58,6 +81,7 @@
 1. `README.md` — 交付物列表、目录、格式骨架总览
 2. `SKILL.md` — 总控入口
 3. `role/README.md` 与 `role/单篇执行流程.md` — 怎么跑完一篇
-4. 执行到某一 stage 时：打开对应 `skills/<stage>/SKILL.md` + 其引用的 `rules/`
+4. `prompts/` — 面向 API 的多角色 prompt 文件（总制作人 + 7 子角色 + 规格审核员）
+5. 执行到某一 stage 时：打开对应 `skills/<stage>/SKILL.md` + 其引用的 `rules/`
 
 若本文件与 `rules/` 冲突，**以 `rules/` 为准**；Soul 仅作方向与优先级提醒。

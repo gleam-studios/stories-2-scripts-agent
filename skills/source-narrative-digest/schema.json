@@ -1,0 +1,127 @@
+{
+  "type": "object",
+  "required": [
+    "plot_direction",
+    "story_structure",
+    "character_backgrounds",
+    "character_profiles",
+    "relationships_and_turns"
+  ],
+  "properties": {
+    "story_bible_merge_note": {
+      "type": "string",
+      "description": "Optional: chunk merge version or coverage note from story_bible"
+    },
+    "plot_direction": {
+      "type": "object",
+      "required": ["summary", "main_arc", "sub_arcs", "key_turns", "ending_tendency"],
+      "properties": {
+        "summary": { "type": "string" },
+        "main_arc": { "type": "string" },
+        "sub_arcs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["label", "description"],
+            "properties": {
+              "label": { "type": "string" },
+              "description": { "type": "string" },
+              "linked_character_ids": {
+                "type": "array",
+                "items": { "type": "string" }
+              }
+            }
+          }
+        },
+        "key_turns": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["order", "what_changes"],
+            "properties": {
+              "order": { "type": "integer" },
+              "what_changes": { "type": "string" },
+              "character_ids": {
+                "type": "array",
+                "items": { "type": "string" }
+              }
+            }
+          }
+        },
+        "ending_tendency": { "type": "string" }
+      }
+    },
+    "story_structure": {
+      "type": "object",
+      "required": ["macro_structure", "reveal_order", "pacing_notes"],
+      "properties": {
+        "macro_structure": { "type": "string" },
+        "reveal_order": { "type": "string" },
+        "pacing_notes": { "type": "string" }
+      }
+    },
+    "character_backgrounds": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["character_id", "source_name", "background"],
+        "properties": {
+          "character_id": { "type": "string" },
+          "source_name": { "type": "string" },
+          "background": { "type": "string" }
+        }
+      }
+    },
+    "character_profiles": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["character_id", "source_name", "profile"],
+        "properties": {
+          "character_id": { "type": "string" },
+          "source_name": { "type": "string" },
+          "profile": { "type": "string" }
+        }
+      }
+    },
+    "relationships_and_turns": {
+      "type": "object",
+      "required": ["network_overview", "pairs_or_triads", "phase_shifts"],
+      "properties": {
+        "network_overview": { "type": "string" },
+        "pairs_or_triads": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["party_character_ids", "dynamic"],
+            "properties": {
+              "party_character_ids": {
+                "type": "array",
+                "items": { "type": "string" },
+                "minItems": 2
+              },
+              "dynamic": { "type": "string" }
+            }
+          }
+        },
+        "phase_shifts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["phase_label", "what_shifts"],
+            "properties": {
+              "phase_label": { "type": "string" },
+              "what_shifts": { "type": "string" },
+              "character_ids": {
+                "type": "array",
+                "items": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

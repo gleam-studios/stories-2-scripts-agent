@@ -1,0 +1,110 @@
+{
+  "story_bible_merge_note": "single-pass story_bible; IDs from character_cards",
+  "plot_direction": {
+    "summary": "A presumed-dead heiress returns under an alias to reclaim public legitimacy while a usurper holds the social crown; a disciplined investor becomes both weapon and romantic risk.",
+    "main_arc": "Nora moves from hidden survival to public proof, forcing Celia's forged legitimacy to collapse in spectacle.",
+    "sub_arcs": [
+      {
+        "label": "Alliance under suspicion",
+        "description": "Adrian funds and protects Nora while tracing a deeper fraud network; trust is transactional until evidence aligns.",
+        "linked_character_ids": ["CHAR-01", "CHAR-02"]
+      },
+      {
+        "label": "Institutional block",
+        "description": "Board and legal gatekeepers slow truth drops; each win must be staged in public to bypass private capture.",
+        "linked_character_ids": ["CHAR-01", "CHAR-03"]
+      }
+    ],
+    "key_turns": [
+      {
+        "order": 1,
+        "what_changes": "Public humiliation reframes Nora as someone who can bite back without revealing the full identity.",
+        "character_ids": ["CHAR-01", "CHAR-03"]
+      },
+      {
+        "order": 2,
+        "what_changes": "Adrian enters as capital and narrative gravity; Nora accepts weaponized closeness.",
+        "character_ids": ["CHAR-01", "CHAR-02"]
+      },
+      {
+        "order": 3,
+        "what_changes": "Evidence chain completes; the final confrontation moves from private family myth to public legitimacy.",
+        "character_ids": ["CHAR-01", "CHAR-02", "CHAR-03"]
+      }
+    ],
+    "ending_tendency": "Public reclamation of name and company; romance earned after truth is no longer leverageable against her."
+  },
+  "story_structure": {
+    "macro_structure": "Launch: return + first reversals; Rise: stacked public wins and alliance pressure; Storm: betrayal beat and false defeat; Payoff: truth spectacle and institutional collapse.",
+    "reveal_order": "Identity clues precede full proof; donor and seal artifacts escalate; board fraud threads surface after social wins lock audience attention.",
+    "pacing_notes": "Each escalation prefers witnessed events; interior exposition minimized in favor of leverage shifts."
+  },
+  "character_backgrounds": [
+    {
+      "character_id": "CHAR-01",
+      "source_name": "Nora Hale / Eva Stone",
+      "background": "Raised inside the Hale legitimacy machine; staged disappearance erased her public existence while Celia consolidated acting-heiress status."
+    },
+    {
+      "character_id": "CHAR-02",
+      "source_name": "Adrian Vale",
+      "background": "Built capital position tracing institutional fraud; entered the Hale war as investor with prior interest in the erased evidence chain."
+    },
+    {
+      "character_id": "CHAR-03",
+      "source_name": "Celia Hale",
+      "background": "Non-blood or contested lineage elevated by social performance; status depends on forged narratives and insider loyalty theater."
+    }
+  ],
+  "character_profiles": [
+    {
+      "character_id": "CHAR-01",
+      "source_name": "Nora Hale / Eva Stone",
+      "profile": "Core desire: reclaim company and destroy the lie in public. Fear: being reduced to sentiment. Voice: cold precision under glamour. Leverage: lineage knowledge, hidden evidence, calm under humiliation."
+    },
+    {
+      "character_id": "CHAR-02",
+      "source_name": "Adrian Vale",
+      "profile": "Core desire: own truth before it is weaponized. Fear: being played. Voice: minimal, timing-based. Leverage: capital, legal reach, media gravity."
+    },
+    {
+      "character_id": "CHAR-03",
+      "source_name": "Celia Hale",
+      "profile": "Core desire: permanent control of the empire. Fear: public unmasking. Voice: performative warmth. Leverage: image, insider networks, forged legitimacy artifacts."
+    }
+  ],
+  "relationships_and_turns": {
+    "network_overview": "Protagonist versus visible usurper with the male lead as volatile ally; institutional villains orbit as pressure, not primary emotional triangle.",
+    "pairs_or_triads": [
+      {
+        "party_character_ids": ["CHAR-01", "CHAR-03"],
+        "dynamic": "Blood or legitimacy rivalry; public war over who the world believes."
+      },
+      {
+        "party_character_ids": ["CHAR-01", "CHAR-02"],
+        "dynamic": "Contractual heat turning into trust risk; mutual use then mutual exposure."
+      },
+      {
+        "party_character_ids": ["CHAR-02", "CHAR-03"],
+        "dynamic": "Cold parallel interests—Celia tries to capture narrative; Adrian buys evidence paths."
+      }
+    ],
+    "phase_shifts": [
+      {
+        "phase_label": "Launch",
+        "what_shifts": "Nora proves she can win in public without full reveal; Celia escalates social attacks.",
+        "character_ids": ["CHAR-01", "CHAR-03"]
+      },
+      {
+        "phase_label": "Storm",
+        "what_shifts": "Hidden evidence partiality triggers betrayal beat; alliance fractures then reframes stakes.",
+        "character_ids": ["CHAR-01", "CHAR-02"]
+      },
+      {
+        "phase_label": "Payoff",
+        "what_shifts": "Truth becomes undeniable in spectacle; Celia's legitimacy engine breaks.",
+        "character_ids": ["CHAR-01", "CHAR-02", "CHAR-03"]
+      }
+    ]
+  }
+}

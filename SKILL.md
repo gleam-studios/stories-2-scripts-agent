@@ -36,13 +36,29 @@
 2. 单次完整改编
 3. 单次双语交付
 
-默认不做：
+## 二点五、多角色 Prompt 体系（面向 API / 前端）
 
-1. 前端页面
-2. 第三方 API 配置
-3. 批量队列
-4. 审核流
-5. 程序壳扩展
+`prompts/` 目录包含 10 个子 Agent prompt 文件，供 API 层的 `loadPrompt()` 加载：
+
+```
+prompts/
+  主Agent/
+    总制作人.txt        ← 纯调度，不生成内容
+  子Agent/
+    原文分析师.txt       ← Stage 1: source-analysis
+    原作梳理师.txt       ← Stage 1b: source-narrative-digest
+    改编策划师.txt       ← Stage 2: overseas-adaptation-planner
+    设定集构建师.txt     ← Stage 3: english-setting-bible-builder
+    大纲创作师.txt       ← Stage 4: english-outline-writer
+    剧本创作师.txt       ← Stage 5: english-screenplay-writer
+    分镜构建师.txt       ← Stage 6: english-storyboard-table-builder
+    镜像翻译师.txt       ← Stage 7: chinese-mirror-pack-translator
+    规格审核员.txt       ← 每个 stage 完成后审核产物
+```
+
+**执行闭环**：总制作人调度子角色 → 子角色完成 → 规格审核员审核 → 询问用户 → 用户满意进入下一 stage。
+
+这些 prompt 的内容源自 `rules/` + `skills/`，格式对齐 Toonflow 的多 Agent 架构（主 Agent 纯调度 + 子 Agent 执行 + 导演审核）。在 Cursor 中手动驱动时仍可直接使用 `skills/` 目录。
 
 ## 三、对话快捷指令
 
@@ -101,49 +117,54 @@
 
 1. 输入归一化
 2. `source-analysis`
-3. `overseas-adaptation-planner`
-4. `english-setting-bible-builder`
-5. `english-outline-writer`
-6. `english-screenplay-writer`
-7. `english-storyboard-table-builder`
-8. `chinese-mirror-pack-translator`
-9. 最终导出 Word
+3. `source-narrative-digest`
+4. `overseas-adaptation-planner`
+5. `english-setting-bible-builder`
+6. `english-outline-writer`
+7. `english-screenplay-writer`
+8. `english-storyboard-table-builder`
+9. `chinese-mirror-pack-translator`
+10. 最终导出 Word
 
-禁止跳步。
+禁止跳步。`overseas-adaptation-planner` 产出须满足 `rules/17_改编计划锁定与下游服从.md`；后续英文与中文生产必须服从 `adaptation_plan` 锁定字段。
 
-## 六、7 个 stage 的责任边界
+## 六、8 个内容 stage 的责任边界
 
 1. `source-analysis`
   - 只做理解与素材抽取
   - 输出 `story_bible`
-2. `overseas-adaptation-planner`
+2. `source-narrative-digest`
+  - 只做原文五维梳理（剧情走向、结构、背景、人物设定、关系与转变）
+  - 输出 `narrative_digest`
+3. `overseas-adaptation-planner`
   - 只做改编规划
-  - 输出 `adaptation_plan`
-3. `english-setting-bible-builder`
+  - 输出 `adaptation_plan`（含五维 `adapted_*`、改名映射、相似度自评 `total` ≤ 30）
+4. `english-setting-bible-builder`
   - 只做英文设定集
   - 输出 `english_setting_bible`
-4. `english-outline-writer`
+5. `english-outline-writer`
   - 只做英文大纲
   - 输出 `english_outline_pack`
-5. `english-screenplay-writer`
+6. `english-screenplay-writer`
   - 只做英文剧本
   - 输出 `english_screenplay_pack`
-6. `english-storyboard-table-builder`
+7. `english-storyboard-table-builder`
   - 只做英文分镜表
   - 输出 `english_storyboard_pack`
-7. `chinese-mirror-pack-translator`
+8. `chinese-mirror-pack-translator`
   - 只做中文镜像 4 件套
   - 输出 `chinese_mirror_pack`
 
 ## 七、固定判断
 
 1. 这是改编任务，不是翻译任务。
-2. 英文 1-4 是主版本。
-3. 中文 5-8 只能从最终英文 1-4 生成。
-4. 大纲不写逐场。
-5. 剧本不写镜头。
-6. 分镜表固定按镜头逐行。
-7. 设定集是超重设计册。
+2. `adaptation_plan` 中五维 `adapted_*` 与 `character_rename_map` 为生产链最高叙事约束（`rules/17`）。
+3. 英文 1-4 是主版本。
+4. 中文 5-8 只能从最终英文 1-4 生成。
+5. 大纲不写逐场。
+6. 剧本不写镜头。
+7. 分镜表固定按镜头逐行。
+8. 设定集是超重设计册。
 
 ## 八、工作目录
 
@@ -155,13 +176,14 @@
 
 1. `source_packet.json`
 2. `story_bible.json`
-3. `adaptation_plan.json`
-4. `setting_bible.json`
-5. `outline_pack.json`
-6. `screenplay_pack.json`
-7. `storyboard_pack.json`
-8. `mirror_pack.json`
-9. `export/`
+3. `narrative_digest.json`
+4. `adaptation_plan.json`
+5. `setting_bible.json`
+6. `outline_pack.json`
+7. `screenplay_pack.json`
+8. `storyboard_pack.json`
+9. `mirror_pack.json`
+10. `export/`
 
 **长文本（推荐常备）：** `chapter_index.yaml`（章起止行号或字符范围或锚点）、`source_chunks/`（可选）、`run_manifest.json`（断点与批次进度）。详见 `rules/16_长文本分段执行规范.md`。
 

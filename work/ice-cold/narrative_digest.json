@@ -1,0 +1,182 @@
+{
+  "story_bible_merge_note": "Derived from story_bible.json (source_id: ice-cold-wattpad-export). No full re-read of source performed; gaps noted inline per rules/16.",
+  "plot_direction": {
+    "summary": "A hostile campus collision between Wren Ridley (Brown student) and Landon Reilly (Providence hockey player) escalates from mutual avoidance into emotional dependence, romantic commitment, and a crisis climax when Landon's abusive father lures him home and beats him. Resolution: Landon breaks from his father, protects his sister Olivia, and enters an openly loving relationship with Wren.",
+    "main_arc": "Wren and Landon move from hostility rooted in a high-school harm to fragile trust, to love confession, to breakup, to emergency rescue, to public commitment.",
+    "sub_arcs": [
+      {
+        "label": "Family abuse survival",
+        "description": "Landon's father Peter weaponizes religion, shame, and physical violence to pull Landon back into the family system; Olivia's danger accelerates the climax.",
+        "linked_character_ids": ["CHAR-SRC-02", "CHAR-SRC-06", "CHAR-SRC-07"]
+      },
+      {
+        "label": "Found family versus origin family",
+        "description": "The Hanson home (Micah's family) provides the care model that Landon lacks, contrasting with the Reilly household and enabling Landon to imagine escape.",
+        "linked_character_ids": ["CHAR-SRC-02", "CHAR-SRC-05"]
+      },
+      {
+        "label": "Wren's emotional avoidance",
+        "description": "Wren freezes at Landon's love declaration, triggering the mid-story breakup; Stella and the aftermath force Wren to confront his own capacity for commitment.",
+        "linked_character_ids": ["CHAR-SRC-01", "CHAR-SRC-04"]
+      }
+    ],
+    "key_turns": [
+      {
+        "order": 1,
+        "what_changes": "First campus collision — Wren recognizes Landon as the boy who once harmed Wren's brother; hostility is established but physical proximity becomes unavoidable.",
+        "character_ids": ["CHAR-SRC-01", "CHAR-SRC-02"]
+      },
+      {
+        "order": 2,
+        "what_changes": "Repeated forced proximity (runs, coffee shop, Micah's network) converts suspicion into flirtation; Landon's attraction can no longer be suppressed.",
+        "character_ids": ["CHAR-SRC-01", "CHAR-SRC-02", "CHAR-SRC-05"]
+      },
+      {
+        "order": 3,
+        "what_changes": "Landon declares love; Wren freezes and cannot reciprocate — relationship breaks, both leads unravel separately.",
+        "character_ids": ["CHAR-SRC-01", "CHAR-SRC-02"]
+      },
+      {
+        "order": 4,
+        "what_changes": "Peter lures Landon home, beats him, disappears him — family-abuse thread becomes dominant crisis; Wren mobilizes a search.",
+        "character_ids": ["CHAR-SRC-02", "CHAR-SRC-07", "CHAR-SRC-01"]
+      },
+      {
+        "order": 5,
+        "what_changes": "Wren finds Landon, becomes caregiver; Olivia is moved to safety; Landon makes a full break from Peter's system.",
+        "character_ids": ["CHAR-SRC-01", "CHAR-SRC-02", "CHAR-SRC-06"]
+      }
+    ],
+    "ending_tendency": "Landon plays hockey on his own terms, openly with Wren; one-year epilogue confirms emotional thaw and stable found-family life."
+  },
+  "story_structure": {
+    "macro_structure": "Launch: hostile collision and first proximity; Rise: forced closeness, attraction, and jealousy; Storm: love-declaration misfire, breakup, and family-violence crisis; Payoff: rescue, family break, and open commitment.",
+    "reveal_order": "High-school harm backstory (Landon's culpability) withheld until mid-story; father's violence severity escalated gradually; Landon's queerness and trauma revealed through interiority before any public act.",
+    "pacing_notes": "Dual-POV structure alternates Wren's sharp exterior read and Landon's internal suppression; chapter density increases at crisis (ch. 52–53). Epilogue resets to slow intimacy."
+  },
+  "character_backgrounds": [
+    {
+      "character_id": "CHAR-SRC-01",
+      "source_name": "Wren Ridley",
+      "background": "Brown student and aspiring writer; witnessed or experienced the fallout of Landon targeting his brother in high school; uses dry wit and social intelligence as emotional armor; family home (Hanson-adjacent warmth) provides stability he publicly minimizes."
+    },
+    {
+      "character_id": "CHAR-SRC-02",
+      "source_name": "Landon Reilly",
+      "background": "Providence hockey player shaped by a strict Christian abusive father (Peter); participated in homophobic targeting in high school while himself closeted; nearly sent to conversion therapy after coming out; emotional shutdown is a survival strategy; hockey is simultaneously an escape and Peter's primary leverage."
+    },
+    {
+      "character_id": "CHAR-SRC-03",
+      "source_name": "James",
+      "background": "Wren's roommate and former casual hookup; no deep backstory established; functions as jealousy catalyst and incidental witness."
+    },
+    {
+      "character_id": "CHAR-SRC-04",
+      "source_name": "Stella",
+      "background": "Wren's closest friend; blunt and perceptive; serves as the stability anchor who refuses to let Wren self-deceive during the post-breakup unraveling."
+    },
+    {
+      "character_id": "CHAR-SRC-05",
+      "source_name": "Micah Hanson",
+      "background": "Landon's longtime friend from a warm, accepting family; the Hanson household is the closest thing Landon has to a safe home; Micah holds knowledge of how damaged Landon is and acts as crisis relay."
+    },
+    {
+      "character_id": "CHAR-SRC-06",
+      "source_name": "Olivia Reilly",
+      "background": "Landon's younger sister, still in the family home during the story; subject to the same abuse system; her danger in the climax forces Landon to act beyond self-protection."
+    },
+    {
+      "character_id": "CHAR-SRC-07",
+      "source_name": "Peter Reilly",
+      "background": "Landon's father; strict Christian; weaponizes religious authority, physical violence, and shame conditioning; views Landon's queerness as a corruption requiring correction; primary antagonist."
+    }
+  ],
+  "character_profiles": [
+    {
+      "character_id": "CHAR-SRC-01",
+      "source_name": "Wren Ridley",
+      "profile": "Core desire: to be chosen honestly without surrendering control. Core fear: emotional exposure leading to loss of self. Fatal flaw: avoidance coded as composure — freezes when love is real. Voice: dry, observant, linguistically precise. Leverage: social read, language, calm under pressure, family safety net."
+    },
+    {
+      "character_id": "CHAR-SRC-02",
+      "source_name": "Landon Reilly",
+      "profile": "Core desire: to be safe, wanted, and free to want what he wants. Core fear: becoming his father or being destroyed by him. Fatal flaw: confuses emotional shutdown with strength; self-sabotages to preempt rejection. Voice: minimal, physical, sincere when walls drop. Leverage: athletic identity, raw loyalty, protectiveness toward Olivia."
+    },
+    {
+      "character_id": "CHAR-SRC-03",
+      "source_name": "James",
+      "profile": "Core desire: pleasure and uncomplicated connection. No deep psychological arc. Functional role: jealousy pressure on Landon; incidental mirror for Wren's avoidance."
+    },
+    {
+      "character_id": "CHAR-SRC-04",
+      "source_name": "Stella",
+      "profile": "Core desire: keep Wren from sabotaging himself. Voice: blunt, affectionate, zero patience for self-deception. Leverage: unconditional honesty and constant presence. No antagonist function."
+    },
+    {
+      "character_id": "CHAR-SRC-05",
+      "source_name": "Micah Hanson",
+      "profile": "Core desire: keep Landon alive, stable, and connected. Function: bridge between Landon's damaged world and a workable future; crisis logistical support. Not a romantic figure."
+    },
+    {
+      "character_id": "CHAR-SRC-06",
+      "source_name": "Olivia Reilly",
+      "profile": "Core desire: escape the family house intact. Function: stakes multiplier in climax; forces Landon's hand beyond self-interest. No independent arc outside the family crisis thread."
+    },
+    {
+      "character_id": "CHAR-SRC-07",
+      "source_name": "Peter Reilly",
+      "profile": "Core desire: force Landon back into a controllable version of son. Voice: authoritative, religious, cold. Leverage: physical violence, shame conditioning, financial-dependency leverage over Olivia. No redemption arc."
+    }
+  ],
+  "relationships_and_turns": {
+    "network_overview": "Dual romantic leads at the center; support characters (Stella, Micah) function as stabilizers; Olivia and Peter form the family-violence axis that detonates the climax; James provides jealousy friction without deep stakes.",
+    "pairs_or_triads": [
+      {
+        "party_character_ids": ["CHAR-SRC-01", "CHAR-SRC-02"],
+        "dynamic": "Enemy memory (high-school harm) becoming fascination, then care, then love complicated by Wren's freeze and Landon's trauma; full arc from hostility to open commitment."
+      },
+      {
+        "party_character_ids": ["CHAR-SRC-02", "CHAR-SRC-07"],
+        "dynamic": "Father-son abuse bond; Peter holds shame, physical violence, and conversion-therapy threat as leverage; Landon must achieve full severance to survive."
+      },
+      {
+        "party_character_ids": ["CHAR-SRC-02", "CHAR-SRC-06"],
+        "dynamic": "Sibling solidarity; Olivia's danger forces Landon into action he would not take for himself alone."
+      },
+      {
+        "party_character_ids": ["CHAR-SRC-01", "CHAR-SRC-04"],
+        "dynamic": "Protective friendship; Stella functions as external conscience when Wren's avoidance threatens to become permanent damage."
+      },
+      {
+        "party_character_ids": ["CHAR-SRC-02", "CHAR-SRC-05"],
+        "dynamic": "Trust-anchor friendship; Micah holds Landon's crisis history and provides the only stable-family model Landon has access to."
+      },
+      {
+        "party_character_ids": ["CHAR-SRC-01", "CHAR-SRC-03"],
+        "dynamic": "Casual sexual history that becomes jealousy fuel when Landon's attachment becomes real; James's presence tests both leads."
+      }
+    ],
+    "phase_shifts": [
+      {
+        "phase_label": "Launch",
+        "what_shifts": "Hostility established; forced proximity begins converting old harm into present tension; Landon's attraction acknowledged privately.",
+        "character_ids": ["CHAR-SRC-01", "CHAR-SRC-02"]
+      },
+      {
+        "phase_label": "Rise",
+        "what_shifts": "Chemistry made explicit through jealousy, physical closeness, and mutual care; Landon starts lowering defenses; James surfaces as friction.",
+        "character_ids": ["CHAR-SRC-01", "CHAR-SRC-02", "CHAR-SRC-03"]
+      },
+      {
+        "phase_label": "Storm",
+        "what_shifts": "Love declaration misfires; Wren's freeze triggers breakup; Peter's violence detonates separately, pulling Landon back into the family system; Olivia's danger raises stakes beyond the romance.",
+        "character_ids": ["CHAR-SRC-01", "CHAR-SRC-02", "CHAR-SRC-06", "CHAR-SRC-07"]
+      },
+      {
+        "phase_label": "Payoff",
+        "what_shifts": "Wren crosses his own avoidance line to find and protect Landon; Landon achieves full break from Peter; Olivia secured; relationship re-entered on equal, honest terms.",
+        "character_ids": ["CHAR-SRC-01", "CHAR-SRC-02", "CHAR-SRC-05", "CHAR-SRC-06"]
+      }
+    ]
+  }
+}

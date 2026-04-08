@@ -12,11 +12,13 @@ Every other document (outline, screenplay, storyboard) must be consistent with t
 
 **Input:**
 - `story_bible` (from `source-analysis`)
-- `adaptation_plan` (from `overseas-adaptation-planner`)
+- `adaptation_plan` (from `overseas-adaptation-planner`) — **binding**: character display names and narrative must follow `adaptation_plan.character_rename_map` and the five `adapted_*` fields (`rules/17_改编计划锁定与下游服从.md`)
 
 **Output:**
 - `setting_bible.json` (machine-readable intermediate)
 - final delivery target: `04_<剧名>_英文设定集.docx`
+
+**Binding:** Do not revert to source-novel names or plot beats; `CHAR-xx` names / public identities must align with `adaptation_plan.character_rename_map` and the five `adapted_*` narrative fields (`rules/17_改编计划锁定与下游服从.md`).
 
 ---
 
@@ -249,6 +251,7 @@ Minimum 3 entries, recommended 5-8.
 
 ## References
 
+- `rules/17_改编计划锁定与下游服从.md`
 - `rules/16_长文本分段执行规范.md`
 - `rules/14_设定集规范.md`
 - `examples/中间产物样例/setting_bible.json`

@@ -1,0 +1,12 @@
+{
+  "name": "novel-to-script-agent",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "DEV=1 node server/index.js",
+    "build": "cd web && npm run build",
+    "start": "node server/index.js",
+    "install:all": "cd server && npm install && cd ../web && npm install"
+  }
+}

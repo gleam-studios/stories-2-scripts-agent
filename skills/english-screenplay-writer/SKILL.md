@@ -11,7 +11,7 @@ Every scene must be written in a format that allows the storyboard builder to ex
 ## Input
 
 - `outline_pack.json` (required — the single source of truth for story structure, characters, hooks, and paywall beats)
-- `adaptation_plan.json` (required — target market, tone, paywall strategy)
+- `adaptation_plan.json` (required — target market, tone, paywall strategy; **and** binding `adapted_*` + `character_rename_map` per `rules/17_改编计划锁定与下游服从.md`)
 - `setting_bible.json` (required — world rules, location names, prop inventory)
 - `rules/12_剧本规范.md` (required — governs every structural and content decision in this skill)
 - `rules/08_英文对白写作规则.md` (required — governs all dialogue writing)
@@ -247,6 +247,7 @@ Do not increase scene count to fill time — write each scene's action blocks to
 
 ## References
 
+- `rules/17_改编计划锁定与下游服从.md`
 - `rules/16_长文本分段执行规范.md`
 - `rules/12_剧本规范.md`
 - `rules/08_英文对白写作规则.md`
